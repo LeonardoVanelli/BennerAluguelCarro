@@ -23,10 +23,10 @@
             <input id="marca" name="carro.Marca" />
 
             <label for="classe">Classe:</label>
-            <select id="classe" name="carro.ClasseId">
-                @foreach (var classe in ViewBag.Classe)
+            <select id="classe" name="classe.classe_Id">
+                @foreach (var classi in ViewBag.Classes)
                 {
-                    <option value="@classe.Id">@classe.Nome</option>
+                    <option value="@classi.Id">@classi.Nome</option>
                 }
             </select>
 

@@ -144,6 +144,10 @@
     <Compile Include="Migrations\201710220038517_Carro.Designer.cs">
       <DependentUpon>201710220038517_Carro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710222133163_PrecoHora.cs" />
+    <Compile Include="Migrations\201710222133163_PrecoHora.Designer.cs">
+      <DependentUpon>201710222133163_PrecoHora.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Classe.cs" />
     <Compile Include="Models\Carro.cs" />
@@ -191,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710220038517_Carro.resx">
       <DependentUpon>201710220038517_Carro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710222133163_PrecoHora.resx">
+      <DependentUpon>201710222133163_PrecoHora.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -23,7 +23,7 @@ namespace CaelumEstoque.Controllers
         {
             var classeDao = new ClassesDAO();
             IList<Classe> classe = classeDao.Lista();
-            ViewBag.Classe = classe;
+            ViewBag.Classes = classe;
 
             return View();
         }

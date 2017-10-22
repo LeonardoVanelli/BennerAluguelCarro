@@ -20,7 +20,7 @@ namespace CaelumEstoque.Models
 
         public string Descricao { get; set; }
 
-        public double Precoora { get; set; }
+        public double PrecoHora { get; set; }
 
     }
 }
