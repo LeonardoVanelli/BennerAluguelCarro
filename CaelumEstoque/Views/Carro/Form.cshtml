@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Form</title>
+</head>
+<body>
+    <div> 
+        <form action="/Carro/Adiciona" method="post">
+            <label for="placa">Placa:</label>
+            <input id="placa" name="carro.Placa" />
+
+            <label for="modelo">Modelo:</label>
+            <input id="modelo" name="carro.Modelo" />
+
+            <label for="marca">Marca:</label>
+            <input id="marca" name="carro.Marca" />
+
+            <label for="classe">Classe:</label>
+            <input id="classe" name="carro.Classe" />
+
+            <label for="descricao">Descrição:</label>
+            <input id="descricao" name="carro.Descricao" />
+
+            <label for="precoHora">Preço Hora:</label>
+            <input id="precoHora" name="carro.PrecoHora" />
+
+            <input type="submit" value="Cadastrar" />
+        </form>
+    </div>
+</body>
+</html>
