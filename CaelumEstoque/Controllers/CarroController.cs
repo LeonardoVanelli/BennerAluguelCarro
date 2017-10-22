@@ -21,6 +21,10 @@ namespace CaelumEstoque.Controllers
 
         public ActionResult Form()
         {
+            var classeDao = new ClassesDAO();
+            IList<Classe> classe = classeDao.Lista();
+            ViewBag.Classe = classe;
+
             return View();
         }
         [HttpPost]
