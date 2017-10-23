@@ -21,7 +21,7 @@ namespace CaelumEstoque.DAO
         {
             using (var contexto = new EstoqueContext())
             {
-                return contexto.Carros.Include("Categorias").ToList();
+                return contexto.Carros.Include("Classes").ToList();
             }
         }
 
