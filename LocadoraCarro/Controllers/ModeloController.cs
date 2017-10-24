@@ -52,5 +52,12 @@ namespace LocadoraCarro.Controllers
             ViewBag.Modelo = dao.BuscaPorId(id);
             return View();
         }
+
+        public ActionResult RemoveModelo(int id)
+        {
+            var dao = new ModeloDAO();
+            dao.Remove(dao.BuscaPorId(id));
+            return RedirectToAction("Index");
+        }
     }
 }

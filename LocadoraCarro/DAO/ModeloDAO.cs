@@ -17,6 +17,15 @@ namespace LocadoraCarro.DAO
             }
         }
 
+        public void Remove(Modelo modelo)
+        {
+            using (var contexto = new LocadoraContext())
+            {
+                contexto.Entry(modelo).State = System.Data.Entity.EntityState.Deleted;
+                contexto.SaveChanges();
+            }
+        }
+
         public IList<Modelo> Lista()
         {
             using (var contexto = new LocadoraContext())

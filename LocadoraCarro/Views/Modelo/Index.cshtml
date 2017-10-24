@@ -17,6 +17,9 @@
                     @Html.ActionLink(modelo.Nome, "Visualiza", new { id = modelo.Id})
                 </td>
                 <td>@modelo.Descricao</td>
+                <td>
+                    @Html.ActionLink("Remover", "RemoveModelo", new { id = modelo.Id })
+                </td>
             </tr>
         }
     </tbody>
