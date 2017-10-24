@@ -216,6 +216,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Modelo\Index.cshtml" />
     <Content Include="Views\Modelo\Form.cshtml" />
+    <Content Include="Views\Modelo\Visualiza.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

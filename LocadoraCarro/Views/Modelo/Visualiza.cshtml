@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Visualiza</title>
+</head>
+<body>
+    <div> 
+        Id: @ViewBag.Modelo.Id<br/>
+        Nome: @ViewBag.Modelo.Nome<br />
+        Descrição: @ViewBag.Modelo.Descricao<br />
+
+        @Html.ActionLink("Voltar", "Index", "Modelo")
+    </div>
+</body>
+</html>

@@ -1,4 +1,6 @@
-﻿
+﻿@model IList<LocadoraCarro.Models.Modelo>
+
+
 @{
     Layout = null;
 }
@@ -21,11 +23,13 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var modelo in ViewBag.Modelos)
+                @foreach (var modelo in Model)
                 {
                     <tr>
                         <td>@modelo.Id</td>
-                        <td>@modelo.Nome</td>
+                        <td>
+                            @Html.ActionLink(modelo.Nome, "Visualiza", new { id = modelo.Id})
+                        </td>
                         <td>@modelo.Descricao</td>
                     </tr>
                 }
