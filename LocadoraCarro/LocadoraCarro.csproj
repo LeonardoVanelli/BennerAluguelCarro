@@ -187,7 +187,12 @@
     <Compile Include="Migrations\201710241654059_Funcoes.Designer.cs">
       <DependentUpon>201710241654059_Funcoes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710241710117_Alugueis.cs" />
+    <Compile Include="Migrations\201710241710117_Alugueis.Designer.cs">
+      <DependentUpon>201710241710117_Alugueis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Aluguel.cs" />
     <Compile Include="Models\Carro.cs" />
     <Compile Include="Models\Classe.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -252,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710241654059_Funcoes.resx">
       <DependentUpon>201710241654059_Funcoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710241710117_Alugueis.resx">
+      <DependentUpon>201710241710117_Alugueis.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
