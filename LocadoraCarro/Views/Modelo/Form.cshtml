@@ -1,30 +1,13 @@
 ﻿
-@{
-    Layout = null;
-}
+<form action="/Modelo/Adiciona" method="post">
+    @Html.ValidationMessage("modelo.caracter")
 
-<!DOCTYPE html>
+    <label for="nome">Nome:</label>
+    <input id="=nome" name="modelo.nome" class="form-control"/>
+    @Html.ValidationMessage("modelo.nome")
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Form</title>
-</head>
-<body>
-    <div> 
-        <form action="/Modelo/Adiciona" method="post">
-            @Html.ValidationMessage("modelo.caracter")
+    <label for="descricao">Descricao:</label>
+    <input id="=descricao" name="modelo.descricao" class="form-control"/>
 
-            <label for="nome">Nome:</label>
-            <input id="=nome" name="modelo.nome"/>
-            @Html.ValidationMessage("modelo.nome")
-
-            <label for="descricao">Descricao:</label>
-            <input id="=descricao" name="modelo.descricao"/>
-
-            <input type="submit" value="Cadastrar" />
-        </form>
-
-    </div>
-</body>
-</html>
+    <input type="submit" value="Cadastrar" />
+</form>

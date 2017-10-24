@@ -45,7 +45,7 @@ namespace LocadoraCarro.Controllers
                 }
             }
         }
-
+        [Route("/Modelo/{id}")]
         public ActionResult Visualiza(int id)
         {
             var dao = new ModeloDAO();
