@@ -183,11 +183,14 @@
     <Compile Include="Migrations\201710241644007_Funcao1.Designer.cs">
       <DependentUpon>201710241644007_Funcao1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710241654059_Funcoes.cs" />
+    <Compile Include="Migrations\201710241654059_Funcoes.Designer.cs">
+      <DependentUpon>201710241654059_Funcoes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Carro.cs" />
     <Compile Include="Models\Classe.cs" />
     <Compile Include="Models\Cliente.cs" />
-    <Compile Include="Models\Funcao.cs" />
     <Compile Include="Models\Marca.cs" />
     <Compile Include="Models\Modelo.cs" />
     <Compile Include="Models\Protecao.cs" />
@@ -246,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710241644007_Funcao1.resx">
       <DependentUpon>201710241644007_Funcao1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710241654059_Funcoes.resx">
+      <DependentUpon>201710241654059_Funcoes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
