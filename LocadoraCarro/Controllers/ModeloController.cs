@@ -22,13 +22,29 @@ namespace LocadoraCarro.Controllers
         {
             return View();
         }
-
+        [HttpPost]
         public ActionResult Adiciona(Modelo modelo)
         {
-            var dao = new ModeloDAO();
-            dao.Adiciona(modelo);
+            if (modelo.Nome.Length > 20)
+            {
+                ViewBag.Modeluo = modelo;
+                ModelState.AddModelError("modelo.caracter", "Nome com mais de 20 Caracteres");
+                return View("Form");
+            }
+            else
+            {
+                if (ModelState.IsValid)
+                {
+                    var dao = new ModeloDAO();
+                    dao.Adiciona(modelo);
 
-            return RedirectToAction("Index", "Modelo");        
+                    return RedirectToAction("Index", "Modelo");
+                }
+                else
+                {
+                    return View("Form");
+                }
+            }
         }
     }
 }

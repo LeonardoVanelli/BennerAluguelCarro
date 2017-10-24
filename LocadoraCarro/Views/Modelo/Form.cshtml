@@ -13,11 +13,14 @@
 <body>
     <div> 
         <form action="/Modelo/Adiciona" method="post">
+            @Html.ValidationMessage("modelo.caracter")
+
             <label for="nome">Nome:</label>
-            <input id="=nome" name="modelo.nome" />
+            <input id="=nome" name="modelo.nome"/>
+            @Html.ValidationMessage("modelo.nome")
 
             <label for="descricao">Descricao:</label>
-            <input id="=descricao" name="modelo.descricao" />
+            <input id="=descricao" name="modelo.descricao"/>
 
             <input type="submit" value="Cadastrar" />
         </form>

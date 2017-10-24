@@ -115,3 +115,4 @@ C:\Users\Leonardo\Documents\Visual Studio 2015\Projects\BennerAluguelCarro\Locad
 C:\Users\Leonardo\Documents\Visual Studio 2015\Projects\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Funcao1.resources
 C:\Users\Leonardo\Documents\Visual Studio 2015\Projects\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Funcoes.resources
 C:\Users\Leonardo\Documents\Visual Studio 2015\Projects\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Alugueis.resources
+C:\Users\Leonardo\Documents\Visual Studio 2015\Projects\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Modelo1.resources
