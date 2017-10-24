@@ -130,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAO\LocadoraContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -138,8 +139,58 @@
     <Compile Include="Migrations\201710241324499_Modelo.Designer.cs">
       <DependentUpon>201710241324499_Modelo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710241545165_Marca.cs" />
+    <Compile Include="Migrations\201710241545165_Marca.Designer.cs">
+      <DependentUpon>201710241545165_Marca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710241549466_Classe.cs" />
+    <Compile Include="Migrations\201710241549466_Classe.Designer.cs">
+      <DependentUpon>201710241549466_Classe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710241554053_Carros.cs" />
+    <Compile Include="Migrations\201710241554053_Carros.Designer.cs">
+      <DependentUpon>201710241554053_Carros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710241611148_Carros1.cs" />
+    <Compile Include="Migrations\201710241611148_Carros1.Designer.cs">
+      <DependentUpon>201710241611148_Carros1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710241625081_Carros2.cs" />
+    <Compile Include="Migrations\201710241625081_Carros2.Designer.cs">
+      <DependentUpon>201710241625081_Carros2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710241626581_Carros3.cs" />
+    <Compile Include="Migrations\201710241626581_Carros3.Designer.cs">
+      <DependentUpon>201710241626581_Carros3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710241634594_Clientes.cs" />
+    <Compile Include="Migrations\201710241634594_Clientes.Designer.cs">
+      <DependentUpon>201710241634594_Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710241636380_Clientes1.cs" />
+    <Compile Include="Migrations\201710241636380_Clientes1.Designer.cs">
+      <DependentUpon>201710241636380_Clientes1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710241639355_Protecoes.cs" />
+    <Compile Include="Migrations\201710241639355_Protecoes.Designer.cs">
+      <DependentUpon>201710241639355_Protecoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710241641241_Funcao.cs" />
+    <Compile Include="Migrations\201710241641241_Funcao.Designer.cs">
+      <DependentUpon>201710241641241_Funcao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710241644007_Funcao1.cs" />
+    <Compile Include="Migrations\201710241644007_Funcao1.Designer.cs">
+      <DependentUpon>201710241644007_Funcao1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Carro.cs" />
+    <Compile Include="Models\Classe.cs" />
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Funcao.cs" />
+    <Compile Include="Models\Marca.cs" />
     <Compile Include="Models\Modelo.cs" />
+    <Compile Include="Models\Protecao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +199,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -157,11 +209,43 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710241324499_Modelo.resx">
       <DependentUpon>201710241324499_Modelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710241545165_Marca.resx">
+      <DependentUpon>201710241545165_Marca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710241549466_Classe.resx">
+      <DependentUpon>201710241549466_Classe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710241554053_Carros.resx">
+      <DependentUpon>201710241554053_Carros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710241611148_Carros1.resx">
+      <DependentUpon>201710241611148_Carros1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710241625081_Carros2.resx">
+      <DependentUpon>201710241625081_Carros2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710241626581_Carros3.resx">
+      <DependentUpon>201710241626581_Carros3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710241634594_Clientes.resx">
+      <DependentUpon>201710241634594_Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710241636380_Clientes1.resx">
+      <DependentUpon>201710241636380_Clientes1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710241639355_Protecoes.resx">
+      <DependentUpon>201710241639355_Protecoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710241641241_Funcao.resx">
+      <DependentUpon>201710241641241_Funcao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710241644007_Funcao1.resx">
+      <DependentUpon>201710241644007_Funcao1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

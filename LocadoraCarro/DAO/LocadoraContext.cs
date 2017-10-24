@@ -10,6 +10,12 @@ namespace LocadoraCarro.DAO
     public class LocadoraContext : DbContext
     {
         public DbSet<Modelo> Modelos { get; set; }
+        public DbSet<Marca> Marcas { get; set; }
+        public DbSet<Classe> Classes { get; set; }
+        public DbSet<Carro> Carros { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Protecao> Protecoes { get; set; }
+        public DbSet<Funcao> Funcoes { get; set; }
 
         public LocadoraContext() : base("Server=(localdb)\\mssqllocaldb;Database=LocadoraCarroDB;Trusted_Connection=true;")
         {
