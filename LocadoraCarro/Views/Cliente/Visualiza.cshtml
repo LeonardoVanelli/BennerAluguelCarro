@@ -1,0 +1,29 @@
+﻿
+@model LocadoraCarro.Models.Cliente
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Cpf</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Login</th>
+            <th>Senha</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Id</td>
+            <td>@Model.Nome</td>
+            <td>@Model.Cpf</td>
+            <td>@Model.Email</td>
+            <td>@Model.Telefono</td>
+            <td>@Model.Login</td>
+            <td>@Model.Senha</td>
+        </tr>
+    </tbody>
+</table>
+
+@Html.ActionLink("Remover", "Remove", new { id = @Model.Id })
