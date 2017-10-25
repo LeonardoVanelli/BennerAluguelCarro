@@ -1,0 +1,26 @@
+﻿
+@model IList<LocadoraCarro.Models.Classe>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var classe in Model)
+        {
+            <tr>
+                <td>@classe.Id</td>
+                <td>
+                    @Html.ActionLink(classe.Nome, "Visualiza", new { id = classe.Id })
+                </td>
+                <td>@classe.Descricao</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.ActionLink("Adicionar", "Form", "Classe")
+
