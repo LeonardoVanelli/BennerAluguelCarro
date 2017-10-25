@@ -5,6 +5,7 @@
             <th>Id</th>
             <th>Nome do Modelo</th>
             <th>Descrição</th>
+            <th>Marca</th>
         </tr>
     </thead>
     <tbody>
@@ -12,9 +13,11 @@
             <td>@ViewBag.Modelo.Id</td>
             <td>@ViewBag.Modelo.Nome</td>
             <td>@ViewBag.Modelo.Descricao</td>
+            <td>@ViewBag.Modelo.MarcaId</td>
         </tr>
     </tbody>
 </table>
 
 @Html.ActionLink("Remover", "Remove", new { id = @ViewBag.Modelo.Id })
+@Html.ActionLink("Voltar", "Index")
 
