@@ -24,6 +24,7 @@ namespace LocadoraCarro.Controllers
             ViewBag.Marca = dao.Lista();
             return View();
         }
+
         [HttpPost]
         public ActionResult Adiciona(Modelo modelo)
         {

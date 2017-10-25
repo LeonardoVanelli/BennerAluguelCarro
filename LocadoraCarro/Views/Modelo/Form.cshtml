@@ -3,17 +3,17 @@
     @Html.ValidationMessage("modelo.caracter")
 
     <label for="nome">Nome:</label>
-    <input id="=nome" name="modelo.nome" class="form-control"/>
+    <input id="=nome" name="modelo.Nome" class="form-control"/>
     @Html.ValidationMessage("modelo.nome")
 
     <label for="descricao">Descricao:</label>
-    <input id="=descricao" name="modelo.descricao" class="form-control"/>
+    <input id="=descricao" name="modelo.Descricao" class="form-control"/>
 
     <label for="marca">Marca:</label>
     <select id="marca" name="modelo.MarcaId" class="form-control">
         @foreach (var marca in ViewBag.Marca)
         {
-            <option value="@marca.Nome">@marca.Nome</option>
+            <option value="@marca.Id">@marca.Nome</option>
         }
 
     </select>

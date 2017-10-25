@@ -1,0 +1,23 @@
+﻿
+@model IList<LocadoraCarro.Models.Protecao>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var protecao in Model)
+        {
+            <tr>
+                <td>@protecao.Id</td>
+                <td>
+                    @Html.ActionLink(protecao.Nome, "Visualiza", new { id = protecao.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.ActionLink("Adicionar", "Form", "Protecao")
