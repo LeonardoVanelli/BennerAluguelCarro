@@ -84,6 +84,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IdentityModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -139,9 +140,14 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MarcaController.cs" />
     <Compile Include="Controllers\ModeloController.cs" />
+    <Compile Include="DAO\AluguelDAO.cs" />
+    <Compile Include="DAO\CarroDAO.cs" />
+    <Compile Include="DAO\ClasseDAO.cs" />
+    <Compile Include="DAO\ClienteDAO.cs" />
     <Compile Include="DAO\LocadoraContext.cs" />
     <Compile Include="DAO\MarcaDAO.cs" />
     <Compile Include="DAO\ModeloDAO.cs" />
+    <Compile Include="DAO\ProtecaoDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -212,6 +218,10 @@
     <Compile Include="Migrations\201710251734578_Modelo2.cs" />
     <Compile Include="Migrations\201710251734578_Modelo2.Designer.cs">
       <DependentUpon>201710251734578_Modelo2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710251810312_Carros4.cs" />
+    <Compile Include="Migrations\201710251810312_Carros4.Designer.cs">
+      <DependentUpon>201710251810312_Carros4.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluguel.cs" />
@@ -297,6 +307,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710251734578_Modelo2.resx">
       <DependentUpon>201710251734578_Modelo2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710251810312_Carros4.resx">
+      <DependentUpon>201710251810312_Carros4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -6,47 +6,47 @@ using System.Web;
 
 namespace LocadoraCarro.DAO
 {
-    public class ModeloDAO
+    public class ProtecaoDAO
     {
-        public void Adiciona(Modelo modelo)
+        public void Adiciona(Protecao protecao)
         {
             using (var context = new LocadoraContext())
             {
-                context.Modelos.Add(modelo);
+                context.Protecoes.Add(protecao);
                 context.SaveChanges();
             }
         }
 
-        public void Remove(Modelo modelo)
+        public void Remove(Protecao protecao)
         {
             using (var contexto = new LocadoraContext())
             {
-                contexto.Entry(modelo).State = System.Data.Entity.EntityState.Deleted;
+                contexto.Entry(protecao).State = System.Data.Entity.EntityState.Deleted;
                 contexto.SaveChanges();
             }
         }
 
-        public IList<Modelo> Lista()
+        public IList<Protecao> Lista()
         {
             using (var contexto = new LocadoraContext())
             {
-                return contexto.Modelos.ToList();                
+                return contexto.Protecoes.ToList();
             }
         }
 
-        public Modelo BuscaPorId(int id)
+        public Protecao BuscaPorId(int id)
         {
             using (var contexto = new LocadoraContext())
             {
-                return contexto.Modelos.Find(id);
+                return contexto.Protecoes.Find(id);
             }
         }
 
-        public void Atualiza(Modelo modelo)
+        public void Atualiza(Protecao protecao)
         {
             using (var contexto = new LocadoraContext())
             {
-                contexto.Entry(modelo).State = System.Data.Entity.EntityState.Modified;
+                contexto.Entry(protecao).State = System.Data.Entity.EntityState.Modified;
                 contexto.SaveChanges();
             }
         }
