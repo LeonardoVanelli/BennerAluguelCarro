@@ -6,47 +6,47 @@ using System.Web;
 
 namespace LocadoraCarro.DAO
 {
-    public class ModeloDAO
+    public class ClasseDAO
     {
-        public void Adiciona(Modelo modelo)
+        public void Adiciona(Classe classe)
         {
             using (var context = new LocadoraContext())
             {
-                context.Modelos.Add(modelo);
+                context.Classes.Add(classe);
                 context.SaveChanges();
             }
         }
 
-        public void Remove(Modelo modelo)
+        public void Remove(Classe classe)
         {
             using (var contexto = new LocadoraContext())
             {
-                contexto.Entry(modelo).State = System.Data.Entity.EntityState.Deleted;
+                contexto.Entry(classe).State = System.Data.Entity.EntityState.Deleted;
                 contexto.SaveChanges();
             }
         }
 
-        public IList<Modelo> Lista()
+        public IList<Classe> Lista()
         {
             using (var contexto = new LocadoraContext())
             {
-                return contexto.Modelos.ToList();                
+                return contexto.Classes.ToList();
             }
         }
 
-        public Modelo BuscaPorId(int id)
+        public Classe BuscaPorId(int id)
         {
             using (var contexto = new LocadoraContext())
             {
-                return contexto.Modelos.Find(id);
+                return contexto.Classes.Find(id);
             }
         }
 
-        public void Atualiza(Modelo modelo)
+        public void Atualiza(Classe classe)
         {
             using (var contexto = new LocadoraContext())
             {
-                contexto.Entry(modelo).State = System.Data.Entity.EntityState.Modified;
+                contexto.Entry(classe).State = System.Data.Entity.EntityState.Modified;
                 contexto.SaveChanges();
             }
         }
