@@ -135,6 +135,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ModeloController.cs" />
     <Compile Include="DAO\LocadoraContext.cs" />
+    <Compile Include="DAO\MarcaDAO.cs" />
     <Compile Include="DAO\ModeloDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -198,6 +199,10 @@
     <Compile Include="Migrations\201710241932221_Modelo1.cs" />
     <Compile Include="Migrations\201710241932221_Modelo1.Designer.cs">
       <DependentUpon>201710241932221_Modelo1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710251224071_Marcas.cs" />
+    <Compile Include="Migrations\201710251224071_Marcas.Designer.cs">
+      <DependentUpon>201710251224071_Marcas.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluguel.cs" />
@@ -276,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710241932221_Modelo1.resx">
       <DependentUpon>201710241932221_Modelo1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710251224071_Marcas.resx">
+      <DependentUpon>201710251224071_Marcas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

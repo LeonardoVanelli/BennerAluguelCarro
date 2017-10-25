@@ -30,7 +30,7 @@ namespace LocadoraCarro.DAO
         {
             using (var contexto = new LocadoraContext())
             {
-                return contexto.Modelos.ToList();
+                return contexto.Modelos.Include("Marca").ToList();
             }
         }
 
