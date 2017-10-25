@@ -19,6 +19,8 @@ namespace LocadoraCarro.Controllers
 
         public ActionResult Form()
         {
+            var dao = new MarcaDAO();
+            ViewBag.Marca = dao.Lista();
             return View();
         }
         [HttpPost]

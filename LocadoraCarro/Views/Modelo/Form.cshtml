@@ -9,5 +9,13 @@
     <label for="descricao">Descricao:</label>
     <input id="=descricao" name="modelo.descricao" class="form-control"/>
 
-    <input type="submit" value="Cadastrar" />
+    <label for="categoria">Categoria:</label>
+    <select id="categoria" name="produto.CategoriaId" class="form-control">
+        @foreach (var marca in ViewBag.Marca)
+        {
+            <option value="@marca.Id" >@marca.Nome</option>
+        }
+
+    </select>
+        <input type="submit" value="Cadastrar" />
 </form>
