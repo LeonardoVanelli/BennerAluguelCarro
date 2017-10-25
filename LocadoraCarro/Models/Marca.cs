@@ -10,6 +10,5 @@ namespace LocadoraCarro.Models
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public IList<Modelo> Modelos { get; set; }
     }
 }

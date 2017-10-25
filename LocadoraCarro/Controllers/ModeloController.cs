@@ -14,7 +14,8 @@ namespace LocadoraCarro.Controllers
         public ActionResult Index()
         {
             var dao = new ModeloDAO();
-            return View(dao.Lista());
+            var modelo = dao.Lista();
+            return View(modelo);
         }
 
         public ActionResult Form()
@@ -55,7 +56,7 @@ namespace LocadoraCarro.Controllers
             return View();
         }
 
-        public ActionResult RemoveModelo(int id)
+        public ActionResult Remove(int id)
         {
             var dao = new ModeloDAO();
             dao.Remove(dao.BuscaPorId(id));

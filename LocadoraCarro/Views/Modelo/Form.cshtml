@@ -9,11 +9,11 @@
     <label for="descricao">Descricao:</label>
     <input id="=descricao" name="modelo.descricao" class="form-control"/>
 
-    <label for="categoria">Categoria:</label>
-    <select id="categoria" name="produto.CategoriaId" class="form-control">
+    <label for="marca">Marca:</label>
+    <select id="marca" name="modelo.MarcaId" class="form-control">
         @foreach (var marca in ViewBag.Marca)
         {
-            <option value="@marca.Id" >@marca.Nome</option>
+            <option value="@marca.Nome">@marca.Nome</option>
         }
 
     </select>

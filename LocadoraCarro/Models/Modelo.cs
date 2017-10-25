@@ -14,6 +14,7 @@ namespace LocadoraCarro.Models
 
         public string Descricao { get; set; }
 
+        public int MarcaId { get; set; }
         public Marca Marca { get; set; }
     }
 }

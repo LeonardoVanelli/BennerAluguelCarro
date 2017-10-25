@@ -125,6 +125,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\LocadoraCarroDB.ldf">
+      <DependentUpon>LocadoraCarroDB.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\LocadoraCarroDB.mdf" />
     <Content Include="Content\Css\bootstrap.css" />
     <Content Include="Content\Css\Site.css" />
     <Content Include="Global.asax" />
@@ -133,6 +137,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MarcaController.cs" />
     <Compile Include="Controllers\ModeloController.cs" />
     <Compile Include="DAO\LocadoraContext.cs" />
     <Compile Include="DAO\MarcaDAO.cs" />
@@ -204,6 +209,10 @@
     <Compile Include="Migrations\201710251224071_Marcas.Designer.cs">
       <DependentUpon>201710251224071_Marcas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710251734578_Modelo2.cs" />
+    <Compile Include="Migrations\201710251734578_Modelo2.Designer.cs">
+      <DependentUpon>201710251734578_Modelo2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluguel.cs" />
     <Compile Include="Models\Carro.cs" />
@@ -226,6 +235,9 @@
     <Content Include="Views\Modelo\Visualiza.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Marca\Index.cshtml" />
+    <Content Include="Views\Marca\Form.cshtml" />
+    <Content Include="Views\Marca\Visualiza.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -233,9 +245,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710241324499_Modelo.resx">
       <DependentUpon>201710241324499_Modelo.cs</DependentUpon>
@@ -284,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710251224071_Marcas.resx">
       <DependentUpon>201710251224071_Marcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710251734578_Modelo2.resx">
+      <DependentUpon>201710251734578_Modelo2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
