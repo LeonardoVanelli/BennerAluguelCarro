@@ -142,6 +142,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MarcaController.cs" />
     <Compile Include="Controllers\ModeloController.cs" />
+    <Compile Include="Controllers\ProtecaoController.cs" />
     <Compile Include="DAO\AluguelDAO.cs" />
     <Compile Include="DAO\CarroDAO.cs" />
     <Compile Include="DAO\ClasseDAO.cs" />
@@ -256,6 +257,9 @@
     <Content Include="Views\Cliente\Index.cshtml" />
     <Content Include="Views\Cliente\Form.cshtml" />
     <Content Include="Views\Cliente\Visualiza.cshtml" />
+    <Content Include="Views\Protecao\Index.cshtml" />
+    <Content Include="Views\Protecao\Form.cshtml" />
+    <Content Include="Views\Protecao\Visualiza.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
