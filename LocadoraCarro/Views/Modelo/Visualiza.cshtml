@@ -1,0 +1,20 @@
+﻿
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome do Modelo</th>
+            <th>Descrição</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@ViewBag.Modelo.Id</td>
+            <td>@ViewBag.Modelo.Nome</td>
+            <td>@ViewBag.Modelo.Descricao</td>
+        </tr>
+    </tbody>
+</table>
+
+@Html.ActionLink("Remover", "RemoveModelo", new { id = @ViewBag.Modelo.Id })
+

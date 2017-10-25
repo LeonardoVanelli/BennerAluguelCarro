@@ -1,0 +1,13 @@
+﻿
+<form action="/Modelo/Adiciona" method="post">
+    @Html.ValidationMessage("modelo.caracter")
+
+    <label for="nome">Nome:</label>
+    <input id="=nome" name="modelo.nome" class="form-control"/>
+    @Html.ValidationMessage("modelo.nome")
+
+    <label for="descricao">Descricao:</label>
+    <input id="=descricao" name="modelo.descricao" class="form-control"/>
+
+    <input type="submit" value="Cadastrar" />
+</form>
