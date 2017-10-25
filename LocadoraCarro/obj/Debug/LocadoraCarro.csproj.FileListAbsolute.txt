@@ -134,3 +134,4 @@ C:\Users\m011\Documents\Visual Studio 2015\Projects\BennerAluguelCarro\LocadoraC
 C:\Users\Leonardo\Documents\Visual Studio 2015\Projects\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Marcas.resources
 C:\Users\Leonardo\Documents\Visual Studio 2015\Projects\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Modelo2.resources
 C:\Users\Leonardo\Documents\Visual Studio 2015\Projects\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Carros4.resources
+C:\Users\Leonardo\Documents\Visual Studio 2015\Projects\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Carros5.resources

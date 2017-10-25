@@ -226,6 +226,10 @@
     <Compile Include="Migrations\201710251810312_Carros4.Designer.cs">
       <DependentUpon>201710251810312_Carros4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710252105366_Carros5.cs" />
+    <Compile Include="Migrations\201710252105366_Carros5.Designer.cs">
+      <DependentUpon>201710252105366_Carros5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluguel.cs" />
     <Compile Include="Models\Carro.cs" />
@@ -322,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710251810312_Carros4.resx">
       <DependentUpon>201710251810312_Carros4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710252105366_Carros5.resx">
+      <DependentUpon>201710252105366_Carros5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
