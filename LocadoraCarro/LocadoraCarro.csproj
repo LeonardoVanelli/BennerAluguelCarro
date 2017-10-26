@@ -137,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CarroController.cs" />
     <Compile Include="Controllers\ClasseController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -264,6 +265,7 @@
     <Content Include="Views\Protecao\Index.cshtml" />
     <Content Include="Views\Protecao\Form.cshtml" />
     <Content Include="Views\Protecao\Visualiza.cshtml" />
+    <Content Include="Views\Carro\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
