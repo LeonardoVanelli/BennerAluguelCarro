@@ -1,0 +1,33 @@
+﻿
+<form action="/Carro/Adiciona" method="post">
+
+    <label for="placa">Placa:</label>
+    <input id="placa" name="carro.Placa" class="form-control" />
+
+    <label for="descricao">Descricao:</label>
+    <input id="descricao" name="carro.Descricao" class="form-control" />
+
+    <label for="precoDia">Preço dia:</label>
+    <input id="precoDia" name="carro.PrecoDia" class="form-control" />
+
+    <label for="clsse">Classe:</label>
+    <select id="classe" name="carro.ClasseId" class="form-control">
+        @foreach (var classe in ViewBag.Classe)
+        {
+            <option value="@classe.Id">@classe.Nome</option>
+        }
+    </select>
+
+    <label for="modelo">Modelo:</label>
+    <select id="modelo" name="carro.ModeloId" class="form-control">
+        @foreach (var modelo in ViewBag.Modelo)
+        {
+            <option value="@modelo.Id">@modelo.Nome</option>
+        }
+    </select>
+
+    <label for="quantidade">Quantidade:</label>
+    <input id="qauantidade" name="carro.QtdDisponivel" class="form-control" />
+
+    <input type="submit" value="Cadastrar" />
+</form>
