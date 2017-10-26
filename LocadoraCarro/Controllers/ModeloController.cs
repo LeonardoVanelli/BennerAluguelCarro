@@ -13,7 +13,7 @@ namespace LocadoraCarro.Controllers
         // GET: Modelo
         public ActionResult Index()
         {
-            var dao = new ModeloDAO();
+            var dao = new ModeloDAO(); 
             var modelo = dao.Lista();
             return View(modelo);
         }
@@ -54,6 +54,8 @@ namespace LocadoraCarro.Controllers
         {
             var dao = new ModeloDAO();
             ViewBag.Modelo = dao.BuscaPorId(id);
+
+            ViewBag.Marca = new MarcaDAO().BuscaPorId(ViewBag.Modelo.MarcaId);
             return View();
         }
 

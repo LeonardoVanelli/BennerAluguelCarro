@@ -137,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CarroController.cs" />
     <Compile Include="Controllers\ClasseController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -226,6 +227,18 @@
     <Compile Include="Migrations\201710251810312_Carros4.Designer.cs">
       <DependentUpon>201710251810312_Carros4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710252105366_Carros5.cs" />
+    <Compile Include="Migrations\201710252105366_Carros5.Designer.cs">
+      <DependentUpon>201710252105366_Carros5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710261852151_Modelos.cs" />
+    <Compile Include="Migrations\201710261852151_Modelos.Designer.cs">
+      <DependentUpon>201710261852151_Modelos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710261906500_Modelos1.cs" />
+    <Compile Include="Migrations\201710261906500_Modelos1.Designer.cs">
+      <DependentUpon>201710261906500_Modelos1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluguel.cs" />
     <Compile Include="Models\Carro.cs" />
@@ -260,6 +273,7 @@
     <Content Include="Views\Protecao\Index.cshtml" />
     <Content Include="Views\Protecao\Form.cshtml" />
     <Content Include="Views\Protecao\Visualiza.cshtml" />
+    <Content Include="Views\Carro\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -322,6 +336,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710251810312_Carros4.resx">
       <DependentUpon>201710251810312_Carros4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710252105366_Carros5.resx">
+      <DependentUpon>201710252105366_Carros5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710261852151_Modelos.resx">
+      <DependentUpon>201710261852151_Modelos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710261906500_Modelos1.resx">
+      <DependentUpon>201710261906500_Modelos1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

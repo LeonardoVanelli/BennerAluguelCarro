@@ -1,11 +1,12 @@
-﻿@model IList<LocadoraCarro.Models.Modelo>
+﻿
+@model IList<LocadoraCarro.Models.Carro>
 
-<h1>Modelos</h1>
+<h1>Carro</h1>
 <table class="table table-hover">
     <thead>
         <tr>
             <th>Id</th>
-            <th>Nome do Modelo</th>
+            <th>Modelo do Carro</th>
         </tr>
     </thead>
     <tbody>
@@ -14,12 +15,10 @@
             <tr>
                 <td>@modelo.Id</td>
                 <td>
-                    @Html.ActionLink(modelo.Nome, "Visualiza", new { id = modelo.Id})
+                    @Html.ActionLink(modelo.Nome, "Visualiza", new { id = modelo.Id })
                 </td>
             </tr>
         }
     </tbody>
 </table>
-
-@Html.ActionLink("Adicionar", "Form", "Modelo")
 

@@ -14,5 +14,6 @@ namespace LocadoraCarro.Models
         public Classe Classe { get; set; }
         public string Descricao { get; set; }
         public double PrecoDia { get; set; }
+        public int QtdDisponivel { get; set; }
     }
 }
