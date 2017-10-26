@@ -239,6 +239,10 @@
     <Compile Include="Migrations\201710261906500_Modelos1.Designer.cs">
       <DependentUpon>201710261906500_Modelos1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710261943576_Carros6.cs" />
+    <Compile Include="Migrations\201710261943576_Carros6.Designer.cs">
+      <DependentUpon>201710261943576_Carros6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluguel.cs" />
     <Compile Include="Models\Carro.cs" />
@@ -274,6 +278,8 @@
     <Content Include="Views\Protecao\Form.cshtml" />
     <Content Include="Views\Protecao\Visualiza.cshtml" />
     <Content Include="Views\Carro\Index.cshtml" />
+    <Content Include="Views\Carro\Form.cshtml" />
+    <Content Include="Views\Carro\Visualiza.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -345,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710261906500_Modelos1.resx">
       <DependentUpon>201710261906500_Modelos1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710261943576_Carros6.resx">
+      <DependentUpon>201710261943576_Carros6.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

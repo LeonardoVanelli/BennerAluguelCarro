@@ -1,24 +1,24 @@
-﻿
-@model IList<LocadoraCarro.Models.Carro>
+﻿@model IList<LocadoraCarro.Models.Carro>
 
 <h1>Carro</h1>
 <table class="table table-hover">
     <thead>
         <tr>
             <th>Id</th>
-            <th>Modelo do Carro</th>
+            <th>Descrição</th>
         </tr>
     </thead>
-    <tbody>
-        @foreach (var modelo in Model)
+    <tbody>       
+        @foreach (var carro in Model)
         {
             <tr>
-                <td>@modelo.Id</td>
+                <td>@carro.Id</td>
                 <td>
-                    @Html.ActionLink(modelo.Nome, "Visualiza", new { id = modelo.Id })
+                    @Html.ActionLink(carro.Descricao, "Visualiza", new { id = carro.Id } )
                 </td>
             </tr>
-        }
+        }            
     </tbody>
 </table>
+@Html.ActionLink("Adicionar", "Form", "Carro")
 
