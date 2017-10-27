@@ -50,5 +50,13 @@ namespace LocadoraCarro.DAO
                 contexto.SaveChanges();
             }
         }
+
+        public Cliente BuscaPorLoginSenha(string login, string senha)
+        {
+            using (var contexto = new LocadoraContext())
+            {
+                return contexto.Clientes.FirstOrDefault(u => u.Nome == login && u.Senha == senha);
+            }
+        }
     }
 }

@@ -1,11 +1,15 @@
 ﻿
+@{
+    Layout = "~/Views/Shared/_LayoutFuncionario.cshtml";
+}
+
 <form action="/Cliente/Adiciona" method="post">
 
     <label for="nome">Nome:</label>
     <input id="nome" name="cliente.Nome" class="form-control" />
 
     <label for="cpf">Cpf:</label>
-    <input id="cpf" name="cliente.Cpf" class="form-control" />
+    <input type="number" id="cpf" name="cliente.Cpf" class="form-control" />
 
     <label for="email">Email:</label>
     <input type="email" id="email" name="cliente.Email" class="form-control" />
@@ -20,4 +24,7 @@
     <input type="password" id="senha" name="cliente.Senha" class="form-control" />
 
     <input type="submit" value="Cadastrar" />
+</form>
+<form method="get" action="/Cliente">
+    <button type="submit">Voltar</button>
 </form>
