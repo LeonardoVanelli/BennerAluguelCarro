@@ -140,7 +140,9 @@
     <Compile Include="Controllers\CarroController.cs" />
     <Compile Include="Controllers\ClasseController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\HomeClienteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomeFuncController.cs" />
     <Compile Include="Controllers\MarcaController.cs" />
     <Compile Include="Controllers\ModeloController.cs" />
     <Compile Include="Controllers\ProtecaoController.cs" />
@@ -280,6 +282,9 @@
     <Content Include="Views\Carro\Index.cshtml" />
     <Content Include="Views\Carro\Form.cshtml" />
     <Content Include="Views\Carro\Visualiza.cshtml" />
+    <Content Include="Views\Shared\_LayoutCliente.cshtml" />
+    <Content Include="Views\Shared\_LayoutFuncionario.cshtml" />
+    <Content Include="Views\HomeFunc\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -287,7 +292,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\HomeCliente\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710241324499_Modelo.resx">
       <DependentUpon>201710241324499_Modelo.cs</DependentUpon>

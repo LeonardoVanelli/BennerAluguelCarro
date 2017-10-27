@@ -1,6 +1,10 @@
 ﻿
 @model IList<LocadoraCarro.Models.Cliente>
 
+@{
+    Layout = "~/Views/Shared/_LayoutFuncionario.cshtml";
+}
+
 <table class="table table-hover">
     <thead>
         <tr>
@@ -20,4 +24,8 @@
         }
     </tbody>
 </table>
-@Html.ActionLink("Adicionar", "Form", "Cliente")
+ 
+<form method="get" action="/Cliente/Form">
+    <button type="submit">Novo Cliente</button>
+</form>
+
