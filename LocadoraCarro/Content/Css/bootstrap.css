@@ -1690,7 +1690,7 @@ output {
 }
 .form-control {
   display: block;
-  width: 100%;
+  width: 90%;
   height: 34px;
   padding: 6px 12px;
   font-size: 14px;
@@ -5781,5 +5781,9 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+
+.form-control {
+    margin-left: 10px;
 }
 /*# sourceMappingURL=bootstrap.css.map */
