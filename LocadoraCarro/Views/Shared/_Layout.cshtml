@@ -17,19 +17,7 @@
                 <li>@Html.ActionLink("Classes dos carros", "Index", "Classe")</li>
                 <li>@Html.ActionLink("Proteção", "Index", "Protecao")</li>
                 <li>@Html.ActionLink("Carros", "Index", "Carro")</li>
-                <li>
-                    Login
-                    <input class="form-control" />
-                </li>
-                <li>
-                    Senha
-                    <input type="password" class="form-control" />
-                </li>
-                <li>
-                    <form method="get" action="/HomeFunc">
-                        <button type="submit">Entrar</button>
-                    </form>
-                </li>
+                <li>@Html.ActionLink("Logar", "Index", "Login")</li>               
             </ul>
             <h3 class="text-muted">@Html.ActionLink("Locadora Carro", "Index", "Home")</h3>
         </div>
