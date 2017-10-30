@@ -9,31 +9,33 @@
     <title>_Layout</title>
 </head>
 <body>
-    <div class="header">
-        <ul class="nav nav-pills pull-right">
-            <li>@Html.ActionLink("Modelos dos carros", "Index", "Modelo")</li>
-            <li>@Html.ActionLink("Marca dos carros", "Index", "Marca")</li>
-            <li>@Html.ActionLink("Classes dos carros", "Index", "Classe")</li>                    
-            <li>@Html.ActionLink("Proteção", "Index", "Protecao")</li>
-            <li>@Html.ActionLink("Carros", "Index", "Carro")</li>
-            <li>
-                Login
-                <input class="form-control"/>                
-            </li>
-            <li>
-                Senha
-                <input type="password" class="form-control" />
-            </li>
-            <li>
-                <form method="get" action="/HomeFunc">
-                    <button type="submit">Entrar</button>
-                </form>
-            </li>
-        </ul>
-        <h3 class="text-muted">@Html.ActionLink("Locadora Carro", "Index", "Home")</h3>
-    </div>
-    <div id="conteudo">
-        @RenderBody()
+    <div class="container">
+        <div class="header">
+            <ul class="nav nav-pills pull-right">
+                <li>@Html.ActionLink("Modelos dos carros", "Index", "Modelo")</li>
+                <li>@Html.ActionLink("Marca dos carros", "Index", "Marca")</li>
+                <li>@Html.ActionLink("Classes dos carros", "Index", "Classe")</li>
+                <li>@Html.ActionLink("Proteção", "Index", "Protecao")</li>
+                <li>@Html.ActionLink("Carros", "Index", "Carro")</li>
+                <li>
+                    Login
+                    <input class="form-control" />
+                </li>
+                <li>
+                    Senha
+                    <input type="password" class="form-control" />
+                </li>
+                <li>
+                    <form method="get" action="/HomeFunc">
+                        <button type="submit">Entrar</button>
+                    </form>
+                </li>
+            </ul>
+            <h3 class="text-muted">@Html.ActionLink("Locadora Carro", "Index", "Home")</h3>
+        </div>
+        <div id="conteudo">
+            @RenderBody()
+        </div>
     </div>
 </body>
 </html>
