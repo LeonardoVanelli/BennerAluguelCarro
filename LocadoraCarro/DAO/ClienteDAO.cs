@@ -55,7 +55,7 @@ namespace LocadoraCarro.DAO
         {
             using (var contexto = new LocadoraContext())
             {
-                return contexto.Clientes.FirstOrDefault(u => u.Nome == login && u.Senha == senha);
+                return contexto.Clientes.FirstOrDefault(u => u.Login == login && u.Senha == senha);
             }
         }
     }
