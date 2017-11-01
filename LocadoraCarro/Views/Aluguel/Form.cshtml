@@ -1,6 +1,6 @@
 ﻿
-<h1>Aluguel</h1>
 <form class="data-hora">
+    <h1>Aluguel</h1>
     <label for="nome">Data retirada:</label>
     <input type="date" id="nome" name="classe.Nome" class="form-control" />
 
@@ -14,7 +14,7 @@
     <input type="time" id="nome" name="classe.Nome" class="form-control" />
 
     <label for="nome">Idade:</label>
-    <input type="number" id="nome" name="classe.Nome" class="form-control" />
+    <input type="number" id="nome" name="classe.Nome" min="18" class="form-control" />
 
     <button id="btn-proximo">Proximo</button>
 </form>
@@ -23,24 +23,24 @@
 <form>
     <div class="carro invisivel">
         <h1>Selecione o carro</h1>
-        <ul>
-            <img src="~/Content/CarrosImg/HB20.jpg" class="img-carro" />
-            <div class="lbl-carros">
-                <ul class="ul-carro"><label for="nome">Modelo: </label> HB20</ul>
-                <ul class="ul-carro"><label for="nome">Marca: </label> Hyundai</ul>
-                <ul class="ul-carro"><label for="nome">Preço por X dias: </label> 850,00R$</ul>
-                <ul class="slc-carro"><button id="btnSlcCarro">Selecionar</button></ul>
+                
+        <img src="~/Content/CarrosImg/HB20.jpg" class="img-carro" /> 
+            <div class="lbl-carros">                                                          
+                <p class="ul-carro"> Modelo: HB20   </p>
+                <p class="ul-carro"> Marca: Hyundai </p>        
+                <p class="ul-carro"> Preço por X dias: 850,00R$ </p>          
+                <button id="btnSlcCarro">Selecionar</button>                                                                                        
             </div>
-        </ul>
-        <ul>
-            <img src="~/Content/CarrosImg/FordFocus.jpg" class="img-carro" />
-            <div class="lbl-carros">
-                <ul class="ul-carro"><label for="nome">Modelo: </label> Focus</ul>
-                <ul class="ul-carro"><label for="nome">Marca: Ford</label> Ford</ul>
-                <ul class="ul-carro"><label for="nome">Preço por X dias: 680,00R$</label>680,00R$</ul>
-                <ul class="slc-carro"><input type="button" value="Selecionar"></ul>
-            </div>
-        </ul>
+
+
+        <img src="~/Content/CarrosImg/FordFocus.jpg" class="img-carro" />
+        <div class="lbl-carros">
+            <p class="ul-carro"> Modelo: Focus   </p>
+            <p class="ul-carro"> Marca: Ford </p>
+            <p class="ul-carro"> Preço por X dias: 680,00R$ </p>
+            <button id="btnSlcCarro">Selecionar</button>
+        </div>
+
     </div>
 </form>
 

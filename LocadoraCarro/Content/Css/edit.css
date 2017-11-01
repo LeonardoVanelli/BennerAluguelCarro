@@ -1,20 +1,20 @@
 .carro {
-    border: 5px solid blue;     
+    border: 5px solid bludase;     
 }
 
 .img-carro {
     height: 100px;
     width: 220px;
-    float:left;
+    float: left;
     clear: left;
-    border: 2px solid black;
+
 }
 
 .lbl-carros {
-    border: 2px solid blue;
     display: grid;
     margin-bottom: 50px;
     height: 100px;
+    width: 500px;
 }
 
 .ul-carro {
@@ -28,6 +28,7 @@
 #btn-proximo {
     margin-top:10px;
     float: right;
+    clear : left;
 }
 
 .visivel {
@@ -36,4 +37,8 @@
 
 .invisivel {
     display: none;
+}
+
+#btnSlcCarro {
+    width: 90px;
 }
