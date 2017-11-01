@@ -1,6 +1,6 @@
 .data-hora {
-    border: 5px solid gray;
     height: auto;
+    background-color: aliceblue;
 }
 
 .carro {
@@ -28,4 +28,21 @@
 
 .slc-carro {
     text-align: right;
+}
+
+.carro {
+    display: none;
+}
+
+.protecao {
+    display: none;
+}
+
+.cliente {
+    display: none;
+}
+
+#btn-proximo {
+    margin-top:10px;
+    float: right;
 }

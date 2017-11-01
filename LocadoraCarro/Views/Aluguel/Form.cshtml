@@ -1,30 +1,28 @@
-﻿<h1>Aluguel</h1>
-<div class="data-hora">
-    <form action="/Classe/Adiciona" method="post">
+﻿
+<h1>Aluguel</h1>
+<form>
+    <label for="nome">Data retirada:</label>
+    <input type="date" id="nome" name="classe.Nome" class="form-control" />
 
-        <label for="nome">Data retirada:</label>
-        <input type="date" id="nome" name="classe.Nome" class="form-control" />
+    <label for="nome">Hora retirada:</label>
+    <input type="time" id="nome" name="classe.Nome" class="form-control" />
 
-        <label for="nome">Hora retirada:</label>
-        <input type="time" id="nome" name="classe.Nome" class="form-control" />
+    <label for="nome">Data devolução:</label>
+    <input type="date" id="nome" name="classe.Nome" class="form-control" />
 
-        <label for="nome">Data devolução:</label>
-        <input type="date" id="nome" name="classe.Nome" class="form-control" />
+    <label for="nome">Hora devolução:</label>
+    <input type="time" id="nome" name="classe.Nome" class="form-control" />
 
-        <label for="nome">Hora devolução:</label>
-        <input type="time" id="nome" name="classe.Nome" class="form-control" />
+    <label for="nome">Idade:</label>
+    <input type="number" id="nome" name="classe.Nome" class="form-control" />
 
-        <label for="nome">Idade:</label>
-        <input type="number" id="nome" name="classe.Nome" class="form-control" />
-
-        <input type="submit" value="Proximo" />
-    </form>
-</div>
+    <input type="submit" value="Proximo" id="btn-proximo" />
+</form>
 
 
-<h1>Selecione o carro</h1>
 <form action="/Classe/Adiciona" method="post">
     <div class="carro">
+        <h1>Selecione o carro</h1>
         <ul>
             <img src="~/Content/CarrosImg/HB20.jpg" class="img-carro" />
             <div class="lbl-carros">
@@ -46,8 +44,8 @@
     </div>
 </form>
 
-<h1>Proteções</h1>
 <div class="protecao">
+    <h1>Proteções</h1>
     <form action="/Classe/Adiciona" method="post">
         <table style="width:100%">
             <tr>
@@ -78,8 +76,9 @@
     </form>
 </div>
 
-<h1>Cadastro de cliente</h1>
+
 <div class="cliente">
+    <h1>Cadastro de cliente</h1>
     <form action="/Classe/Adiciona" method="post">
         <label for="nome">Nome:</label>
         <input id="nome" name="cliente.Nome" class="form-control" />
