@@ -1,6 +1,6 @@
 ﻿
 <h1>Aluguel</h1>
-<form>
+<form class="data-hora">
     <label for="nome">Data retirada:</label>
     <input type="date" id="nome" name="classe.Nome" class="form-control" />
 
@@ -16,12 +16,12 @@
     <label for="nome">Idade:</label>
     <input type="number" id="nome" name="classe.Nome" class="form-control" />
 
-    <input type="submit" value="Proximo" id="btn-proximo" />
+    <button id="btn-proximo">Proximo</button>
 </form>
 
 
-<form action="/Classe/Adiciona" method="post">
-    <div class="carro">
+<form>
+    <div class="carro invisivel">
         <h1>Selecione o carro</h1>
         <ul>
             <img src="~/Content/CarrosImg/HB20.jpg" class="img-carro" />
@@ -29,7 +29,7 @@
                 <ul class="ul-carro"><label for="nome">Modelo: </label> HB20</ul>
                 <ul class="ul-carro"><label for="nome">Marca: </label> Hyundai</ul>
                 <ul class="ul-carro"><label for="nome">Preço por X dias: </label> 850,00R$</ul>
-                <ul class="slc-carro"><input type="button" value="Selecionar"></ul>
+                <ul class="slc-carro"><button id="btnSlcCarro">Selecionar</button></ul>
             </div>
         </ul>
         <ul>
@@ -44,9 +44,9 @@
     </div>
 </form>
 
-<div class="protecao">
+<div class="protecao invisivel">
     <h1>Proteções</h1>
-    <form action="/Classe/Adiciona" method="post">
+    <form>
         <table style="width:100%">
             <tr>
                 <th>       </th>
@@ -68,18 +68,18 @@
             </tr>
             <tr>
                 <th>         </th>
-                <td><a>Contratar</a></td>
-                <td><a>Contratar</a></td>
-                <td><a>Contratar</a></td>
+                <td><button id="btnSlcProtecao">Contratar</button></td>
+                <td><button id="btnSlcProtecao">Contratar</button></td>
+                <td><button id="btnSlcProtecao">Contratar</button></td>
             </tr>
         </table>
     </form>
 </div>
 
 
-<div class="cliente">
+<div class="cliente invisivel">
     <h1>Cadastro de cliente</h1>
-    <form action="/Classe/Adiciona" method="post">
+    <form >
         <label for="nome">Nome:</label>
         <input id="nome" name="cliente.Nome" class="form-control" />
 
@@ -101,3 +101,4 @@
         <input type="submit" value="Cadastrar" />
     </form>
 </div>
+<script type="text/javascript" src="~/Content/JS/Aluguel.js"></script>

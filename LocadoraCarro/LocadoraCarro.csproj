@@ -135,6 +135,8 @@
     <Content Include="Content\Css\bootstrap.css" />
     <Content Include="Content\Css\edit.css" />
     <Content Include="Content\Css\Site.css" />
+    <Content Include="Content\JS\Aluguel.js" />
+    <Content Include="Content\JS\jquery-3.2.1.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
