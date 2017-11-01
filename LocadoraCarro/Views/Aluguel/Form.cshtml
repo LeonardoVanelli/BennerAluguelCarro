@@ -1,0 +1,104 @@
+﻿<h1>Aluguel</h1>
+<div class="data-hora">
+    <form action="/Classe/Adiciona" method="post">
+
+        <label for="nome">Data retirada:</label>
+        <input type="date" id="nome" name="classe.Nome" class="form-control" />
+
+        <label for="nome">Hora retirada:</label>
+        <input type="time" id="nome" name="classe.Nome" class="form-control" />
+
+        <label for="nome">Data devolução:</label>
+        <input type="date" id="nome" name="classe.Nome" class="form-control" />
+
+        <label for="nome">Hora devolução:</label>
+        <input type="time" id="nome" name="classe.Nome" class="form-control" />
+
+        <label for="nome">Idade:</label>
+        <input type="number" id="nome" name="classe.Nome" class="form-control" />
+
+        <input type="submit" value="Proximo" />
+    </form>
+</div>
+
+
+<h1>Selecione o carro</h1>
+<form action="/Classe/Adiciona" method="post">
+    <div class="carro">
+        <ul>
+            <img src="~/Content/CarrosImg/HB20.jpg" class="img-carro" />
+            <div class="lbl-carros">
+                <ul class="ul-carro"><label for="nome">Modelo: </label> HB20</ul>
+                <ul class="ul-carro"><label for="nome">Marca: </label> Hyundai</ul>
+                <ul class="ul-carro"><label for="nome">Preço por X dias: </label> 850,00R$</ul>
+                <ul class="slc-carro"><input type="button" value="Selecionar"></ul>
+            </div>
+        </ul>
+        <ul>
+            <img src="~/Content/CarrosImg/FordFocus.jpg" class="img-carro" />
+            <div class="lbl-carros">
+                <ul class="ul-carro"><label for="nome">Modelo: </label> Focus</ul>
+                <ul class="ul-carro"><label for="nome">Marca: Ford</label> Ford</ul>
+                <ul class="ul-carro"><label for="nome">Preço por X dias: 680,00R$</label>680,00R$</ul>
+                <ul class="slc-carro"><input type="button" value="Selecionar"></ul>
+            </div>
+        </ul>
+    </div>
+</form>
+
+<h1>Proteções</h1>
+<div class="protecao">
+    <form action="/Classe/Adiciona" method="post">
+        <table style="width:100%">
+            <tr>
+                <th>       </th>
+                <th>Nenhuma</th>
+                <th>Basica</th>
+                <th>Completa</th>
+            </tr>
+            <tr>
+                <th>Descrição</th>
+                <td>Descrição do nenhuma proteção</td>
+                <td>Descrição da proteção basica</td>
+                <td>Descrição da proteção completa</td>
+            </tr>
+            <tr>
+                <th>Preço</th>
+                <td>00,00R$</td>
+                <td>80,00R$</td>
+                <td>120,00R$</td>
+            </tr>
+            <tr>
+                <th>         </th>
+                <td><a>Contratar</a></td>
+                <td><a>Contratar</a></td>
+                <td><a>Contratar</a></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<h1>Cadastro de cliente</h1>
+<div class="cliente">
+    <form action="/Classe/Adiciona" method="post">
+        <label for="nome">Nome:</label>
+        <input id="nome" name="cliente.Nome" class="form-control" />
+
+        <label for="cpf">Cpf:</label>
+        <input type="number" id="cpf" name="cliente.Cpf" class="form-control" />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="cliente.Email" class="form-control" />
+
+        <label for="telofone">Telefone:</label>
+        <input id="telefone" name="cliente.Telefono" class="form-control" />
+
+        <label for="login">Login:</label>
+        <input id="login" name="cliente.Login" class="form-control" />
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="cliente.Senha" class="form-control" />
+
+        <input type="submit" value="Cadastrar" />
+    </form>
+</div>

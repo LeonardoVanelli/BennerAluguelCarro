@@ -130,13 +130,17 @@
       <DependentUpon>LocadoraCarroDB.mdf</DependentUpon>
     </Content>
     <Content Include="App_Data\LocadoraCarroDB.mdf" />
+    <Content Include="Content\CarrosImg\FordFocus.jpg" />
+    <Content Include="Content\CarrosImg\HB20.jpg" />
     <Content Include="Content\Css\bootstrap.css" />
+    <Content Include="Content\Css\edit.css" />
     <Content Include="Content\Css\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AluguelController.cs" />
     <Compile Include="Controllers\CarroController.cs" />
     <Compile Include="Controllers\ClasseController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
@@ -288,6 +292,7 @@
     <Content Include="Views\HomeFunc\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\AluguelCarro.cshtml" />
+    <Content Include="Views\Aluguel\Form.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
