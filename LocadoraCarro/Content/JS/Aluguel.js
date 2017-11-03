@@ -21,7 +21,7 @@ function RetiraValorDataHora() {
     var DataIdade     = $("#data_idade")    .val();
 }
 
-$("#btnSlcCarro").click(function () {
+$(".CarroSelecionado").click(function () {
     event.preventDefault();
     FormCarro.addClass("invisivel");
     FormProtecao.removeClass("invisivel");
@@ -54,7 +54,7 @@ function MontaCarro() {
     DCarroPrincipal.append(PMarca);
     DCarroPrincipal.append(PPreco);
     //cria botão
-    var botao = $("<button>").attr("id", "btnSlcCarro").text("Selecionar")
+    var botao = $("<button>").addClass("CarroSelecionado").attr("id", "btnSlcCarro").text("Selecionar")
     DCarroPrincipal.append(botao);
     //mostra console
     console.log(DCarroPrincipal);
