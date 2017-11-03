@@ -1,7 +1,3 @@
-.carro {
-    border: 5px solid bludase;     
-}
-
 .img-carro {
     height: 100px;
     width: 220px;
@@ -13,8 +9,11 @@
 .lbl-carros {
     display: grid;
     margin-bottom: 50px;
-    height: 100px;
-    width: 500px;
+    height: auto;
+    width: auto;
+    margin: 0% auto;
+    float: left;
+    margin-left: 2.5%;
 }
 
 .ul-carro {
@@ -41,4 +40,14 @@
 
 #btnSlcCarro {
     width: 90px;
+}
+
+#Img_car1 {
+    height: 100px;
+    width: 220px;
+}
+
+#Img_car2 {
+    height: 100px;
+    width: 220px;
 }
