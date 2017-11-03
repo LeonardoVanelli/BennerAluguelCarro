@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LocadoraCarro.DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,6 +16,11 @@ namespace LocadoraCarro.Controllers
         }
         public ActionResult Form()
         {
+            return View();
+        }
+        public ActionResult BuscaCarros()
+        {
+            var dao = new CarroDAO().Lista();
             return View();
         }
     }

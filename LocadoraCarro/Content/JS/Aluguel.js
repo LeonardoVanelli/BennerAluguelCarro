@@ -61,3 +61,7 @@ function MontaCarro() {
     var carros = $("#lista-carro");
     carros.append(DCarroPrincipal);
 }
+
+function retornaBanco() {
+    var carros = $.get("http://localhost:3000/frases");
+}
