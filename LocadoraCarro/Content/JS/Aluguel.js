@@ -33,7 +33,7 @@ $("#btnSlcProtecao").click(function () {
     FormCliente.removeClass("invisivel");
 })
 
-function MontaCarro() {
+function MontaCarro(modelo, marca, preco) {
     //Cria Div principal
     var DCarroPrincipal = $("<div>").addClass("lbl-carros");
     //cria div imagem e adiciona img
@@ -44,11 +44,11 @@ function MontaCarro() {
     //junta div principal com div img
     DCarroPrincipal.append(DCarroImagem);
     //cria p modelo
-    var PModelo = $("<p>").addClass("ul-carro").attr("id", "modelo-car").text("ewaofew");
+    var PModelo = $("<p>").addClass("ul-carro").attr("id", "modelo-car").text("Modelo: "+modelo);
     //cria p marca
-    var PMarca = $("<p>").addClass("ul-carro").attr("id", "marca-car").text("erawre");
+    var PMarca = $("<p>").addClass("ul-carro").attr("id", "marca-car").text("Marca: "+marca);
     //cria p preço
-    var PPreco = $("<p>").addClass("ul-carro").attr("id", "preco-car").text("eafwaf");
+    var PPreco = $("<p>").addClass("ul-carro").attr("id", "preco-car").text("Preço por X dias: " + preco + "R$");
     //Coloca p na div principal
     DCarroPrincipal.append(PModelo);
     DCarroPrincipal.append(PMarca);
@@ -57,11 +57,16 @@ function MontaCarro() {
     var botao = $("<button>").addClass("CarroSelecionado").attr("id", "btnSlcCarro").text("Selecionar")
     DCarroPrincipal.append(botao);
     //mostra console
-    console.log(DCarroPrincipal);
     var carros = $("#lista-carro");
     carros.append(DCarroPrincipal);
 }
 
 function retornaBanco() {
-    var carros = $.get("http://localhost:3000/frases");
+    var carros = $.get("http://localhost:50806/aluguel/BuscaCarros", function (carros) {
+ 
+        for (var i = 0; i < carros.length; i++) {
+            MontaCarro(carros[i].ModeloId, carros[i].ClasseId, carros[i].PrecoDia);
+        }
+    })
+    
 }

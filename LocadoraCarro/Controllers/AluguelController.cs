@@ -18,10 +18,10 @@ namespace LocadoraCarro.Controllers
         {
             return View();
         }
-        public ActionResult BuscaCarros()
+        public JsonResult BuscaCarros()
         {
-            var dao = new CarroDAO().Lista();
-            return View();
+            var carros = new CarroDAO().Lista();
+            return Json(carros, JsonRequestBehavior.AllowGet);
         }
     }
 }
