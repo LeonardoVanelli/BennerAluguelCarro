@@ -5,12 +5,11 @@ var FormCliente = $(".cliente");
 $("#btn-proximo").click(function () {
     event.preventDefault();    
     var FormData = $(".data-hora");
-    RetiraValorDataHora();    
+    RetiraValorDataHora();
 
     FormData.addClass("invisivel");
     FormCarro.removeClass("invisivel");
-    retornaBanco()
-
+    retornaCarros();
 })
 
 function RetiraValorDataHora() {
@@ -20,6 +19,13 @@ function RetiraValorDataHora() {
     var dataDevolucao = $("#data_devolucao").val();
     var horaDevolucao = $("#hora_devolucao").val();
     var DataIdade     = $("#data_idade")    .val();
+    
+    return data = [{
+        DataRetirada: dataRetirada,
+        HoraRetirada: horaRetirada,
+        DataDevolucao: dataDevolucao,
+        horaDevolucao: horaDevolucao
+    }]
 }
 
 $(".CarroSelecionado").click(function () {
@@ -51,18 +57,16 @@ function MontaCarro(modelo, marca, preco) {
     //cria p preço
     var PPreco = $("<p>").addClass("ul-carro").attr("id", "preco-car").text("Preço por X dias: " + preco + "R$");
     //Coloca p na div principal
-    DCarroPrincipal.append(PModelo);
-    DCarroPrincipal.append(PMarca);
-    DCarroPrincipal.append(PPreco);
+    DCarroPrincipal.append(PModelo).append(PMarca).append(PPreco);
     //cria botão
     var botao = $("<button>").addClass("CarroSelecionado").attr("id", "btnSlcCarro").text("Selecionar")
     DCarroPrincipal.append(botao);
-    //mostra console
+    //insere no formulario
     var carros = $("#lista-carro");
     carros.append(DCarroPrincipal);
 }
 
-function retornaBanco() {
+function retornaCarros() {
     var carros = $.get("http://localhost:50806/aluguel/BuscaCarros", function (carros) {
  
         for (var i = 0; i < carros.length; i++) {

@@ -20,11 +20,9 @@ namespace LocadoraCarro.Controllers
         }
         public JsonResult BuscaCarros()
         {
-            var carros = new CarroDAO().Lista();
-
             List<Object> resultado = new List<object>();
 
-            foreach (var carro in carros)
+            foreach (var carro in new CarroDAO().Lista())
             {
                 var modelo = new ModeloDAO().BuscaPorId(carro.ModeloId);
                 resultado.Add(new
@@ -33,10 +31,13 @@ namespace LocadoraCarro.Controllers
                     Marca = new MarcaDAO().BuscaPorId(modelo.MarcaId).Nome,
                     Preco = carro.PrecoDia
                 });
-
             }
-
             return Json(resultado, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult BuscaProtecoes()
+        {
+            var protecoes = new ProtecaoDAO().Lista();
+            return Json(protecoes, JsonRequestBehavior.AllowGet);
         }
     }
 }
