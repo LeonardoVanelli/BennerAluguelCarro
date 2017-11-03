@@ -252,6 +252,18 @@
     <Compile Include="Migrations\201710261943576_Carros6.Designer.cs">
       <DependentUpon>201710261943576_Carros6.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711031702405_Carros7.cs" />
+    <Compile Include="Migrations\201711031702405_Carros7.Designer.cs">
+      <DependentUpon>201711031702405_Carros7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711031729405_Carros8.cs" />
+    <Compile Include="Migrations\201711031729405_Carros8.Designer.cs">
+      <DependentUpon>201711031729405_Carros8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711031732191_Marcas1.cs" />
+    <Compile Include="Migrations\201711031732191_Marcas1.Designer.cs">
+      <DependentUpon>201711031732191_Marcas1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluguel.cs" />
     <Compile Include="Models\Carro.cs" />
@@ -371,6 +383,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710261943576_Carros6.resx">
       <DependentUpon>201710261943576_Carros6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711031702405_Carros7.resx">
+      <DependentUpon>201711031702405_Carros7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711031729405_Carros8.resx">
+      <DependentUpon>201711031729405_Carros8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711031732191_Marcas1.resx">
+      <DependentUpon>201711031732191_Marcas1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

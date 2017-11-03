@@ -284,3 +284,6 @@ C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\Lo
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.csproj.GenerateResource.Cache
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.dll
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.pdb
+C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Carros7.resources
+C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Carros8.resources
+C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Marcas1.resources

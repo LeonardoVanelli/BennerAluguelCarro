@@ -7,8 +7,9 @@ $("#btn-proximo").click(function () {
     var FormData = $(".data-hora");
     RetiraValorDataHora();    
 
-FormData.addClass("invisivel");
-FormCarro.removeClass("invisivel");
+    FormData.addClass("invisivel");
+    FormCarro.removeClass("invisivel");
+    retornaBanco()
 
 })
 
@@ -65,7 +66,7 @@ function retornaBanco() {
     var carros = $.get("http://localhost:50806/aluguel/BuscaCarros", function (carros) {
  
         for (var i = 0; i < carros.length; i++) {
-            MontaCarro(carros[i].ModeloId, carros[i].ClasseId, carros[i].PrecoDia);
+            MontaCarro(carros[i].Modelo, carros[i].Marca, carros[i].Preco);
         }
     })
     

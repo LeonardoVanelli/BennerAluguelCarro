@@ -21,7 +21,22 @@ namespace LocadoraCarro.Controllers
         public JsonResult BuscaCarros()
         {
             var carros = new CarroDAO().Lista();
-            return Json(carros, JsonRequestBehavior.AllowGet);
+
+            List<Object> resultado = new List<object>();
+
+            foreach (var carro in carros)
+            {
+                var modelo = new ModeloDAO().BuscaPorId(carro.ModeloId);
+                resultado.Add(new
+                {
+                    Modelo = modelo.Nome,
+                    Marca = new MarcaDAO().BuscaPorId(modelo.MarcaId).Nome,
+                    Preco = carro.PrecoDia
+                });
+
+            }
+
+            return Json(resultado, JsonRequestBehavior.AllowGet);
         }
     }
 }
