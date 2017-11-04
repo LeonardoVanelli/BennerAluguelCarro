@@ -1,4 +1,5 @@
 ﻿using LocadoraCarro.DAO;
+using LocadoraCarro.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,7 @@ namespace LocadoraCarro.Controllers
                 var modelo = new ModeloDAO().BuscaPorId(carro.ModeloId);
                 resultado.Add(new
                 {
-                    Id = carro.Id, 
+                    Id = carro.Id,
                     Modelo = modelo.Nome,
                     Marca = new MarcaDAO().BuscaPorId(modelo.MarcaId).Nome,
                     Preco = carro.PrecoDia
@@ -41,6 +42,23 @@ namespace LocadoraCarro.Controllers
         {
             var protecoes = new ProtecaoDAO().Lista();
             return Json(protecoes, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult AdicionaUsuario(string nome, string cpf, string email, string telefone, string login, string senha)
+        {
+            var cliente = new Cliente() { Nome = nome,
+                                          Cpf = cpf,
+                                          Email = email,
+                                          Telefono = telefone,
+                                          Login = login,
+                                          Senha = senha};
+
+            var dao = new ClienteDAO();
+            dao.Adiciona(cliente);
+            var usuarioCriado = dao.BuscaPorLoginSenha(login, senha);
+
+            var data = new { id = usuarioCriado.Id };
+            return Json(data);
         }
     }
 }

@@ -2,6 +2,8 @@
 var FormProtecao = $(".protecao");
 var FormCliente = $(".cliente");
 
+var DataHoraRetirada;
+
 $("#btn-proximo").click(function () {
     event.preventDefault();    
     var FormData = $(".data-hora");
@@ -10,6 +12,7 @@ $("#btn-proximo").click(function () {
     FormData.addClass("invisivel");
     FormCarro.removeClass("invisivel");
     retornaCarros();
+    console.log(DataHoraRetirada);
 })
 
 function RetiraValorDataHora() {
@@ -20,7 +23,7 @@ function RetiraValorDataHora() {
     var horaDevolucao = $("#hora_devolucao").val();
     var DataIdade     = $("#data_idade")    .val();
     
-    return data = [{
+    DataHoraRetirada = [{
         DataRetirada: dataRetirada,
         HoraRetirada: horaRetirada,
         DataDevolucao: dataDevolucao,
@@ -57,19 +60,35 @@ function retornaCarros() {
 
 $("#btn-cadastrar").click(function () {
     event.preventDefault();
-    var nome     = $("#nome").val();
-    var cpf      = $("#cpf").val();
-    var email    = $("#email").val();
-    var telefone = $("#telefone").val();
-    var login    = $("#login").val();
-    var senha    = $("#senha").val();
+    adicionaUsuario();
 
-    var usuario = [{
-        Nome : nome,
-        Cpf  : cpf,
-        Email: email,
-        Login: login,
-        Senha: senha,
-    }]
-    console.log(usuario);
+    $.ajax({
+        dataType: "json",
+        type: "POST",
+        url: "/Aluguel/Adiciona",
+        data: {
+            DataHoraRetirada: DataHoraRetirada.dataRetirada,
+            DataHoraDevolucao: $("#cpf").val(),
+            IdCliente: $("#email").val(),
+            IdCarro: $("#telefone").val(),
+            IdProtecao: $("#login").val()
+        },
+    })
 })
+
+function adicionaUsuario() {
+    var idUsuario = $.ajax({
+        dataType: "json",
+        type: "POST",
+        url: "/Aluguel/AdicionaUsuario",
+        data: {
+            Nome    : $("#nome").val(),
+            Cpf     : $("#cpf").val(),
+            Email   : $("#email").val(),
+            Telefone: $("#telefone").val(),
+            Login   : $("#login").val(),
+            Senha   : $("#senha").val()
+        },
+    })
+    return idUsuario;
+}
