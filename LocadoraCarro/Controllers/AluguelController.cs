@@ -18,6 +18,7 @@ namespace LocadoraCarro.Controllers
         {
             return View();
         }
+
         public JsonResult BuscaCarros()
         {
             List<Object> resultado = new List<object>();
@@ -27,6 +28,7 @@ namespace LocadoraCarro.Controllers
                 var modelo = new ModeloDAO().BuscaPorId(carro.ModeloId);
                 resultado.Add(new
                 {
+                    Id = carro.Id, 
                     Modelo = modelo.Nome,
                     Marca = new MarcaDAO().BuscaPorId(modelo.MarcaId).Nome,
                     Preco = carro.PrecoDia
@@ -34,6 +36,7 @@ namespace LocadoraCarro.Controllers
             }
             return Json(resultado, JsonRequestBehavior.AllowGet);
         }
+
         public JsonResult BuscaProtecoes()
         {
             var protecoes = new ProtecaoDAO().Lista();

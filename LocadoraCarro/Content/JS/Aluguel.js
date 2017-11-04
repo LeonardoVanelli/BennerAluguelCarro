@@ -32,15 +32,21 @@ $(".CarroSelecionado").click(function () {
     event.preventDefault();
     FormCarro.addClass("invisivel");
     FormProtecao.removeClass("invisivel");
+
+    var btn = $(this).parent().find("p")[0].innerHTML;
+    console.log(btn);
 })
 
-$("#btnSlcProtecao").click(function () {
+$(".btn-protecao").click(function (event) {
     event.preventDefault();
     FormProtecao.addClass("invisivel");
     FormCliente.removeClass("invisivel");
+    var td = $(this).parent().parent();
+    
+    console.log(td.find("td")[0].innerHTML);
 })
 
-function MontaCarro(modelo, marca, preco) {
+function MontaCarro(id, modelo, marca, preco) {
     //Cria Div principal
     var DCarroPrincipal = $("<div>").addClass("lbl-carros");
     //cria div imagem e adiciona img
@@ -50,14 +56,16 @@ function MontaCarro(modelo, marca, preco) {
     DCarroImagem.append(IImgCarro);
     //junta div principal com div img
     DCarroPrincipal.append(DCarroImagem);
+    //cria p Id invisivel
+    var PId     = $("<p>").addClass("ul-carro").addClass("invisivel").attr("id", "modelo-car").text(id);
     //cria p modelo
     var PModelo = $("<p>").addClass("ul-carro").attr("id", "modelo-car").text("Modelo: "+modelo);
     //cria p marca
-    var PMarca = $("<p>").addClass("ul-carro").attr("id", "marca-car").text("Marca: "+marca);
+    var PMarca  = $("<p>").addClass("ul-carro").attr("id", "marca-car") .text("Marca: "+marca);
     //cria p preço
-    var PPreco = $("<p>").addClass("ul-carro").attr("id", "preco-car").text("Preço por X dias: " + preco + ",00R$");
+    var PPreco  = $("<p>").addClass("ul-carro").attr("id", "preco-car") .text("Preço por X dias: " + preco + ",00R$");
     //Coloca p na div principal
-    DCarroPrincipal.append(PModelo).append(PMarca).append(PPreco);
+    DCarroPrincipal.append(PId).append(PModelo).append(PMarca).append(PPreco);
     //cria botão
     var botao = $("<button>").addClass("CarroSelecionado").attr("id", "btnSlcCarro").text("Selecionar")
     DCarroPrincipal.append(botao);
@@ -70,7 +78,7 @@ function retornaCarros() {
     var carros = $.get("http://localhost:50806/aluguel/BuscaCarros", function (carros) {
  
         for (var i = 0; i < carros.length; i++) {
-            MontaCarro(carros[i].Modelo, carros[i].Marca, carros[i].Preco);
+            MontaCarro(carros[i].Id, carros[i].Modelo, carros[i].Marca, carros[i].Preco);
         }
     })
     

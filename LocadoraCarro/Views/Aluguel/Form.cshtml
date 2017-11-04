@@ -51,30 +51,34 @@
 <div class="protecao invisivel">
     <h1>Proteções</h1>
     <form>
-        <table class="table" style="width:100%">
+        <table class="table" id="tbl-protecao" style="width:100%">
             <tr>
-                <th>       </th>
-                <th>Nenhuma</th>
-                <th>Basica</th>
-                <th>Completa</th>
-            </tr>
-            <tr>
+                <td>       </td>
                 <th>Descrição</th>
-                <td>Descrição do nenhuma proteção</td>
-                <td>Descrição da proteção basica</td>
-                <td>Descrição da proteção completa</td>
-            </tr>
-            <tr>
                 <th>Preço</th>
-                <td>00,00R$</td>
-                <td>80,00R$</td>
-                <td>120,00R$</td>
+                <th>Selecione</th>
             </tr>
             <tr>
-                <th>         </th>
-                <td><button id="btnSlcProtecao">Contratar</button></td>
-                <td><button id="btnSlcProtecao">Contratar</button></td>
-                <td><button id="btnSlcProtecao">Contratar</button></td>
+                <td class="invisivel">1</td>
+                <td>Nenhuma</td>
+                <td>Descrição do nenhuma proteção</td>
+                <td>00,00R$</td>
+                <td>
+                    <a href="#" class="btn-protecao">
+                        <i class="small material-icons">delete</i>
+                    </a>
+                </td>
+            </tr>
+            <tr>     
+                <td class="invisivel">2</td>      
+                <td>Basica</td>
+                <td>Descrição da proteção basica</td>
+                <td>80,00R$</td>
+                <td>
+                    <a href="#" class="btn-protecao">
+                        <i class="small material-icons">delete</i>
+                    </a>
+                </td>
             </tr>
         </table>
     </form>
