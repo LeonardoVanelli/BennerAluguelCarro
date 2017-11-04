@@ -60,5 +60,10 @@ namespace LocadoraCarro.Controllers
             var data = new { id = usuarioCriado.Id };
             return Json(data);
         }
+
+        public JsonResult Adiciona(string dTRetirada, string dTDevolucao, int IdCliente, int IdCarro, int IdProtecao)
+        {
+            return Json(new { quantidade = 10 });
+        }
     }
 }

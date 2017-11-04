@@ -2,17 +2,19 @@
 var FormProtecao = $(".protecao");
 var FormCliente = $(".cliente");
 
-var DataHoraRetirada;
+var dataHoraRetirada;
+var dataHoraDevolucao;
+var idCarro;
+var idProtecao;
+var idCliente;
 
 $("#btn-proximo").click(function () {
     event.preventDefault();    
     var FormData = $(".data-hora");
-    console.log(RetiraValorDataHora());
 
     FormData.addClass("invisivel");
     FormCarro.removeClass("invisivel");
     retornaCarros();
-    console.log(DataHoraRetirada);
 })
 
 function RetiraValorDataHora() {
@@ -23,20 +25,15 @@ function RetiraValorDataHora() {
     var horaDevolucao = $("#hora_devolucao").val();
     var DataIdade     = $("#data_idade")    .val();
     
-    DataHoraRetirada = [{
-        DataRetirada: dataRetirada,
-        HoraRetirada: horaRetirada,
-        DataDevolucao: dataDevolucao,
-        horaDevolucao: horaDevolucao
-    }]
+    dataHoraRetirada = dataRetirada + " " + horaRetirada;
+    dataHoraDevolucao = dataDevolucao + " " + horaDevolucao;
 }
 function SelecionaCarro() {
     event.preventDefault();
     FormCarro.addClass("invisivel");
     FormProtecao.removeClass("invisivel");
 
-    var btn = $(this).parent().find("p")[0].innerHTML;
-    console.log(btn);
+    idCarro = $(this).parent().find("p")[0].innerHTML; 
 }
 
 $(".btn-protecao").click(function (event) {
@@ -45,7 +42,7 @@ $(".btn-protecao").click(function (event) {
     FormCliente.removeClass("invisivel");
     var td = $(this).parent().parent();
     
-    console.log(td.find("td")[0].innerHTML);
+    idProtecao = td.find("td")[0].innerHTML;
 })
 
 function retornaCarros() {
@@ -60,18 +57,17 @@ function retornaCarros() {
 
 $("#btn-cadastrar").click(function () {
     event.preventDefault();
-    adicionaUsuario();
 
     $.ajax({
         dataType: "json",
         type: "POST",
         url: "/Aluguel/Adiciona",
         data: {
-            DataHoraRetirada: DataHoraRetirada.dataRetirada,
-            DataHoraDevolucao: $("#cpf").val(),
-            IdCliente: $("#email").val(),
-            IdCarro: $("#telefone").val(),
-            IdProtecao: $("#login").val()
+            DataHoraRetirada: dataHoraRetirada,
+            DataHoraDevolucao: dataHoraDevolucao,
+            IdCliente: adicionaUsuario(),
+            IdCarro: idCarro,
+            IdProtecao: idProtecao
         },
     })
 })
@@ -91,4 +87,9 @@ function adicionaUsuario() {
         },
     })
     return idUsuario;
+}
+
+function testesss() {
+    console.log(dataHoraRetirada);
+    console.log(dataHoraDevolucao);
 }
