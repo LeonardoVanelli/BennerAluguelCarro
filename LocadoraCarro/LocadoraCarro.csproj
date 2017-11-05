@@ -130,13 +130,20 @@
       <DependentUpon>LocadoraCarroDB.mdf</DependentUpon>
     </Content>
     <Content Include="App_Data\LocadoraCarroDB.mdf" />
+    <Content Include="Content\CarrosImg\FordFocus.jpg" />
+    <Content Include="Content\CarrosImg\HB20.jpg" />
     <Content Include="Content\Css\bootstrap.css" />
+    <Content Include="Content\Css\edit.css" />
     <Content Include="Content\Css\Site.css" />
+    <Content Include="Content\JS\Aluguel.js" />
+    <Content Include="Content\JS\CriarElementos.js" />
+    <Content Include="Content\JS\jquery-3.2.1.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AluguelController.cs" />
     <Compile Include="Controllers\CarroController.cs" />
     <Compile Include="Controllers\ClasseController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
@@ -246,6 +253,18 @@
     <Compile Include="Migrations\201710261943576_Carros6.Designer.cs">
       <DependentUpon>201710261943576_Carros6.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711031702405_Carros7.cs" />
+    <Compile Include="Migrations\201711031702405_Carros7.Designer.cs">
+      <DependentUpon>201711031702405_Carros7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711031729405_Carros8.cs" />
+    <Compile Include="Migrations\201711031729405_Carros8.Designer.cs">
+      <DependentUpon>201711031729405_Carros8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711031732191_Marcas1.cs" />
+    <Compile Include="Migrations\201711031732191_Marcas1.Designer.cs">
+      <DependentUpon>201711031732191_Marcas1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluguel.cs" />
     <Compile Include="Models\Carro.cs" />
@@ -287,6 +306,8 @@
     <Content Include="Views\Shared\_LayoutFuncionario.cshtml" />
     <Content Include="Views\HomeFunc\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\AluguelCarro.cshtml" />
+    <Content Include="Views\Aluguel\Form.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -363,6 +384,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710261943576_Carros6.resx">
       <DependentUpon>201710261943576_Carros6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711031702405_Carros7.resx">
+      <DependentUpon>201711031702405_Carros7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711031729405_Carros8.resx">
+      <DependentUpon>201711031729405_Carros8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711031732191_Marcas1.resx">
+      <DependentUpon>201711031732191_Marcas1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

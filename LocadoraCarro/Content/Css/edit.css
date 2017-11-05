@@ -1,0 +1,54 @@
+.img-carro {
+    height: 100px;
+    width: 220px;
+    float: left;
+    clear: left;
+
+}
+
+.lbl-carros {
+    display: grid;
+    margin-bottom: 50px;
+    height: auto;
+    width: auto;
+    margin: 0% auto;
+    float: left;
+    margin-left: 2.5%;
+    margin-bottom: 30px;
+}
+
+.ul-carro {
+    border-bottom: 2px solid gray;
+}
+
+.slc-carro {
+    text-align: right;
+}
+
+#btn-proximo {
+    margin-top:10px;
+    float: right;
+    clear : left;
+}
+
+.visivel {
+    display: grid;
+}
+
+.invisivel {
+    display: none;
+}
+
+#btnSlcCarro {
+    width: 90px;
+}
+
+#Img_car1 {
+    height: 100px;
+    width: 220px;
+}
+
+#Img_car2 {
+    height: 100px;
+    width: 220px;
+}

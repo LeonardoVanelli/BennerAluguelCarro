@@ -10,9 +10,9 @@ namespace LocadoraCarro.Models
     {
         public int Id { get; set; }
         public string Placa { get; set; }
-        public Modelo Modelo { get; set; }
-        public int? ModeloId { get; set; }
-        public Classe Classe { get; set; }
+        public virtual Modelo Modelo { get; set; }
+        public int ModeloId { get; set; }
+        public virtual Classe Classe { get; set; }
         public int? ClasseId { get; set; }
         public string Descricao { get; set; }
         public double PrecoDia { get; set; }

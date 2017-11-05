@@ -1,0 +1,124 @@
+﻿
+<form class="data-hora">
+    <h1>Aluguel</h1>
+    <label for="nome">Data retirada:</label>
+    <input type="date" id="data_retirada" name="classe.Nome" class="form-control" />
+
+    <label for="nome">Hora retirada:</label>
+    <input type="time" id="hora_retirada" name="classe.Nome" class="form-control" />
+
+    <label for="nome">Data devolução:</label>
+    <input type="date" id="data_devolucao" name="classe.Nome" class="form-control" />
+
+    <label for="nome">Hora devolução:</label>
+    <input type="time" id="hora_devolucao" name="classe.Nome" class="form-control" />
+
+    <label for="nome">Idade:</label>
+    <input type="number" id="data_idade" name="classe.Nome" min="18" class="form-control" />
+
+    <button id="btn-proximo">Proximo</button>
+</form>
+
+
+<form>
+    <div class="carro invisivel" id="lista-carro">
+        <h1>Selecione o carro</h1>
+                
+        
+            <div class="lbl-carros">                
+                <div id="Img_car1" >
+                    <img src="~/Content/CarrosImg/HB20.jpg" class="img-carro" />
+                </div>
+                <p class="ul-carro" id="modelo-car"> Modelo: HB20   </p>
+                <p class="ul-carro" id="marca-car"> Marca: Hyundai </p>        
+                <p class="ul-carro" id="preco-car"> Preço por X dias: <span id="spam-preco">850,00R$</span> </p>          
+                <button class="CarroSelecionado" id="btnSlcCarro">Selecionar</button>                                                                                        
+            </div>
+     
+        <div class="lbl-carros">
+            <div id="Img_car2">
+                <img src="~/Content/CarrosImg/FordFocus.jpg" class="img-carro" />
+            </div>
+            <p class="ul-carro"> Modelo: Focus   </p>
+            <p class="ul-carro"> Marca: Ford </p>
+            <p class="ul-carro"> Preço por X dias: 680,00R$ </p>
+            <button class="CarroSelecionado" id="btnSlcCarro">Selecionar</button>            
+        </div>
+
+    </div>
+</form>
+
+<div class="protecao invisivel">
+    <h1>Proteções</h1>
+    <form>
+        <table class="table" id="tbl-protecao" style="width:100%">
+            <tr>
+                <td>       </td>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Selecione</th>
+            </tr>
+            <tr>
+                <td class="invisivel">2002</td>
+                <td>Nenhuma</td>
+                <td>Descrição do nenhuma proteção</td>
+                <td>00,00R$</td>
+                <td>
+                    <a href="#" class="btn-protecao">
+                        <i class="small material-icons">delete</i>
+                    </a>
+                </td>
+            </tr>
+            <tr>     
+                <td class="invisivel">1002</td>      
+                <td>Basica</td>
+                <td>Descrição da proteção basica</td>
+                <td>80,00R$</td>
+                <td>
+                    <a href="#" class="btn-protecao">
+                        <i class="small material-icons">delete</i>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="invisivel">1003</td>
+                <td>Completa</td>
+                <td>Proteção completa</td>
+                <td>120,00R$</td>
+                <td>
+                    <a href="#" class="btn-protecao">
+                        <i class="small material-icons">delete</i>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+
+<div class="cliente invisivel">
+    <h1>Cadastro de cliente</h1>
+    <form>
+        <label for="nome">Nome:</label>
+        <input id="nome" name="cliente.Nome" class="form-control" />
+
+        <label for="cpf">Cpf:</label>
+        <input id="cpf" type="number" name="cliente.Cpf" class="form-control" />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="cliente.Email" class="form-control" />
+
+        <label for="telofone">Telefone:</label>
+        <input id="telefone" name="cliente.Telefono" class="form-control" />
+
+        <label for="login">Login:</label>
+        <input id="login" name="cliente.Login" class="form-control" />
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="cliente.Senha" class="form-control" />
+
+        <input id="btn-cadastrar" type="submit" value="Cadastrar" />
+    </form>
+</div>
+<script type="text/javascript" src="~/Content/JS/Aluguel.js"></script>
+<script type="text/javascript" src="~/Content/JS/CriarElementos.js"></script>
