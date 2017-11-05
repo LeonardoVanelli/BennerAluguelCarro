@@ -61,9 +61,24 @@ namespace LocadoraCarro.Controllers
             return Json(data);
         }
 
-        public JsonResult Adiciona(string dTRetirada, string dTDevolucao, int IdCliente, int IdCarro, int IdProtecao)
+        public JsonResult Adiciona(string dTRetirada, string dTDevolucao, int idCliente, int idCarro, int idProtecao)
         {
-            return Json(new { quantidade = 10 });
+            DateTime retirada = DateTime.Parse(dTRetirada);
+            DateTime devolucao = DateTime.Parse(dTDevolucao);
+
+            var carro = new CarroDAO().BuscaPorId(idCarro);
+            var cliente = new ClienteDAO().BuscaPorId(idCliente);
+            var protecao = new ProtecaoDAO().BuscaPorId(idProtecao);
+
+            var aluguel = new Aluguel() { DataHoraRetirada = retirada ,
+                                          DataHoraDevolucao = devolucao,
+                                          Carro = carro,
+                                          Cliente = cliente,
+                                          Protecao = protecao};
+
+            new AluguelDAO().Adiciona(aluguel);
+
+            return Json(new { id = 12 });
         }
     }
 }

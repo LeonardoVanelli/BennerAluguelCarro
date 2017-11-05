@@ -11,6 +11,7 @@ var idCliente;
 $("#btn-proximo").click(function () {
     event.preventDefault();    
     var FormData = $(".data-hora");
+    RetiraValorDataHora()
 
     FormData.addClass("invisivel");
     FormCarro.removeClass("invisivel");
@@ -57,23 +58,38 @@ function retornaCarros() {
 
 $("#btn-cadastrar").click(function () {
     event.preventDefault();
-
+        
     $.ajax({
         dataType: "json",
         type: "POST",
-        url: "/Aluguel/Adiciona",
+        url: "/Aluguel/AdicionaUsuario",
         data: {
-            DataHoraRetirada: dataHoraRetirada,
-            DataHoraDevolucao: dataHoraDevolucao,
-            IdCliente: adicionaUsuario(),
-            IdCarro: idCarro,
-            IdProtecao: idProtecao
+            Nome: $("#nome").val(),
+            Cpf: $("#cpf").val(),
+            Email: $("#email").val(),
+            Telefone: $("#telefone").val(),
+            Login: $("#login").val(),
+            Senha: $("#senha").val()
         },
+        success: function (result) {            
+            $.ajax({
+                dataType: "json",
+                type: "POST",
+                url: "/Aluguel/Adiciona",
+                data: {
+                    dTRetirada: dataHoraRetirada,
+                    dTDevolucao: dataHoraDevolucao,
+                    IdCliente: result.id,
+                    IdCarro: idCarro,
+                    IdProtecao: idProtecao
+                }
+            })
+        }
     })
 })
 
 function adicionaUsuario() {
-    var idUsuario = $.ajax({
+    $.ajax({
         dataType: "json",
         type: "POST",
         url: "/Aluguel/AdicionaUsuario",
@@ -85,11 +101,14 @@ function adicionaUsuario() {
             Login   : $("#login").val(),
             Senha   : $("#senha").val()
         },
+        success: function (result) {
+            idCliente = result.id;
+        }
     })
-    return idUsuario;
 }
 
 function testesss() {
     console.log(dataHoraRetirada);
     console.log(dataHoraDevolucao);
+    console.log(idCliente);
 }
