@@ -64,6 +64,7 @@ namespace LocadoraCarro.Controllers
 
         public JsonResult Adiciona(string dTRetirada, string dTDevolucao, int idCliente, int idCarro, int idProtecao)
         {
+            //cadastra aluguel
             DateTime retirada = DateTime.Parse(dTRetirada);
             DateTime devolucao = DateTime.Parse(dTDevolucao);
 
@@ -74,8 +75,25 @@ namespace LocadoraCarro.Controllers
                                           ProtecaoId = idProtecao };
 
             new AluguelDAO().Adiciona(aluguel);
+            //cria json 
+            var carro = new CarroDAO().BuscaPorId(idCarro);
+            var modelo = new ModeloDAO().BuscaPorId(carro.ModeloId);
+            var marca = new MarcaDAO().BuscaPorId(modelo.MarcaId);
 
-            return Json(new { id = 12 });
+            var protecao = new ProtecaoDAO().BuscaPorId(idProtecao);
+
+
+            var JsonAluguel = new {
+                Modelo = modelo.Nome,
+                Marca = marca.Nome,
+                PrecoCar = carro.PrecoDia,
+                Retirada = dTRetirada,
+                Devolucao = dTDevolucao,
+                Protecao = protecao.Nome,
+                PrecoProtecao = protecao.PrecoDia
+            };
+
+            return Json(JsonAluguel);
         }
     }
 }

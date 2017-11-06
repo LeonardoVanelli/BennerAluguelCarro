@@ -1,5 +1,6 @@
 ﻿var FormCadastro = $(".cliente");
 var formLogin = $(".clienteLogar");
+var formConfirmacao = $("#confirmacao");
 
 $("#btn-cadastro").click(function () {
     event.preventDefault();
@@ -68,16 +69,42 @@ function AdicionaAluguel(idCliente) {
             IdProtecao: idProtecao
         },     
         success: function (result) {
-            $('#cadastro-sucesso').modal({
-                escapeClose: false,
-                clickClose: false,
-                showClose: false
-            });
+            preencheConfirmacao(result);
+            formLogin.addClass("invisivel");
+            formConfirmacao.removeClass("invisivel");
 
             console.log("entrei");
         },
         error: function (result) {
-            // Como requisitar $resposta e mostrar ela aqui
+            $('#cadastro-sucesso').modal({
+                escapeClose: false,
+                clickClose: false,
+                showClose: false
+            })
         }
-        })
+    })
 }
+
+function preencheConfirmacao(aluguel) {
+    $("#cModelo-car").text("Modelo: "+aluguel.Modelo);
+    $("#cMarca-car").text("Marca "+aluguel.Marca);
+    $("#cPreco-car").text(aluguel.PrecoCar + ",00R$");
+
+    $("#cRetirada").text(aluguel.Retirada);
+    $("#cDevolucao").text(aluguel.Devolucao);
+    $("#cProtecao").text(aluguel.Protecao);
+    $("#cPreco-protecao").text(aluguel.PrecoProtecao + ",00R$");
+    $("#cTotal").text(aluguel.PrecoProtecao + aluguel.PrecoCar + ",00R$");
+}
+
+$("#btnConfirmar").click(function(){
+    $('#cadastro-sucesso').modal({
+        escapeClose: false,
+        clickClose: false,
+        showClose: false
+    })
+})
+
+$("#VoltaHome").click(function () {
+    window.location.replace("/home");
+})
