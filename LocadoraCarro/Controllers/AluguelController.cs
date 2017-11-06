@@ -75,6 +75,11 @@ namespace LocadoraCarro.Controllers
                                           ProtecaoId = idProtecao };
 
             new AluguelDAO().Adiciona(aluguel);
+
+            return Json(aluguel);
+        }
+        public JsonResult RetornaConfirmacao(int idCliente, int idCarro, int idProtecao)
+        {
             //cria json 
             var carro = new CarroDAO().BuscaPorId(idCarro);
             var modelo = new ModeloDAO().BuscaPorId(carro.ModeloId);
@@ -83,12 +88,11 @@ namespace LocadoraCarro.Controllers
             var protecao = new ProtecaoDAO().BuscaPorId(idProtecao);
 
 
-            var JsonAluguel = new {
+            var JsonAluguel = new
+            {
                 Modelo = modelo.Nome,
                 Marca = marca.Nome,
                 PrecoCar = carro.PrecoDia,
-                Retirada = dTRetirada,
-                Devolucao = dTDevolucao,
                 Protecao = protecao.Nome,
                 PrecoProtecao = protecao.PrecoDia
             };
