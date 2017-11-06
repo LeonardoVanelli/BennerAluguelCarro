@@ -57,37 +57,7 @@ function retornaCarros() {
     
 }
 
-$("#btn-cadastrar").click(function () {
-    event.preventDefault();
-        
-    $.ajax({
-        dataType: "json",
-        type: "POST",
-        url: "/Aluguel/AdicionaUsuario",
-        data: {
-            Nome: $("#nome").val(),
-            Cpf: $("#cpf").val(),
-            Email: $("#email").val(),
-            Telefone: $("#telefone").val(),
-            Login: $("#login").val(),
-            Senha: $("#senha").val()
-        },
-        success: function (result) {            
-            $.ajax({
-                dataType: "json",
-                type: "POST",
-                url: "/Aluguel/Adiciona",
-                data: {
-                    dTRetirada: dataHoraRetirada,
-                    dTDevolucao: dataHoraDevolucao,
-                    IdCliente: result.id,
-                    IdCarro: idCarro,
-                    IdProtecao: idProtecao
-                }
-            })
-        }
-    })
-})
+
 
 function adicionaUsuario() {
     $.ajax({
@@ -109,7 +79,5 @@ function adicionaUsuario() {
 }
 
 function testesss() {
-    console.log(dataHoraRetirada);
-    console.log(dataHoraDevolucao);
     console.log(idCliente);
 }

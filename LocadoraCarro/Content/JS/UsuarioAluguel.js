@@ -1,48 +1,72 @@
-﻿function MontaCarro(id, modelo, marca, preco) {
-    //Cria Div principal
-    var DCarroPrincipal = $("<div>").addClass("lbl-carros");
-    //cria div imagem e adiciona img
-    var DCarroImagem = $("<div>").addClass("Img_car1");
-    var IImgCarro = $("<img>").attr("src", "/Content/CarrosImg/FordFocus.jpg").addClass("img-carro");
-    //Junta img com div imagem
-    DCarroImagem.append(IImgCarro);
-    //junta div principal com div img
-    DCarroPrincipal.append(DCarroImagem);
-    //cria p Id invisivel
-    var PId = $("<p>").addClass("ul-carro").addClass("invisivel").attr("id", "modelo-car").text(id);
-    //cria p modelo
-    var PModelo = $("<p>").addClass("ul-carro").attr("id", "modelo-car").text("Modelo: " + modelo);
-    //cria p marca
-    var PMarca = $("<p>").addClass("ul-carro").attr("id", "marca-car").text("Marca: " + marca);
-    //cria p preço
-    var PPreco = $("<p>").addClass("ul-carro").attr("id", "preco-car").text("Preço por X dias: " + preco + ",00R$");
-    //Coloca p na div principal
-    DCarroPrincipal.append(PId).append(PModelo).append(PMarca).append(PPreco);
-    //cria botão
-    var botao = $("<button>").addClass("CarroSelecionado").attr("id", "btnSlcCarro").text("Selecionar")
-    //Insere evento click no botao
-    botao.click(SelecionaCarro)
-    //Inasere botão na div principal
-    DCarroPrincipal.append(botao);
-    //insere div principal no formulario
-    var carros = $("#lista-carro");
-    carros.append(DCarroPrincipal);
-}
+﻿var FormCadastro = $(".cliente");
+var formLogin = $(".clienteLogar");
 
-function MontaProtecao(id, nome, descricao, preco) {
-    var linha = $("<tr>");
+$("#btn-cadastro").click(function () {
+    event.preventDefault();
 
-    var id = $("<td>").addClass("invisivel").text(id);
-    var nome = $("<td>").text(nome);
-    var desc = $("<td>").text(descricao);
-    var preco = $("<td>").text(preco+"R$");
-    
-    var btn = $("<td>");
-    var link = $("<a>").addClass("btn-protecao").attr("href", "#").text("Selecionar");
+    FormUsuario.addClass("invisivel");
+    FormCadastro.removeClass("invisivel");
+})
 
-    btn.append(link)
+$("#btn-login").click(function () {
+    event.preventDefault();
 
-    linha.append(id).append(nome).append(desc).append(preco).append(btn);
+    FormUsuario.addClass("invisivel");
+    formLogin.removeClass("invisivel");
+})
 
-    $("#tbl-protecao").append(linha);
+$("#btn-logar").click(function () {
+    event.preventDefault();
+
+    $.ajax({
+        dataType: "json",
+        type: "POST",
+        url: "/Login/autenticaAluguel",
+        data: {
+            Login: $("#login_autentica").val(),
+            Senha: $("#senha_autentica").val()
+        },
+        success: function (result) {
+            if (result.id != 0)
+                AdicionaAluguel(result.id);
+            else
+                console.log("Cliete errrrro");
+        }
+    })
+})
+
+$("#btn-cadastrar").click(function () {
+    event.preventDefault();
+
+    $.ajax({
+        dataType: "json",
+        type: "POST",
+        url: "/Aluguel/AdicionaUsuario",
+        data: {
+            Nome: $("#nome").val(),
+            Cpf: $("#cpf").val(),
+            Email: $("#email").val(),
+            Telefone: $("#telefone").val(),
+            Login: $("#login").val(),
+            Senha: $("#senha").val()
+        },
+        success: function (result) {
+            AdicionaAluguel(result.id);
+        }
+    })
+})
+
+function AdicionaAluguel(idCliente) {
+    $.ajax({
+        dataType: "json",
+        type: "POST",
+        url: "/Aluguel/Adiciona",
+        data: {
+            dTRetirada: dataHoraRetirada,
+            dTDevolucao: dataHoraDevolucao,
+            IdCliente: idCliente,
+            IdCarro: idCarro,
+            IdProtecao: idProtecao
+        }
+    })
 }
