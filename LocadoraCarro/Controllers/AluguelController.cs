@@ -13,6 +13,7 @@ namespace LocadoraCarro.Controllers
         // GET: Aluguel
         public ActionResult Index()
         {
+
             return View();
         }
         public ActionResult Form()

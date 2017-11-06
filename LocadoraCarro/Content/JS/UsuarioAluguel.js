@@ -4,8 +4,7 @@ var formLogin = $(".clienteLogar");
 $("#btn-cadastro").click(function () {
     event.preventDefault();
 
-    formLogin.addClass("invisivel");
-    FormCadastro.removeClass("invisivel");
+
 })
 
 $("#btn-login").click(function () {
@@ -67,6 +66,18 @@ function AdicionaAluguel(idCliente) {
             IdCliente: idCliente,
             IdCarro: idCarro,
             IdProtecao: idProtecao
+        },     
+        success: function (result) {
+            $('#cadastro-sucesso').modal({
+                escapeClose: false,
+                clickClose: false,
+                showClose: false
+            });
+
+            console.log("entrei");
+        },
+        error: function (result) {
+            // Como requisitar $resposta e mostrar ela aqui
         }
-    })
+        })
 }

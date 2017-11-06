@@ -22,28 +22,7 @@
 
 <form>
     <div class="carro invisivel" id="lista-carro">
-        <h1>Selecione o carro</h1>
-                
-        
-            <div class="lbl-carros">                
-                <div id="Img_car1" >
-                    <img src="~/Content/CarrosImg/HB20.jpg" class="img-carro" />
-                </div>
-                <p class="ul-carro" id="modelo-car"> Modelo: HB20   </p>
-                <p class="ul-carro" id="marca-car"> Marca: Hyundai </p>        
-                <p class="ul-carro" id="preco-car"> Preço por X dias: <span id="spam-preco">850,00R$</span> </p>          
-                <button class="CarroSelecionado" id="btnSlcCarro">Selecionar</button>                                                                                        
-            </div>
-     
-        <div class="lbl-carros">
-            <div id="Img_car2">
-                <img src="~/Content/CarrosImg/FordFocus.jpg" class="img-carro" />
-            </div>
-            <p class="ul-carro"> Modelo: Focus   </p>
-            <p class="ul-carro"> Marca: Ford </p>
-            <p class="ul-carro"> Preço por X dias: 680,00R$ </p>
-            <button class="CarroSelecionado" id="btnSlcCarro">Selecionar</button>            
-        </div>
+        <h1>Selecione o carro</h1>               
 
     </div>
 </form>
@@ -104,34 +83,43 @@
         <input id="senha_autentica" type="password" class="form-control" />
 
         <input id="btn-logar" type="submit" value="Logar" />
-        <input id="btn-cadastro" type="submit" value="Ainda não tem conta?" />
+        <p><a href="#ex1" rel="modal:open">Ainda não tem conta?</a></p>
     </form>
 </div>
 
-<div class="cliente invisivel">
+<div id="ex1" class="cliente modal">
     <h1>Cadastro de cliente</h1>
-    <form>
-        <label for="nome">Nome:</label>
-        <input id="nome" name="cliente.Nome" class="form-control" />
 
-        <label for="cpf">Cpf:</label>
-        <input id="cpf" type="number" name="cliente.Cpf" class="form-control" />
+    <label for="nome">Nome:</label>
+    <input id="nome" name="cliente.Nome" class="form-control" />
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="cliente.Email" class="form-control" />
+    <label for="cpf">Cpf:</label>
+    <input id="cpf" type="number" name="cliente.Cpf" class="form-control" />
 
-        <label for="telofone">Telefone:</label>
-        <input id="telefone" name="cliente.Telefono" class="form-control" />
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="cliente.Email" class="form-control" />
 
-        <label for="login">Login:</label>
-        <input id="login" name="cliente.Login" class="form-control" />
+    <label for="telofone">Telefone:</label>
+    <input id="telefone" name="cliente.Telefono" class="form-control" />
 
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="cliente.Senha" class="form-control" />
+    <label for="login">Login:</label>
+    <input id="login" name="cliente.Login" class="form-control" />
 
-        <input id="btn-cadastrar" type="submit" value="Cadastrar" />
-    </form>
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="cliente.Senha" class="form-control" />
+
+    <input id="btn-cadastrar" type="submit" value="Cadastrar" />
+
 </div>
+
+<div id="cadastro-sucesso" class="modal">
+    <p>Locação realizada com sucesso</p> 
+    <a href="#" rel="modal:close">Concluir</a>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <script type="text/javascript" src="~/Content/JS/Aluguel.js"></script>
 <script type="text/javascript" src="~/Content/JS/CriarElementos.js"></script>
 <script type="text/javascript" src="~/Content/JS/UsuarioAluguel.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
