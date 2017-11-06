@@ -76,11 +76,7 @@ function AdicionaAluguel(idCliente) {
             console.log("entrei");
         },
         error: function (result) {
-            $('#cadastro-sucesso').modal({
-                escapeClose: false,
-                clickClose: false,
-                showClose: false
-            })
+            console.log("Falha ao cadastrar aluguel");
         }
     })
 }
