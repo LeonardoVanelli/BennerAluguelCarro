@@ -4,7 +4,7 @@ var formLogin = $(".clienteLogar");
 $("#btn-cadastro").click(function () {
     event.preventDefault();
 
-    FormUsuario.addClass("invisivel");
+    formLogin.addClass("invisivel");
     FormCadastro.removeClass("invisivel");
 })
 

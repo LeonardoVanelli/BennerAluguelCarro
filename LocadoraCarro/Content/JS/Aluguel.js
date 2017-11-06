@@ -41,7 +41,7 @@ function SelecionaCarro() {
 $(".btn-protecao").click(function (event) {
     event.preventDefault();
     FormProtecao.addClass("invisivel");
-    FormUsuario.removeClass("invisivel");
+    formLogin.removeClass("invisivel");
     var td = $(this).parent().parent();
     
     idProtecao = td.find("td")[0].innerHTML;
@@ -56,8 +56,6 @@ function retornaCarros() {
     })
     
 }
-
-
 
 function adicionaUsuario() {
     $.ajax({
