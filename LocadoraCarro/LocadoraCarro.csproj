@@ -265,6 +265,10 @@
     <Compile Include="Migrations\201711031732191_Marcas1.Designer.cs">
       <DependentUpon>201711031732191_Marcas1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711061544232_Alugel.cs" />
+    <Compile Include="Migrations\201711061544232_Alugel.Designer.cs">
+      <DependentUpon>201711061544232_Alugel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluguel.cs" />
     <Compile Include="Models\Carro.cs" />
@@ -393,6 +397,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711031732191_Marcas1.resx">
       <DependentUpon>201711031732191_Marcas1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711061544232_Alugel.resx">
+      <DependentUpon>201711061544232_Alugel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
