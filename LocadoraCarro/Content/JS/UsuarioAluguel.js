@@ -97,6 +97,9 @@ function preencheConfirmacao(idCliente) {
             IdCarro: idCarro,
             IdProtecao: idProtecao
         },
+        always(){
+            $("#loading").toggle();
+        },
         success: function (aluguel) {
             $("#cModelo-car").text("Modelo: " + aluguel.Modelo);
             $("#cMarca-car").text("Marca " + aluguel.Marca);

@@ -48,13 +48,19 @@ $(".btn-protecao").click(function (event) {
 })
 
 function retornaCarros() {
-    var carros = $.get("http://localhost:50806/aluguel/BuscaCarros", function (carros) {
- 
+    $("#loading").toggle();
+    var carros = $.get("http://localhost:50806/aluguel/BuscaCarros", function (carros) {        
         for (var i = 0; i < carros.length; i++) {
             MontaCarro(carros[i].Id, carros[i].Modelo, carros[i].Marca, carros[i].Preco);
+            
         }
     })
-    
+    .always(function () { 
+        $("#loading").toggle();
+    })
+    .fail(function () {
+        $("#loading").toggle();
+    });
 }
 
 function adicionaUsuario() {
