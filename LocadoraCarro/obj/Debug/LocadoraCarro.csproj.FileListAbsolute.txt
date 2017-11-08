@@ -287,3 +287,4 @@ C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\Lo
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Carros7.resources
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Carros8.resources
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Marcas1.resources
+C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Alugel.resources

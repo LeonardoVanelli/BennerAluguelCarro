@@ -52,3 +52,25 @@
     height: 100px;
     width: 220px;
 }
+
+.margin-bot {
+    margin-bottom: 5px;
+}
+
+#btn-logar {
+    float: left;
+    margin-right: 5px;
+}
+
+#fail-login {
+    font-size:15px;
+    color: red;
+}
+
+.date {
+  width: 262px;
+}
+
+.time {
+  width: 150px;
+}

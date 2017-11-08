@@ -30,5 +30,15 @@ namespace LocadoraCarro.Controllers
                 return RedirectToAction("Index");
             }
         }
+
+        public JsonResult autenticaAluguel(string login, string senha)
+        {
+            var dao = new ClienteDAO();
+            var usuario = dao.BuscaPorLoginSenha(login, senha);
+
+            if (usuario != null)
+                return Json(new { id = usuario.Id });
+            return Json(new { id = 0 });
+        }
     }
 }

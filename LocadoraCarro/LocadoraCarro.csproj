@@ -135,8 +135,12 @@
     <Content Include="Content\Css\bootstrap.css" />
     <Content Include="Content\Css\edit.css" />
     <Content Include="Content\Css\Site.css" />
+    <Content Include="Content\Img\spinner.gif" />
     <Content Include="Content\JS\Aluguel.js" />
     <Content Include="Content\JS\CriarElementos.js" />
+    <Content Include="Content\JS\jquery.comiseo.daterangepicker.js" />
+    <Content Include="Content\JS\jquery.comiseo.daterangepicker.min.js" />
+    <Content Include="Content\JS\UsuarioAluguel.js" />
     <Content Include="Content\JS\jquery-3.2.1.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -265,6 +269,10 @@
     <Compile Include="Migrations\201711031732191_Marcas1.Designer.cs">
       <DependentUpon>201711031732191_Marcas1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711061544232_Alugel.cs" />
+    <Compile Include="Migrations\201711061544232_Alugel.Designer.cs">
+      <DependentUpon>201711061544232_Alugel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluguel.cs" />
     <Compile Include="Models\Carro.cs" />
@@ -308,6 +316,7 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\AluguelCarro.cshtml" />
     <Content Include="Views\Aluguel\Form.cshtml" />
+    <Content Include="Views\Aluguel\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -393,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711031732191_Marcas1.resx">
       <DependentUpon>201711031732191_Marcas1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711061544232_Alugel.resx">
+      <DependentUpon>201711061544232_Alugel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
