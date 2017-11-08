@@ -1,0 +1,28 @@
+﻿
+<form action="/Funcionario/Adiciona" method="post">
+
+    <label for="cpf">Cpf:</label>
+    <input id="cpf" name="funcionario.Cpf" class="form-control" />
+
+    <label for="nome">Nome:</label>
+    <input id="nome" name="funcionario.Nome" class="form-control" />
+
+    <label for="dataNascimento">Data Nascimento:</label>
+    <input type="date" id="dataNascimento" name="funcionario.DataNascimento" class="form-control" />
+
+    <label for="funcao">Funcao:</label>
+    <select id="funcao" name="funcionario.FuncaoId" class="form-control">
+        @foreach (var funcao in ViewBag.Funcao)
+        {
+            <option value="@funcao.Id">@funcao.Nome</option>
+        }
+    </select>
+
+    <label for="login">Login:</label>
+    <input id="login" name="funcionario.Login" class="form-control" />
+
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="funcionario.Senha" class="form-control" />
+
+    <input type="submit" value="Cadastrar" />
+</form>

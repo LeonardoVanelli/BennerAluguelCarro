@@ -254,6 +254,7 @@
     <Compile Include="Controllers\ClasseController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\FuncaoController.cs" />
+    <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\HomeClienteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomeFuncController.cs" />
@@ -468,6 +469,9 @@
     <Content Include="Views\Funcao\Index.cshtml" />
     <Content Include="Views\Funcao\Form.cshtml" />
     <Content Include="Views\Funcao\Visualiza.cshtml" />
+    <Content Include="Views\Funcionario\Index.cshtml" />
+    <Content Include="Views\Funcionario\Form.cshtml" />
+    <Content Include="Views\Funcionario\Visualiza.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
