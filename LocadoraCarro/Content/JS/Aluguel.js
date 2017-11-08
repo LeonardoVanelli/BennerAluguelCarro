@@ -18,11 +18,10 @@ $("#btn-proximo").click(function () {
         FormCarro.removeClass("invisivel");
         retornaCarros();
     }
+    console.log($("#data_retirada").val())
 })
-function ValidaCamposDatas (){
+function ValidaCamposDatas() {
     var patternData = /^[0-9]{4}\-[0-9]{2}\-[0-9]{2}$/;
-    console.log($("#data_retirada").val());
-    console.log(patternData);
     if (!patternData.test($("#data_retirada").val())) {
         alert("Digite a data no formato Dia/Mês/Ano");
         return false;
