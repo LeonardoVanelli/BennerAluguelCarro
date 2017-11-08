@@ -264,6 +264,8 @@
     <Compile Include="DAO\CarroDAO.cs" />
     <Compile Include="DAO\ClasseDAO.cs" />
     <Compile Include="DAO\ClienteDAO.cs" />
+    <Compile Include="DAO\FuncaoDAO.cs" />
+    <Compile Include="DAO\FuncionarioDAO.cs" />
     <Compile Include="DAO\LocadoraContext.cs" />
     <Compile Include="DAO\MarcaDAO.cs" />
     <Compile Include="DAO\ModeloDAO.cs" />
