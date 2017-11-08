@@ -269,8 +269,6 @@ C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\Lo
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Clientes.resources
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Clientes1.resources
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Protecoes.resources
-C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Funcao.resources
-C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Funcao1.resources
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Funcoes.resources
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Alugueis.resources
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Modelo1.resources
@@ -288,3 +286,7 @@ C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\Lo
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Carros8.resources
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Marcas1.resources
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Alugel.resources
+C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Cliente.resources
+C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Funcao.resources
+C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Funcao1.resources
+C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Funcao2.resources

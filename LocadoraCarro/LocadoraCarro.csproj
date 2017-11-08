@@ -311,14 +311,6 @@
     <Compile Include="Migrations\201710241639355_Protecoes.Designer.cs">
       <DependentUpon>201710241639355_Protecoes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710241641241_Funcao.cs" />
-    <Compile Include="Migrations\201710241641241_Funcao.Designer.cs">
-      <DependentUpon>201710241641241_Funcao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710241644007_Funcao1.cs" />
-    <Compile Include="Migrations\201710241644007_Funcao1.Designer.cs">
-      <DependentUpon>201710241644007_Funcao1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201710241654059_Funcoes.cs" />
     <Compile Include="Migrations\201710241654059_Funcoes.Designer.cs">
       <DependentUpon>201710241654059_Funcoes.cs</DependentUpon>
@@ -375,11 +367,28 @@
     <Compile Include="Migrations\201711061544232_Alugel.Designer.cs">
       <DependentUpon>201711061544232_Alugel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711081937396_Cliente.cs" />
+    <Compile Include="Migrations\201711081937396_Cliente.Designer.cs">
+      <DependentUpon>201711081937396_Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711082001445_Funcao.cs" />
+    <Compile Include="Migrations\201711082001445_Funcao.Designer.cs">
+      <DependentUpon>201711082001445_Funcao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711082002489_Funcao1.cs" />
+    <Compile Include="Migrations\201711082002489_Funcao1.Designer.cs">
+      <DependentUpon>201711082002489_Funcao1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711082005070_Funcao2.cs" />
+    <Compile Include="Migrations\201711082005070_Funcao2.Designer.cs">
+      <DependentUpon>201711082005070_Funcao2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluguel.cs" />
     <Compile Include="Models\Carro.cs" />
     <Compile Include="Models\Classe.cs" />
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Funcao.cs" />
     <Compile Include="Models\Marca.cs" />
     <Compile Include="Models\Modelo.cs" />
     <Compile Include="Models\Protecao.cs" />
@@ -461,12 +470,6 @@
     <EmbeddedResource Include="Migrations\201710241639355_Protecoes.resx">
       <DependentUpon>201710241639355_Protecoes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710241641241_Funcao.resx">
-      <DependentUpon>201710241641241_Funcao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710241644007_Funcao1.resx">
-      <DependentUpon>201710241644007_Funcao1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710241654059_Funcoes.resx">
       <DependentUpon>201710241654059_Funcoes.cs</DependentUpon>
     </EmbeddedResource>
@@ -508,6 +511,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711061544232_Alugel.resx">
       <DependentUpon>201711061544232_Alugel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711081937396_Cliente.resx">
+      <DependentUpon>201711081937396_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711082001445_Funcao.resx">
+      <DependentUpon>201711082001445_Funcao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711082002489_Funcao1.resx">
+      <DependentUpon>201711082002489_Funcao1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711082005070_Funcao2.resx">
+      <DependentUpon>201711082005070_Funcao2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
