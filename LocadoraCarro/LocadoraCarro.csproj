@@ -383,12 +383,21 @@
     <Compile Include="Migrations\201711082005070_Funcao2.Designer.cs">
       <DependentUpon>201711082005070_Funcao2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711082007385_Funcionario.cs" />
+    <Compile Include="Migrations\201711082007385_Funcionario.Designer.cs">
+      <DependentUpon>201711082007385_Funcionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711082009346_Funcionario1.cs" />
+    <Compile Include="Migrations\201711082009346_Funcionario1.Designer.cs">
+      <DependentUpon>201711082009346_Funcionario1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluguel.cs" />
     <Compile Include="Models\Carro.cs" />
     <Compile Include="Models\Classe.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Funcao.cs" />
+    <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Models\Marca.cs" />
     <Compile Include="Models\Modelo.cs" />
     <Compile Include="Models\Protecao.cs" />
@@ -523,6 +532,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711082005070_Funcao2.resx">
       <DependentUpon>201711082005070_Funcao2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711082007385_Funcionario.resx">
+      <DependentUpon>201711082007385_Funcionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711082009346_Funcionario1.resx">
+      <DependentUpon>201711082009346_Funcionario1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

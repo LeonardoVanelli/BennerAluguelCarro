@@ -290,3 +290,5 @@ C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\Lo
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Funcao.resources
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Funcao1.resources
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Funcao2.resources
+C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Funcionario.resources
+C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Funcionario1.resources

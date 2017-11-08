@@ -17,6 +17,7 @@ namespace LocadoraCarro.DAO
         public DbSet<Protecao> Protecoes { get; set; }
         public DbSet<Aluguel> Alugueis { get; set; }
         public DbSet<Funcao> Funcao { get; set; }
+        public DbSet<Funcionario> Funcionarios { get; set; }
 
         public LocadoraContext() : base("Server=(localdb)\\mssqllocaldb;Database=LocadoraCarroDB;Trusted_Connection=true;")
         {
