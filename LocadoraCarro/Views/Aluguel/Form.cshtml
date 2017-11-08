@@ -2,48 +2,28 @@
 <form class="data-hora">
     <h1>Aluguel</h1>
     <label for="nome">Data retirada:</label>
-    <input type="date" id="data_retirada" name="classe.Nome" class="form-control" />
+    <input type="date" id="data_retirada" name="classe.Nome" class="form-control date" />
 
     <label for="nome">Hora retirada:</label>
-    <input type="time" id="hora_retirada" name="classe.Nome" class="form-control" />
+    <input type="time" id="hora_retirada" name="classe.Nome" class="form-control date" />
 
     <label for="nome">Data devolução:</label>
-    <input type="date" id="data_devolucao" name="classe.Nome" class="form-control" />
+    <input type="date" id="data_devolucao" name="classe.Nome" class="form-control date" />
 
     <label for="nome">Hora devolução:</label>
-    <input type="time" id="hora_devolucao" name="classe.Nome" class="form-control" />
+    <input type="time" id="hora_devolucao" name="classe.Nome" class="form-control date" />
 
     <label for="nome">Idade:</label>
-    <input type="number" id="data_idade" name="classe.Nome" min="18" class="form-control" />
+    <input type="number" id="data_idade" name="classe.Nome" min="18" class="form-control date" />
 
-    <button id="btn-proximo">Proximo</button>
+    <button id="btn-proximo" type="button" class="btn btn-success">Proximo</button>
+
 </form>
 
 
 <form>
     <div class="carro invisivel" id="lista-carro">
-        <h1>Selecione o carro</h1>
-                
-        
-            <div class="lbl-carros">                
-                <div id="Img_car1" >
-                    <img src="~/Content/CarrosImg/HB20.jpg" class="img-carro" />
-                </div>
-                <p class="ul-carro" id="modelo-car"> Modelo: HB20   </p>
-                <p class="ul-carro" id="marca-car"> Marca: Hyundai </p>        
-                <p class="ul-carro" id="preco-car"> Preço por X dias: <span id="spam-preco">850,00R$</span> </p>          
-                <button class="CarroSelecionado" id="btnSlcCarro">Selecionar</button>                                                                                        
-            </div>
-     
-        <div class="lbl-carros">
-            <div id="Img_car2">
-                <img src="~/Content/CarrosImg/FordFocus.jpg" class="img-carro" />
-            </div>
-            <p class="ul-carro"> Modelo: Focus   </p>
-            <p class="ul-carro"> Marca: Ford </p>
-            <p class="ul-carro"> Preço por X dias: 680,00R$ </p>
-            <button class="CarroSelecionado" id="btnSlcCarro">Selecionar</button>            
-        </div>
+        <h1>Selecione o carro</h1>               
 
     </div>
 </form>
@@ -64,9 +44,7 @@
                 <td>Descrição do nenhuma proteção</td>
                 <td>00,00R$</td>
                 <td>
-                    <a href="#" class="btn-protecao">
-                        <i class="small material-icons">delete</i>
-                    </a>
+                    <a class="btn-protecao btn btn-success btn-xs" role="button">Selecionar</a>
                 </td>
             </tr>
             <tr>     
@@ -75,9 +53,7 @@
                 <td>Descrição da proteção basica</td>
                 <td>80,00R$</td>
                 <td>
-                    <a href="#" class="btn-protecao">
-                        <i class="small material-icons">delete</i>
-                    </a>
+                    <a class="btn-protecao btn btn-success btn-xs" role="button">Selecionar</a>
                 </td>
             </tr>
             <tr>
@@ -86,39 +62,95 @@
                 <td>Proteção completa</td>
                 <td>120,00R$</td>
                 <td>
-                    <a href="#" class="btn-protecao">
-                        <i class="small material-icons">delete</i>
-                    </a>
+                    <a class="btn-protecao btn btn-success btn-xs" role="button">Selecionar</a>
                 </td>
             </tr>
         </table>
     </form>
 </div>
 
-
-<div class="cliente invisivel">
-    <h1>Cadastro de cliente</h1>
+<div class="clienteLogar invisivel">
     <form>
-        <label for="nome">Nome:</label>
-        <input id="nome" name="cliente.Nome" class="form-control" />
-
-        <label for="cpf">Cpf:</label>
-        <input id="cpf" type="number" name="cliente.Cpf" class="form-control" />
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="cliente.Email" class="form-control" />
-
-        <label for="telofone">Telefone:</label>
-        <input id="telefone" name="cliente.Telefono" class="form-control" />
-
         <label for="login">Login:</label>
-        <input id="login" name="cliente.Login" class="form-control" />
+        <input id="login_autentica" class="form-control" />
 
         <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="cliente.Senha" class="form-control" />
+        <input id="senha_autentica" type="password" class="form-control margin-bot" />
 
-        <input id="btn-cadastrar" type="submit" value="Cadastrar" />
+        <div id="fail-login" class="modal">
+            <p>Login ou senha incorreto</p>
+            <a class="btn btn-success" href="#" rel="modal:close">Fechar</a>
+        </div>
+
+        <input class="btn btn-success margin-bot" id="btn-logar" type="submit" value="Logar" />
+        <p><a class="btn btn-success" href="#ex1" rel="modal:open">Ainda não tem conta?</a></p>
     </form>
 </div>
-<script type="text/javascript" src="~/Content/JS/Aluguel.js"></script>
+
+<div id="ex1" class="cliente modal">
+    <h1>Cadastro de cliente</h1>
+
+    <label for="nome">Nome:</label>
+    <input id="nome" name="cliente.Nome" class="form-control" />
+
+    <label for="cpf">Cpf:</label>
+    <input id="cpf" type="number" name="cliente.Cpf" class="form-control" />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="cliente.Email" class="form-control" />
+
+    <label for="telofone">Telefone:</label>
+    <input id="telefone" name="cliente.Telefono" class="form-control" />
+
+    <label for="login">Login:</label>
+    <input id="login" name="cliente.Login" class="form-control" />
+
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="cliente.Senha" class="form-control" />
+
+    <button id="btn-cadastrar" type="button" class="btn btn-success">Cadastrar</button>
+</div>
+
+<div id="confirmacao" class="invisivel">
+    <div class="Img_car1 lbl-carro">
+        <img src="/Content/CarrosImg/FordFocus.jpg" class="img-carro">
+    </div>
+    <div class="lbl-carros">
+        <h3>Carro</h3>
+        <p class="ul-carro" id="cModelo-car">Modelo: Siena</p>
+        <p class="ul-carro" id="cMarca-car">Marca: Fiat</p>
+        <p class="ul-carro" id="cPreco-car">Preco: 120,00R$</p>
+    </div>
+    
+    <div class="lbl-carros">
+        <h3>Data</h3>
+        <p class="ul-carro" id="cRetirada">De: 10/08/2017 as 12:00h</p>
+        <p class="ul-carro" id="cDevolucao">Até: 17/08/2017 as 16:00h</p>
+    </div>
+    
+    <div class="lbl-carros">
+        <h3>Proteção</h3>
+        <p class="ul-carro" id="cProtecao">Proteção: Básica</p>
+        <p class="ul-carro" id="cPreco-protecao">Preco: 80,00R$</p>     
+    </div>
+
+    <div class="lbl-carros">
+        <h3>Valor Total</h3>
+        <p class="ul-carro" id="cTotal">Total: 200,00R$</p>
+    </div>
+    <input class="btn btn-success" id="btnConfirmar" type="submit" value="Confirmar" />
+</div>
+
+<div id="loading" class="center invisivel">
+    <img src="~/Content/Img/spinner.gif" alt="Spinner" id="spinner">
+</div>
+
+<div id="cadastro-sucesso" class="modal">
+    <p>Locação realizada com sucesso</p> 
+    <a id="VoltaHome" href="#" rel="modal:close">Concluir</a>
+</div>
+
+<script type="text/javascript" src="~/Content/JS/Aluguel.js">       </script>
 <script type="text/javascript" src="~/Content/JS/CriarElementos.js"></script>
+<script type="text/javascript" src="~/Content/JS/UsuarioAluguel.js"></script>
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>

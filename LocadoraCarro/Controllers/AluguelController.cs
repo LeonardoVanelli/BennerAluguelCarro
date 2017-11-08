@@ -13,6 +13,7 @@ namespace LocadoraCarro.Controllers
         // GET: Aluguel
         public ActionResult Index()
         {
+
             return View();
         }
         public ActionResult Form()
@@ -63,22 +64,40 @@ namespace LocadoraCarro.Controllers
 
         public JsonResult Adiciona(string dTRetirada, string dTDevolucao, int idCliente, int idCarro, int idProtecao)
         {
+            //cadastra aluguel
             DateTime retirada = DateTime.Parse(dTRetirada);
             DateTime devolucao = DateTime.Parse(dTDevolucao);
 
-            var carro = new CarroDAO().BuscaPorId(idCarro);
-            var cliente = new ClienteDAO().BuscaPorId(idCliente);
-            var protecao = new ProtecaoDAO().BuscaPorId(idProtecao);
-
             var aluguel = new Aluguel() { DataHoraRetirada = retirada ,
                                           DataHoraDevolucao = devolucao,
-                                          Carro = carro,
-                                          Cliente = cliente,
-                                          Protecao = protecao};
+                                          CarroId = idCarro,
+                                          ClienteId = idCliente,
+                                          ProtecaoId = idProtecao };
 
             new AluguelDAO().Adiciona(aluguel);
 
-            return Json(new { id = 12 });
+            return Json(aluguel);
+        }
+        public JsonResult RetornaConfirmacao(int idCliente, int idCarro, int idProtecao)
+        {
+            //cria json 
+            var carro = new CarroDAO().BuscaPorId(idCarro);
+            var modelo = new ModeloDAO().BuscaPorId(carro.ModeloId);
+            var marca = new MarcaDAO().BuscaPorId(modelo.MarcaId);
+
+            var protecao = new ProtecaoDAO().BuscaPorId(idProtecao);
+
+
+            var JsonAluguel = new
+            {
+                Modelo = modelo.Nome,
+                Marca = marca.Nome,
+                PrecoCar = carro.PrecoDia,
+                Protecao = protecao.Nome,
+                PrecoProtecao = protecao.PrecoDia
+            };
+
+            return Json(JsonAluguel);
         }
     }
 }

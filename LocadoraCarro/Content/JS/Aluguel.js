@@ -1,6 +1,7 @@
 ﻿var FormCarro = $(".carro");
 var FormProtecao = $(".protecao");
 var FormCliente = $(".cliente");
+var FormUsuario = $(".escolhaCliente");
 
 var dataHoraRetirada;
 var dataHoraDevolucao;
@@ -11,15 +12,27 @@ var idCliente;
 $("#btn-proximo").click(function () {
     event.preventDefault();    
     var FormData = $(".data-hora");
-    RetiraValorDataHora()
-
-    FormData.addClass("invisivel");
-    FormCarro.removeClass("invisivel");
-    retornaCarros();
+    RetiraValorDataHora();
+    if (ValidaCamposDatas()) {
+        FormData.addClass("invisivel");
+        FormCarro.removeClass("invisivel");
+        retornaCarros();
+    }
 })
+function ValidaCamposDatas (){
+    var patternData = /^[0-9]{4}\-[0-9]{2}\-[0-9]{2}$/;
+    console.log($("#data_retirada").val());
+    console.log(patternData);
+    if (!patternData.test($("#data_retirada").val())) {
+        alert("Digite a data no formato Dia/Mês/Ano");
+        return false;
+    }
+    return true
+}
 
 function RetiraValorDataHora() {
-    var dataRetirada  = $("#data_retirada") .val();
+
+    var dataRetirada = $("#data_retirada").val();
     
     var horaRetirada  = $("#hora_retirada") .val();
     var dataDevolucao = $("#data_devolucao").val();
@@ -40,53 +53,27 @@ function SelecionaCarro() {
 $(".btn-protecao").click(function (event) {
     event.preventDefault();
     FormProtecao.addClass("invisivel");
-    FormCliente.removeClass("invisivel");
+    formLogin.removeClass("invisivel");
     var td = $(this).parent().parent();
     
     idProtecao = td.find("td")[0].innerHTML;
 })
 
 function retornaCarros() {
-    var carros = $.get("http://localhost:50806/aluguel/BuscaCarros", function (carros) {
- 
+    $("#loading").toggle();
+    var carros = $.get("http://localhost:50806/aluguel/BuscaCarros", function (carros) {        
         for (var i = 0; i < carros.length; i++) {
             MontaCarro(carros[i].Id, carros[i].Modelo, carros[i].Marca, carros[i].Preco);
+            
         }
     })
-    
+    .always(function () { 
+        $("#loading").toggle();
+    })
+    .fail(function () {
+        $("#loading").toggle();
+    });
 }
-
-$("#btn-cadastrar").click(function () {
-    event.preventDefault();
-        
-    $.ajax({
-        dataType: "json",
-        type: "POST",
-        url: "/Aluguel/AdicionaUsuario",
-        data: {
-            Nome: $("#nome").val(),
-            Cpf: $("#cpf").val(),
-            Email: $("#email").val(),
-            Telefone: $("#telefone").val(),
-            Login: $("#login").val(),
-            Senha: $("#senha").val()
-        },
-        success: function (result) {            
-            $.ajax({
-                dataType: "json",
-                type: "POST",
-                url: "/Aluguel/Adiciona",
-                data: {
-                    dTRetirada: dataHoraRetirada,
-                    dTDevolucao: dataHoraDevolucao,
-                    IdCliente: result.id,
-                    IdCarro: idCarro,
-                    IdProtecao: idProtecao
-                }
-            })
-        }
-    })
-})
 
 function adicionaUsuario() {
     $.ajax({
@@ -108,7 +95,5 @@ function adicionaUsuario() {
 }
 
 function testesss() {
-    console.log(dataHoraRetirada);
-    console.log(dataHoraDevolucao);
     console.log(idCliente);
 }
