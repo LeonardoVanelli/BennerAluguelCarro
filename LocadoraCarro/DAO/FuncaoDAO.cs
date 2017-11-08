@@ -12,7 +12,7 @@ namespace LocadoraCarro.DAO
         {
             using (var context = new LocadoraContext())
             {
-                context.Funcao.Add(funcao);
+                context.Funcaos.Add(funcao);
                 context.SaveChanges();
             }
         }
@@ -30,7 +30,7 @@ namespace LocadoraCarro.DAO
         {
             using (var contexto = new LocadoraContext())
             {
-                return contexto.Funcao.ToList();
+                return contexto.Funcaos.ToList();
             }
         }
 
@@ -38,7 +38,7 @@ namespace LocadoraCarro.DAO
         {
             using (var contexto = new LocadoraContext())
             {
-                return contexto.Funcao.Find(id);
+                return contexto.Funcaos.Find(id);
             }
         }
 

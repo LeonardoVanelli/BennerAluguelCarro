@@ -7,13 +7,13 @@ namespace LocadoraCarro.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Funcao : IMigrationMetadata
+    public sealed partial class funcao22 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Funcao));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(funcao22));
         
         string IMigrationMetadata.Id
         {
-            get { return "201711082001445_Funcao"; }
+            get { return "201711082046125_funcao22"; }
         }
         
         string IMigrationMetadata.Source
