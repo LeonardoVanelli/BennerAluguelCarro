@@ -2,21 +2,22 @@
 <form class="data-hora">
     <h1>Aluguel</h1>
     <label for="nome">Data retirada:</label>
-    <input type="date" id="data_retirada" name="classe.Nome" class="form-control" />
+    <input type="date" id="data_retirada" name="classe.Nome" class="form-control date" />
 
     <label for="nome">Hora retirada:</label>
-    <input type="time" id="hora_retirada" name="classe.Nome" class="form-control" />
+    <input type="time" id="hora_retirada" name="classe.Nome" class="form-control date" />
 
     <label for="nome">Data devolução:</label>
-    <input type="date" id="data_devolucao" name="classe.Nome" class="form-control" />
+    <input type="date" id="data_devolucao" name="classe.Nome" class="form-control date" />
 
     <label for="nome">Hora devolução:</label>
-    <input type="time" id="hora_devolucao" name="classe.Nome" class="form-control" />
+    <input type="time" id="hora_devolucao" name="classe.Nome" class="form-control date" />
 
     <label for="nome">Idade:</label>
-    <input type="number" id="data_idade" name="classe.Nome" min="18" class="form-control" />
+    <input type="number" id="data_idade" name="classe.Nome" min="18" class="form-control date" />
 
-    <button id="btn-proximo">Proximo</button>
+    <button id="btn-proximo" type="button" class="btn btn-success">Proximo</button>
+
 </form>
 
 
@@ -43,9 +44,7 @@
                 <td>Descrição do nenhuma proteção</td>
                 <td>00,00R$</td>
                 <td>
-                    <a href="#" class="btn-protecao">
-                        <i class="small material-icons">Selecionar</i>
-                    </a>
+                    <a class="btn-protecao btn btn-success btn-xs" role="button">Selecionar</a>
                 </td>
             </tr>
             <tr>     
@@ -54,9 +53,7 @@
                 <td>Descrição da proteção basica</td>
                 <td>80,00R$</td>
                 <td>
-                    <a href="#" class="btn-protecao">
-                        <i class="small material-icons">Selecionar</i>
-                    </a>
+                    <a class="btn-protecao btn btn-success btn-xs" role="button">Selecionar</a>
                 </td>
             </tr>
             <tr>
@@ -65,9 +62,7 @@
                 <td>Proteção completa</td>
                 <td>120,00R$</td>
                 <td>
-                    <a href="#" class="btn-protecao">
-                        <i class="small material-icons">Selecionar</i>
-                    </a>
+                    <a class="btn-protecao btn btn-success btn-xs" role="button">Selecionar</a>
                 </td>
             </tr>
         </table>
@@ -80,10 +75,15 @@
         <input id="login_autentica" class="form-control" />
 
         <label for="senha">Senha:</label>
-        <input id="senha_autentica" type="password" class="form-control" />
+        <input id="senha_autentica" type="password" class="form-control margin-bot" />
 
-        <input id="btn-logar" type="submit" value="Logar" />
-        <p><a href="#ex1" rel="modal:open">Ainda não tem conta?</a></p>
+        <div id="fail-login" class="modal">
+            <p>Login ou senha incorreto</p>
+            <a class="btn btn-success" href="#" rel="modal:close">Fechar</a>
+        </div>
+
+        <input class="btn btn-success margin-bot" id="btn-logar" type="submit" value="Logar" />
+        <p><a class="btn btn-success" href="#ex1" rel="modal:open">Ainda não tem conta?</a></p>
     </form>
 </div>
 
@@ -108,8 +108,7 @@
     <label for="senha">Senha:</label>
     <input type="password" id="senha" name="cliente.Senha" class="form-control" />
 
-    <input id="btn-cadastrar" type="submit" value="Cadastrar" />
-
+    <button id="btn-cadastrar" type="button" class="btn btn-success">Cadastrar</button>
 </div>
 
 <div id="confirmacao" class="invisivel">
@@ -139,7 +138,7 @@
         <h3>Valor Total</h3>
         <p class="ul-carro" id="cTotal">Total: 200,00R$</p>
     </div>
-    <input id="btnConfirmar" type="submit" value="Confirmar" />
+    <input class="btn btn-success" id="btnConfirmar" type="submit" value="Confirmar" />
 </div>
 
 <div id="loading" class="center invisivel">

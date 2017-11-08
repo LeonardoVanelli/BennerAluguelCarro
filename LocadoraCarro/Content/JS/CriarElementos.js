@@ -19,7 +19,7 @@
     //Coloca p na div principal
     DCarroPrincipal.append(PId).append(PModelo).append(PMarca).append(PPreco);
     //cria botão
-    var botao = $("<button>").addClass("CarroSelecionado").attr("id", "btnSlcCarro").text("Selecionar")
+    var botao = $("<button>").addClass("CarroSelecionado").attr("id", "btnSlcCarro").text("Selecionar").addClass("btn btn-success")
     //Insere evento click no botao
     botao.click(SelecionaCarro)
     //Inasere botão na div principal

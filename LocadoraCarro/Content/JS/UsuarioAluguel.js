@@ -29,11 +29,13 @@ $("#btn-logar").click(function () {
             Senha: $("#senha_autentica").val()
         },
         success: function (result) {
-            if (result.id != 0){
+            if (result.id != 0) {
                 IdDoCliente = result.id
                 preencheConfirmacao(result.id);
-            }else
+            } else {
                 console.log("Cliete errrrro");
+                $("#fail-login").modal({});
+            }
         }
     })
 })
@@ -82,6 +84,7 @@ function AdicionaAluguel() {
         },
         error: function (result) {
             console.log("Falha ao cadastrar aluguel");
+            $("#login-invalido").toggle("invisivel")
         }
     })
 }

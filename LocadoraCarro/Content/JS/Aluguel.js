@@ -12,15 +12,27 @@ var idCliente;
 $("#btn-proximo").click(function () {
     event.preventDefault();    
     var FormData = $(".data-hora");
-    RetiraValorDataHora()
-
-    FormData.addClass("invisivel");
-    FormCarro.removeClass("invisivel");
-    retornaCarros();
+    RetiraValorDataHora();
+    if (ValidaCamposDatas()) {
+        FormData.addClass("invisivel");
+        FormCarro.removeClass("invisivel");
+        retornaCarros();
+    }
 })
+function ValidaCamposDatas (){
+    var patternData = /^[0-9]{4}\-[0-9]{2}\-[0-9]{2}$/;
+    console.log($("#data_retirada").val());
+    console.log(patternData);
+    if (!patternData.test($("#data_retirada").val())) {
+        alert("Digite a data no formato Dia/Mês/Ano");
+        return false;
+    }
+    return true
+}
 
 function RetiraValorDataHora() {
-    var dataRetirada  = $("#data_retirada") .val();
+
+    var dataRetirada = $("#data_retirada").val();
     
     var horaRetirada  = $("#hora_retirada") .val();
     var dataDevolucao = $("#data_devolucao").val();
