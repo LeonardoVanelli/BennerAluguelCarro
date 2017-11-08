@@ -33,7 +33,6 @@ $("#btn-logar").click(function () {
                 IdDoCliente = result.id
                 preencheConfirmacao(result.id);
             } else {
-                console.log("Cliete errrrro");
                 $("#fail-login").modal({});
             }
         }
@@ -57,7 +56,7 @@ $("#btn-cadastrar").click(function () {
         },
         success: function (result) {
             IdDoCliente = result.id
-            preencheConfirmacao(result.id);
+            preencheConfirmacao(result.id);           
         }
     })
 })
