@@ -144,6 +144,7 @@
     <Content Include="Content\Img\spinner.gif" />
     <Content Include="Content\JS\Aluguel.js" />
     <Content Include="Content\JS\CriarElementos.js" />
+    <Content Include="Content\JS\DateTime.js" />
     <Content Include="Content\JS\jquery.comiseo.daterangepicker.js" />
     <Content Include="Content\JS\jquery.comiseo.daterangepicker.min.js" />
     <Content Include="Content\JS\UsuarioAluguel.js" />

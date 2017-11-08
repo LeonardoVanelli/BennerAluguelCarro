@@ -18,10 +18,10 @@ $("#btn-proximo").click(function () {
         FormCarro.removeClass("invisivel");
         retornaCarros();
     }
-    console.log($("#data_retirada").val())
 })
+
 function ValidaCamposDatas() {
-    var patternData = /^[0-9]{4}\-[0-9]{2}\-[0-9]{2}$/;
+    var patternData = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
     if (!patternData.test($("#data_retirada").val())) {
         alert("Digite a data no formato Dia/Mês/Ano");
         return false;
@@ -93,6 +93,7 @@ function adicionaUsuario() {
     })
 }
 
-function testesss() {
-    console.log(idCliente);
+window.onbeforeunload = confirmExit;
+function confirmExit() {
+    return "Deseja realmente sair desta página?";
 }
