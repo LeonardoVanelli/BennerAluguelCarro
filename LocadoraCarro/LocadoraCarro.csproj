@@ -273,6 +273,7 @@
     <Compile Include="Filtros\AutorizacaoFilterClienteAttribute.cs" />
     <Compile Include="Filtros\AutorizacaoFiltroAdmAttribute.cs" />
     <Compile Include="Filtros\AutorizacaoFiltreFuncionarioAttribute.cs" />
+    <Compile Include="Filtros\JaEstaLogatoAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -470,6 +471,7 @@
     <Content Include="Views\Funcionario\Index.cshtml" />
     <Content Include="Views\Funcionario\Form.cshtml" />
     <Content Include="Views\Funcionario\Visualiza.cshtml" />
+    <Content Include="Views\Login\FalhaLogin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,4 +1,5 @@
 ﻿using LocadoraCarro.DAO;
+using LocadoraCarro.Filtros;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace LocadoraCarro.Controllers
     public class LoginController : Controller
     {
         // GET: Login
+        [JaEstaLogato]
         public ActionResult Index()
         {
             return View();
@@ -55,6 +57,11 @@ namespace LocadoraCarro.Controllers
             Session["clienteLogado"] = null;
 
             return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult FalhaLogin()
+        {
+            return View();
         }
     }
 }
