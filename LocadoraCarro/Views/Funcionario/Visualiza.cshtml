@@ -1,0 +1,32 @@
+﻿
+@model LocadoraCarro.Models.Funcionario
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Cpf</th>
+                <th>Nome</th>
+                <th>Data Nascimento</th>
+                <th>Função</th>
+                <th>Login</th>
+                <th>Senha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Id</td>
+                <td>@Model.Cpf</td>
+                <td>@Model.Nome</td>
+                <td>@Model.DataNascimento.ToString("dd/MM/yyyy")</td>
+                <td>@ViewBag.Funcao.Nome</td>
+                <td>@Model.Login</td>
+                <td>@Model.Senha</td>
+            </tr>
+        </tbody>
+    </table>
+
+    @Html.ActionLink("Remover", "Remove", new { id = Model.Id })
+    @Html.ActionLink("Voltar", "Index")
+
+

@@ -50,7 +50,7 @@ namespace LocadoraCarro.Controllers
             var cliente = new Cliente() { Nome = nome,
                                           Cpf = cpf,
                                           Email = email,
-                                          Telefono = telefone,
+                                          Telefone = telefone,
                                           Login = login,
                                           Senha = senha};
 

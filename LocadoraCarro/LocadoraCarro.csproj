@@ -253,6 +253,8 @@
     <Compile Include="Controllers\CarroController.cs" />
     <Compile Include="Controllers\ClasseController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\FuncaoController.cs" />
+    <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\HomeClienteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomeFuncController.cs" />
@@ -264,6 +266,8 @@
     <Compile Include="DAO\CarroDAO.cs" />
     <Compile Include="DAO\ClasseDAO.cs" />
     <Compile Include="DAO\ClienteDAO.cs" />
+    <Compile Include="DAO\FuncaoDAO.cs" />
+    <Compile Include="DAO\FuncionarioDAO.cs" />
     <Compile Include="DAO\LocadoraContext.cs" />
     <Compile Include="DAO\MarcaDAO.cs" />
     <Compile Include="DAO\ModeloDAO.cs" />
@@ -310,14 +314,6 @@
     <Compile Include="Migrations\201710241639355_Protecoes.cs" />
     <Compile Include="Migrations\201710241639355_Protecoes.Designer.cs">
       <DependentUpon>201710241639355_Protecoes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710241641241_Funcao.cs" />
-    <Compile Include="Migrations\201710241641241_Funcao.Designer.cs">
-      <DependentUpon>201710241641241_Funcao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710241644007_Funcao1.cs" />
-    <Compile Include="Migrations\201710241644007_Funcao1.Designer.cs">
-      <DependentUpon>201710241644007_Funcao1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201710241654059_Funcoes.cs" />
     <Compile Include="Migrations\201710241654059_Funcoes.Designer.cs">
@@ -375,11 +371,61 @@
     <Compile Include="Migrations\201711061544232_Alugel.Designer.cs">
       <DependentUpon>201711061544232_Alugel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711081937396_Cliente.cs" />
+    <Compile Include="Migrations\201711081937396_Cliente.Designer.cs">
+      <DependentUpon>201711081937396_Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711082002489_Funcao1.cs" />
+    <Compile Include="Migrations\201711082002489_Funcao1.Designer.cs">
+      <DependentUpon>201711082002489_Funcao1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711082005070_Funcao2.cs" />
+    <Compile Include="Migrations\201711082005070_Funcao2.Designer.cs">
+      <DependentUpon>201711082005070_Funcao2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711082007385_Funcionario.cs" />
+    <Compile Include="Migrations\201711082007385_Funcionario.Designer.cs">
+      <DependentUpon>201711082007385_Funcionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711082009346_Funcionario1.cs" />
+    <Compile Include="Migrations\201711082009346_Funcionario1.Designer.cs">
+      <DependentUpon>201711082009346_Funcionario1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711082044050_funcao.cs" />
+    <Compile Include="Migrations\201711082044050_funcao.Designer.cs">
+      <DependentUpon>201711082044050_funcao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711082046125_funcao22.cs" />
+    <Compile Include="Migrations\201711082046125_funcao22.Designer.cs">
+      <DependentUpon>201711082046125_funcao22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711082055252_Funcionario2.cs" />
+    <Compile Include="Migrations\201711082055252_Funcionario2.Designer.cs">
+      <DependentUpon>201711082055252_Funcionario2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711082057222_Funcionario3.cs" />
+    <Compile Include="Migrations\201711082057222_Funcionario3.Designer.cs">
+      <DependentUpon>201711082057222_Funcionario3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711082059596_Funcao23.cs" />
+    <Compile Include="Migrations\201711082059596_Funcao23.Designer.cs">
+      <DependentUpon>201711082059596_Funcao23.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711082101168_Funcao24.cs" />
+    <Compile Include="Migrations\201711082101168_Funcao24.Designer.cs">
+      <DependentUpon>201711082101168_Funcao24.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711082102422_Funcionario4.cs" />
+    <Compile Include="Migrations\201711082102422_Funcionario4.Designer.cs">
+      <DependentUpon>201711082102422_Funcionario4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluguel.cs" />
     <Compile Include="Models\Carro.cs" />
     <Compile Include="Models\Classe.cs" />
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Funcao.cs" />
+    <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Models\Marca.cs" />
     <Compile Include="Models\Modelo.cs" />
     <Compile Include="Models\Protecao.cs" />
@@ -420,6 +466,12 @@
     <Content Include="Views\Aluguel\Form.cshtml" />
     <Content Include="Views\Aluguel\Index.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Funcao\Index.cshtml" />
+    <Content Include="Views\Funcao\Form.cshtml" />
+    <Content Include="Views\Funcao\Visualiza.cshtml" />
+    <Content Include="Views\Funcionario\Index.cshtml" />
+    <Content Include="Views\Funcionario\Form.cshtml" />
+    <Content Include="Views\Funcionario\Visualiza.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -460,12 +512,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710241639355_Protecoes.resx">
       <DependentUpon>201710241639355_Protecoes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710241641241_Funcao.resx">
-      <DependentUpon>201710241641241_Funcao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710241644007_Funcao1.resx">
-      <DependentUpon>201710241644007_Funcao1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710241654059_Funcoes.resx">
       <DependentUpon>201710241654059_Funcoes.cs</DependentUpon>
@@ -508,6 +554,42 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711061544232_Alugel.resx">
       <DependentUpon>201711061544232_Alugel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711081937396_Cliente.resx">
+      <DependentUpon>201711081937396_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711082002489_Funcao1.resx">
+      <DependentUpon>201711082002489_Funcao1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711082005070_Funcao2.resx">
+      <DependentUpon>201711082005070_Funcao2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711082007385_Funcionario.resx">
+      <DependentUpon>201711082007385_Funcionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711082009346_Funcionario1.resx">
+      <DependentUpon>201711082009346_Funcionario1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711082044050_funcao.resx">
+      <DependentUpon>201711082044050_funcao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711082046125_funcao22.resx">
+      <DependentUpon>201711082046125_funcao22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711082055252_Funcionario2.resx">
+      <DependentUpon>201711082055252_Funcionario2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711082057222_Funcionario3.resx">
+      <DependentUpon>201711082057222_Funcionario3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711082059596_Funcao23.resx">
+      <DependentUpon>201711082059596_Funcao23.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711082101168_Funcao24.resx">
+      <DependentUpon>201711082101168_Funcao24.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711082102422_Funcionario4.resx">
+      <DependentUpon>201711082102422_Funcionario4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
