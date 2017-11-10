@@ -1,0 +1,27 @@
+﻿
+@model IList<LocadoraCarro.Models.Cliente>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cliente in Model)
+        {
+            <tr>
+                <td>@cliente.Id</td>
+                <td>
+                    @Html.ActionLink(cliente.Nome, "Visualiza", new { id = cliente.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+ 
+<form method="get" action="/Cliente/Form">
+    <button type="submit">Novo Cliente</button>
+</form>
+

@@ -1,0 +1,30 @@
+﻿@model IList<LocadoraCarro.Models.Aluguel>
+
+<h1>Meus Alugueis</h1>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Data Devolução</th>
+            <th>Data Retirada</th>
+            <th>Carro</th>
+            <th>Protecao</th>
+            <th>Cliente</th>
+        </tr>
+    </thead>
+    <tbody>        
+        @foreach (var aluguel in Model)
+        {
+            <tr>
+                <td>@aluguel.Id</td>
+                <td>@aluguel.DataHoraDevolucao</td>
+                <td>@aluguel.DataHoraRetirada</td>
+                <td>@aluguel.CarroId</td>
+                <td>@aluguel.ProtecaoId</td>
+                <td>@aluguel.ClienteId</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<button  class="btn btn-success" onclick="location.href='@Url.Action("Form", "Aluguel")';return false;">Alugue já</button>
+
