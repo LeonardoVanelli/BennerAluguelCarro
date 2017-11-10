@@ -255,9 +255,7 @@
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\FuncaoController.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
-    <Compile Include="Controllers\HomeClienteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\HomeFuncController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MarcaController.cs" />
     <Compile Include="Controllers\ModeloController.cs" />
@@ -461,9 +459,6 @@
     <Content Include="Views\Carro\Index.cshtml" />
     <Content Include="Views\Carro\Form.cshtml" />
     <Content Include="Views\Carro\Visualiza.cshtml" />
-    <Content Include="Views\Shared\_LayoutCliente.cshtml" />
-    <Content Include="Views\Shared\_LayoutFuncionario.cshtml" />
-    <Content Include="Views\HomeFunc\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\AluguelCarro.cshtml" />
     <Content Include="Views\Aluguel\Form.cshtml" />
@@ -482,9 +477,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\HomeCliente\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710241324499_Modelo.resx">
       <DependentUpon>201710241324499_Modelo.cs</DependentUpon>
