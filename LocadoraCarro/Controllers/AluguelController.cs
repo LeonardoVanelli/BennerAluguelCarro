@@ -15,16 +15,23 @@ namespace LocadoraCarro.Controllers
         [AutorizacaoFilterCliente]
         public ActionResult Index()
         {
-            IList<Aluguel> aluguel = new List<Aluguel>();
+            IList<Aluguel> alugueis = new List<Aluguel>();
+            IList<Cliente> clientes = new List<Cliente>();
+
             Cliente cliente = (Cliente)(Session["clienteLogado"]);
             if (cliente != null)
             {
-                aluguel = new AluguelDAO().ListaPorUsuario(cliente.Id);
+                alugueis = new AluguelDAO().ListaPorUsuario(cliente.Id);                
             } else if (Session["funcionarioLogado"] != null)
             {
-                aluguel = new AluguelDAO().Lista();
+                alugueis = new AluguelDAO().Lista();
+                foreach (var aluguel in alugueis)
+                {
+                    clientes.Add( new ClienteDAO().BuscaPorId(aluguel.ClienteId) );
+                }             
             }
-            return View(aluguel);
+            ViewBag.Cliente = clientes;
+            return View(alugueis);
         }
 
         public ActionResult Form()
