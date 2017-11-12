@@ -26,6 +26,8 @@ namespace LocadoraCarro.Controllers
 
         public ActionResult Form()
         {
+            ViewBag.ClienteLogado     = Session["clienteLogado"];
+            ViewBag.FuncionarioLogado = Session["funcionarioLogado"];
             return View();
         }
 

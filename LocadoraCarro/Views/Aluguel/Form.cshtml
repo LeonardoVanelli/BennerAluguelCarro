@@ -80,21 +80,26 @@
 </div>
 
 <div class="clienteLogar invisivel">
-    <form>
-        <label for="login">Login:</label>
-        <input id="login_autentica" class="form-control" />
+    @if (ViewBag.ClienteLogado == null)
+    {
+        <form>
+            <label for="login">Login:</label>
+            <input id="login_autentica" class="form-control" />
+            <label for="senha">Senha:</label>
+            <input id="senha_autentica" type="password" class="form-control margin-bot" />
+            <div id="fail-login" class="modal">
+                <p>Login ou senha incorreto</p>
+                <a class="btn btn-success" href="#" rel="modal:close">Fechar</a>
+            </div>
+            <input class="btn btn-success margin-bot" id="btn-logar" type="submit" value="Logar" />
+            <p><a class="btn btn-success" href="#ex1" rel="modal:open">Ainda não tem conta?</a></p>
+        </form>
+    }
+    else
+    {
+        
+    }
 
-        <label for="senha">Senha:</label>
-        <input id="senha_autentica" type="password" class="form-control margin-bot" />
-
-        <div id="fail-login" class="modal">
-            <p>Login ou senha incorreto</p>
-            <a class="btn btn-success" href="#" rel="modal:close">Fechar</a>
-        </div>
-
-        <input class="btn btn-success margin-bot" id="btn-logar" type="submit" value="Logar" />
-        <p><a class="btn btn-success" href="#ex1" rel="modal:open">Ainda não tem conta?</a></p>
-    </form>
 </div>
 
 <div id="ex1" class="cliente modal">
