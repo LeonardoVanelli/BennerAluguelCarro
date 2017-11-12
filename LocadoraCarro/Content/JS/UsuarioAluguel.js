@@ -30,8 +30,9 @@ $("#btn-logar").click(function () {
         },
         success: function (result) {
             if (result.id != 0) {
-                IdDoCliente = result.id
-                preencheConfirmacao(result.id);
+                $("#btn-login").text("Sair");
+                IdDoCliente = result.id;
+                preencheConfirmacao(result.id);              
             } else {
                 $("#fail-login").modal({});
             }
@@ -55,8 +56,18 @@ $("#btn-cadastrar").click(function () {
             Senha: $("#senha").val()
         },
         success: function (result) {
-            IdDoCliente = result.id
-            preencheConfirmacao(result.id);           
+            $.ajax({
+                dataType: "json",
+                type: "POST",
+                url: "/Login/autenticaAluguel",
+                data: {
+                    Login: result.login,
+                    Senha: result.senha
+                }
+            });
+            $("#btn-login").text("Sair");
+            IdDoCliente = result.id;
+            preencheConfirmacao(result.id);
         }
     })
 })
@@ -88,14 +99,16 @@ function AdicionaAluguel() {
     })
 }
 
-function preencheConfirmacao(idCliente) {
-    console.log(idCliente);
+function preencheConfirmacao(idClient) {
+    console.log(idClient);
+    console.log(idCarro);
+    console.log(idProtecao);
     $.ajax({
         dataType: "json",
         type: "POST",
         url: "/Aluguel/RetornaConfirmacao",
         data: {
-            IdCliente: idCliente,
+            IdCliente: idClient,
             IdCarro: idCarro,
             IdProtecao: idProtecao
         },
