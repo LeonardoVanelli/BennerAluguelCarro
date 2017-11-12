@@ -20,14 +20,18 @@ namespace LocadoraCarro.Controllers
             if (cliente != null)
             {
                 aluguel = new AluguelDAO().ListaPorUsuario(cliente.Id);
+            } else if (Session["funcionarioLogado"] != null)
+            {
+                aluguel = new AluguelDAO().Lista();
             }
             return View(aluguel);
         }
 
         public ActionResult Form()
         {
-            ViewBag.ClienteLogado     = Session["clienteLogado"];
-            ViewBag.FuncionarioLogado = Session["funcionarioLogado"];
+            if (Session["clienteLogado"] != null)
+                 ViewBag.ClienteLogado = ( (Cliente)(Session["clienteLogado"]) ).Id;
+            else ViewBag.ClienteLogado = 0;
             return View();
         }
 
@@ -68,7 +72,9 @@ namespace LocadoraCarro.Controllers
             dao.Adiciona(cliente);
             var usuarioCriado = dao.BuscaPorLoginSenha(login, senha);
 
-            var data = new { id = usuarioCriado.Id };
+            var data = new { id = usuarioCriado.Id,
+                             login = usuarioCriado.Login,
+                             senha = usuarioCriado.Senha};
             return Json(data);
         }
 

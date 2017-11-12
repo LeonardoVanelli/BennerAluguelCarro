@@ -47,7 +47,10 @@ namespace LocadoraCarro.Controllers
             var usuario = dao.BuscaPorLoginSenha(login, senha);
 
             if (usuario != null)
-                return Json(new { id = usuario.Id });
+            {
+                Session["clienteLogado"] = usuario;
+                return Json(new { id = usuario.Id });             
+            }            
             return Json(new { id = 0 });
         }
             

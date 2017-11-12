@@ -51,11 +51,15 @@ function SelecionaCarro() {
 
 $(".btn-protecao").click(function (event) {
     event.preventDefault();
-    FormProtecao.addClass("invisivel");
-    formLogin.removeClass("invisivel");
     var td = $(this).parent().parent();
-    
     idProtecao = td.find("td")[0].innerHTML;
+    FormProtecao.addClass("invisivel");
+    if ($("#cliente-logado").text() != 0) {
+        IdDoCliente = $("#cliente-logado").text()
+        preencheConfirmacao( $("#cliente-logado").text() );
+    } else {
+        formLogin.removeClass("invisivel");
+    }        
 })
 
 function retornaCarros() {
