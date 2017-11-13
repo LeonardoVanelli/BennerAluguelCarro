@@ -11,7 +11,7 @@ var idCliente;
 
 $("#btn-proximo").click(function () {
     event.preventDefault();    
-    var FormData = $(".data-hora");
+    var FormData = $(".data-hora"); 
     RetiraValorDataHora();
     if (ValidaCamposDatas()) {
         FormData.addClass("invisivel");
@@ -66,7 +66,7 @@ function retornaCarros() {
     $("#loading").toggle();
     var carros = $.get("http://localhost:50806/aluguel/BuscaCarros", function (carros) {        
         for (var i = 0; i < carros.length; i++) {
-            MontaCarro(carros[i].Id, carros[i].Modelo, carros[i].Marca, carros[i].Preco);
+            MontaCarro(carros[i].Id, carros[i].Modelo, carros[i].Marca, carros[i].Preco, carros[i].Imagem);
             
         }
     })

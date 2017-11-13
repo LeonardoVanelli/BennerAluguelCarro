@@ -54,7 +54,8 @@ namespace LocadoraCarro.Controllers
                     Id = carro.Id,
                     Modelo = modelo.Nome,
                     Marca = new MarcaDAO().BuscaPorId(modelo.MarcaId).Nome,
-                    Preco = carro.PrecoDia
+                    Preco = carro.PrecoDia,
+                    Imagem = carro.Imagem
                 });
             }
             return Json(resultado, JsonRequestBehavior.AllowGet);
@@ -117,7 +118,8 @@ namespace LocadoraCarro.Controllers
                 Marca = marca.Nome,
                 PrecoCar = carro.PrecoDia,
                 Protecao = protecao.Nome,
-                PrecoProtecao = protecao.PrecoDia
+                PrecoProtecao = protecao.PrecoDia,
+                Imagem = carro.Imagem
             };
 
             return Json(JsonAluguel);

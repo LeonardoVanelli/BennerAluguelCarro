@@ -116,6 +116,7 @@ function preencheConfirmacao(idClient) {
             $("#loading").toggle();
         },
         success: function (aluguel) {
+            $("#confirma-imagem").attr("src", aluguel.Imagem)
             $("#cModelo-car").text("Modelo: " + aluguel.Modelo);
             $("#cMarca-car").text("Marca " + aluguel.Marca);
             $("#cPreco-car").text(aluguel.PrecoCar + ",00R$");
