@@ -4,12 +4,6 @@ var formConfirmacao = $("#confirmacao");
 
 var IdDoCliente;
 
-$("#btn-cadastro").click(function () {
-    event.preventDefault();
-
-
-})
-
 $("#btn-login").click(function () {
     event.preventDefault();
 
@@ -66,7 +60,8 @@ $("#btn-cadastrar").click(function () {
                 }
             });
             $("#btn-loginHome").text("Sair");
-            IdDoCliente = result.id;
+            $('#ex1').modal('hide');
+            IdDoCliente = result.id;            
             preencheConfirmacao(result.id);
         }
     })
