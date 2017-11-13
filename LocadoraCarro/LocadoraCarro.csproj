@@ -146,10 +146,12 @@
     <Content Include="Content\JS\CriarElementos.js" />
     <Content Include="Content\JS\DateTime.js" />
     <Content Include="Content\JS\FiltroAluguel.js" />
+    <Content Include="Content\JS\ImagemCarro.js" />
     <Content Include="Content\JS\jquery.comiseo.daterangepicker.js" />
     <Content Include="Content\JS\jquery.comiseo.daterangepicker.min.js" />
     <Content Include="Content\JS\UsuarioAluguel.js" />
     <Content Include="Content\JS\jquery-3.2.1.js" />
+    <Content Include="Content\JS\VisualizaCarro.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
@@ -422,6 +424,10 @@
     <Compile Include="Migrations\201711082102422_Funcionario4.Designer.cs">
       <DependentUpon>201711082102422_Funcionario4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711131940064_Carro.cs" />
+    <Compile Include="Migrations\201711131940064_Carro.Designer.cs">
+      <DependentUpon>201711131940064_Carro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluguel.cs" />
     <Compile Include="Models\Carro.cs" />
@@ -589,6 +595,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711082102422_Funcionario4.resx">
       <DependentUpon>201711082102422_Funcionario4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711131940064_Carro.resx">
+      <DependentUpon>201711131940064_Carro.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
