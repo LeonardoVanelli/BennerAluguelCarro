@@ -30,7 +30,7 @@ $("#btn-logar").click(function () {
         },
         success: function (result) {
             if (result.id != 0) {
-                $("#btn-login").text("Sair");
+                $("#btn-loginHome").text("Sair");
                 IdDoCliente = result.id;
                 preencheConfirmacao(result.id);              
             } else {
@@ -65,7 +65,7 @@ $("#btn-cadastrar").click(function () {
                     Senha: result.senha
                 }
             });
-            $("#btn-login").text("Sair");
+            $("#btn-loginHome").text("Sair");
             IdDoCliente = result.id;
             preencheConfirmacao(result.id);
         }
@@ -138,6 +138,7 @@ function preencheConfirmacao(idClient) {
 
 $("#btnConfirmar").click(function () {
     console.log("Id  do cliente: " + IdDoCliente);
+    PerguntarSeQuerSair = false;
     AdicionaAluguel()
 })
 

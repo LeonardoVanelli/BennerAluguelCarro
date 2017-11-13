@@ -8,6 +8,7 @@ var dataHoraDevolucao;
 var idCarro;
 var idProtecao;
 var idCliente;
+var PerguntarSeQuerSair = true;
 
 $("#btn-proximo").click(function () {
     event.preventDefault();    
@@ -97,7 +98,10 @@ function adicionaUsuario() {
     })
 }
 
+
 window.onbeforeunload = confirmExit;
 function confirmExit() {
-    return "Deseja realmente sair desta página?";
+    if (PerguntarSeQuerSair == true) {
+        return "Deseja realmente sair desta página?"
+    }else{return}
 }
