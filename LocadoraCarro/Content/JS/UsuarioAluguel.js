@@ -4,12 +4,6 @@ var formConfirmacao = $("#confirmacao");
 
 var IdDoCliente;
 
-$("#btn-cadastro").click(function () {
-    event.preventDefault();
-
-
-})
-
 $("#btn-login").click(function () {
     event.preventDefault();
 
@@ -30,7 +24,7 @@ $("#btn-logar").click(function () {
         },
         success: function (result) {
             if (result.id != 0) {
-                $("#btn-login").text("Sair");
+                $("#btn-loginHome").text("Sair");
                 IdDoCliente = result.id;
                 preencheConfirmacao(result.id);              
             } else {
@@ -65,8 +59,9 @@ $("#btn-cadastrar").click(function () {
                     Senha: result.senha
                 }
             });
-            $("#btn-login").text("Sair");
-            IdDoCliente = result.id;
+            $("#btn-loginHome").text("Sair");
+            $('#ex1').modal('hide');
+            IdDoCliente = result.id;            
             preencheConfirmacao(result.id);
         }
     })
@@ -116,6 +111,7 @@ function preencheConfirmacao(idClient) {
             $("#loading").toggle();
         },
         success: function (aluguel) {
+            $("#confirma-imagem").attr("src", aluguel.Imagem)
             $("#cModelo-car").text("Modelo: " + aluguel.Modelo);
             $("#cMarca-car").text("Marca " + aluguel.Marca);
             $("#cPreco-car").text(aluguel.PrecoCar + ",00R$");
@@ -137,6 +133,7 @@ function preencheConfirmacao(idClient) {
 
 $("#btnConfirmar").click(function () {
     console.log("Id  do cliente: " + IdDoCliente);
+    PerguntarSeQuerSair = false;
     AdicionaAluguel()
 })
 

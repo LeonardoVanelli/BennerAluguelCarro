@@ -15,16 +15,23 @@ namespace LocadoraCarro.Controllers
         [AutorizacaoFilterCliente]
         public ActionResult Index()
         {
-            IList<Aluguel> aluguel = new List<Aluguel>();
+            IList<Aluguel> alugueis = new List<Aluguel>();
+            IList<Cliente> clientes = new List<Cliente>();
+
             Cliente cliente = (Cliente)(Session["clienteLogado"]);
             if (cliente != null)
             {
-                aluguel = new AluguelDAO().ListaPorUsuario(cliente.Id);
+                alugueis = new AluguelDAO().ListaPorUsuario(cliente.Id);                
             } else if (Session["funcionarioLogado"] != null)
             {
-                aluguel = new AluguelDAO().Lista();
+                alugueis = new AluguelDAO().Lista();
+                foreach (var aluguel in alugueis)
+                {
+                    clientes.Add( new ClienteDAO().BuscaPorId(aluguel.ClienteId) );
+                }             
             }
-            return View(aluguel);
+            ViewBag.Cliente = clientes;
+            return View(alugueis);
         }
 
         public ActionResult Form()
@@ -47,7 +54,8 @@ namespace LocadoraCarro.Controllers
                     Id = carro.Id,
                     Modelo = modelo.Nome,
                     Marca = new MarcaDAO().BuscaPorId(modelo.MarcaId).Nome,
-                    Preco = carro.PrecoDia
+                    Preco = carro.PrecoDia,
+                    Imagem = carro.Imagem
                 });
             }
             return Json(resultado, JsonRequestBehavior.AllowGet);
@@ -110,7 +118,8 @@ namespace LocadoraCarro.Controllers
                 Marca = marca.Nome,
                 PrecoCar = carro.PrecoDia,
                 Protecao = protecao.Nome,
-                PrecoProtecao = protecao.PrecoDia
+                PrecoProtecao = protecao.PrecoDia,
+                Imagem = carro.Imagem
             };
 
             return Json(JsonAluguel);

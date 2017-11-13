@@ -1,5 +1,7 @@
 ﻿
-<table class="table table-dark">
+<img id="Imagem-Carro" />
+<label class="invisivel" id="src-imagem">@ViewBag.Carro.Imagem</label>
+<table class="table table-dark">  
     <thead>
         <tr>
             <th >Id</th>
@@ -28,3 +30,5 @@
 
 @Html.ActionLink("Remover", "Remove", new { id = @ViewBag.Carro.Id })
 @Html.ActionLink("Voltar", "Index")
+
+<script type="text/javascript" src="~/Content/JS/VisualizaCarro.js"></script>

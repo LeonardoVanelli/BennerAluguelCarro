@@ -1,6 +1,8 @@
 ﻿@model IList<LocadoraCarro.Models.Aluguel>
 
 <h1>Meus Alugueis</h1>
+<label>Filtro: </label>
+<input id="filtro" type="text"/>
 <table class="table table-hover">
     <thead>
         <tr>
@@ -12,7 +14,7 @@
             <th>Cliente</th>
         </tr>
     </thead>
-    <tbody>        
+    <tbody>
         @foreach (var aluguel in Model)
         {
             <tr>
@@ -21,10 +23,11 @@
                 <td>@aluguel.DataHoraRetirada</td>
                 <td>@aluguel.CarroId</td>
                 <td>@aluguel.ProtecaoId</td>
-                <td>@aluguel.ClienteId</td>
+                <td class="Campo-Cliente">@aluguel.ClienteId</td>
             </tr>
-        }
-    </tbody>
+        }</tbody>
 </table>
 <button  class="btn btn-success" onclick="location.href='@Url.Action("Form", "Aluguel")';return false;">Alugue já</button>
+
+<script type="text/javascript" src="~/Content/JS/FiltroAluguel.js"></script>
 

@@ -1,13 +1,13 @@
-﻿function MontaCarro(id, modelo, marca, preco) {
+﻿function MontaCarro(id, modelo, marca, preco, imagem) {
     //Cria Div principal
     var DCarroPrincipal = $("<div>").addClass("lbl-carros");
     //cria div imagem e adiciona img
     var DCarroImagem = $("<div>").addClass("Img_car1");
-    var IImgCarro = $("<img>").attr("src", "/Content/CarrosImg/FordFocus.jpg").addClass("img-carro");
+    var IImgCarro = $("<img>").attr("src", imagem).addClass("img-carro");
     //Junta img com div imagem
     DCarroImagem.append(IImgCarro);
     //junta div principal com div img
-    DCarroPrincipal.append(DCarroImagem);
+    DCarroPrincipal.append(DCarroImagem); 
     //cria p Id invisivel
     var PId = $("<p>").addClass("ul-carro").addClass("invisivel").attr("id", "modelo-car").text(id);
     //cria p modelo

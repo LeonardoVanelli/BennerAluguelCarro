@@ -1,4 +1,4 @@
-﻿<label id="cliente-logado">@ViewBag.ClienteLogado</label>
+﻿<label id="cliente-logado" class="invisivel">@ViewBag.ClienteLogado</label>
 
 <form class="data-hora">
     <h1 class="center">Aluguel</h1>
@@ -11,7 +11,12 @@
     </div>
 
     <label class="informacao-data">Hora retirada:</label>
-    <input type="time" id="hora_retirada" class="form-control date" />
+    <div class='input-group date' id='datetimepicker3'>
+        <input type='text' id="hora_retirada" class="form-control" />
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-time"></span>
+        </span>
+    </div>
 
     <label class="informacao-data">Data devolução:</label>
     <div class='input-group date' id='datetimepicker7'>
@@ -19,11 +24,15 @@
         <span class="input-group-addon">
             <span class="glyphicon glyphicon-calendar"></span>
         </span>
-
     </div>
 
     <label class="informacao-data">Hora devolução:</label>
-    <input type="time" id="hora_devolucao" class="form-control date" />
+    <div class='input-group date' id='datetimepicker2'>
+        <input type='text' id="hora_devolucao" class="form-control" />
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-time"></span>
+        </span>
+    </div>
 
     <label class="informacao-data">Idade:</label>
     <input type="number" id="data_idade" min="18" class="form-control date" />
@@ -121,7 +130,7 @@
 
 <div id="confirmacao" class="invisivel">
     <div class="Img_car1 lbl-carro">
-        <img src="/Content/CarrosImg/FordFocus.jpg" class="img-carro">
+        <img id="confirma-imagem" src="/Content/CarrosImg/FordFocus.jpg" class="img-carro">
     </div>
     <div class="lbl-carros">
         <h3>Carro</h3>
