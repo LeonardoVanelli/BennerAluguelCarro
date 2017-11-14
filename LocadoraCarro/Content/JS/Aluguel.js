@@ -5,6 +5,7 @@ var FormUsuario = $(".escolhaCliente");
 
 var dataHoraRetirada;
 var dataHoraDevolucao;
+var diasAlugado;
 var idCarro;
 var idProtecao;
 var idCliente;
@@ -41,6 +42,7 @@ function RetiraValorDataHora() {
     
     dataHoraRetirada = dataRetirada + " " + horaRetirada;
     dataHoraDevolucao = dataDevolucao + " " + horaDevolucao;
+    diasAlugado = dataHoraDevolucao.substring(0, 2) - dataRetirada.substring(0, 2) + 1;
 }
 function SelecionaCarro() {
     event.preventDefault();

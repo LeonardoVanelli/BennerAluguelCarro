@@ -22,7 +22,6 @@
     <div id="menu-top" class="container">
         <div class="header">
             <ul class="nav nav-pills pull-right">
-                <li>@Html.ActionLink("Aluguel", "Form", "Aluguel")</li>
                 
                 @if (Session["funcionarioLogado"] != null || Session["clienteLogado"] != null)
                 {
@@ -38,9 +37,14 @@
         <div>
         <div id="menu-lateral">
             <ul class="nav nav-pills pull-right">
+                @if (Session["clienteLogado"] == null & Session["funcionarioLogado"] == null)
+                {
+                    <li>@Html.ActionLink("Alugue já", "Form", "Aluguel")</li>
+                }
                 <!-- Papel do Cliente+ -->
                 @if (Session["clienteLogado"] != null)
                 {
+                    <li>@Html.ActionLink("Aluguel", "Form", "Aluguel")</li>
                     <li>@Html.ActionLink("Meus aluguéis", "index", "Aluguel")</li>
                 }
                 @if (Session["funcionarioLogado"] != null)
