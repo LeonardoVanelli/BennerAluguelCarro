@@ -48,16 +48,19 @@
                     <!-- Papel do gerente+ -->
                     if (((LocadoraCarro.Models.Funcionario)(Session["funcionarioLogado"])).FuncaoId == 3)
                     {                        
+                        <li>Funcionario</li>
                         <li>@Html.ActionLink("Funções"     , "Index", "Funcao")</li>
                         <li>@Html.ActionLink("Funcionarios", "Index", "Funcionario")</li>
                     }
                     <!-- Papel Funcionario+ -->
                     <li>@Html.ActionLink("Alugueis", "Index", "Aluguel")</li>
+                    <li>Carros</li>
                     <li>@Html.ActionLink("Modelos dos carros", "Index", "Modelo")</li>
                     <li>@Html.ActionLink("Marca dos carros"  , "Index", "Marca")</li>
                     <li>@Html.ActionLink("Classes dos carros", "Index", "Classe")</li>
                     <li>@Html.ActionLink("Proteção"          , "Index", "Protecao")</li>
                     <li>@Html.ActionLink("Carros"            , "Index", "Carro")</li>
+                    <li>Clientes</li> 
                     <li>@Html.ActionLink("Clientes"          , "index", "Cliente")</li>                    
                 }
             </ul>
