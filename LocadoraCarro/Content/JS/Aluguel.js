@@ -67,18 +67,22 @@ $(".btn-protecao").click(function (event) {
 
 function retornaCarros() {
     $("#loading").toggle();
-    var carros = $.get("http://localhost:50806/aluguel/BuscaCarros", function (carros) {        
-        for (var i = 0; i < carros.length; i++) {
-            MontaCarro(carros[i].Id, carros[i].Modelo, carros[i].Marca, carros[i].Preco, carros[i].Imagem);
-            
+    console.log(dataHoraRetirada);
+    console.log(dataHoraDevolucao);
+    $.ajax({
+        dataType: "json",
+        type: "POST",
+        url: "/Aluguel/BuscaCarros",
+        data: {
+            dataRetirada: dataHoraRetirada,
+            dataDevolucao: dataHoraDevolucao
+        },
+        success: function (carros) {
+            for (var i = 0; i < carros.length; i++) {
+                MontaCarro(carros[i].Id, carros[i].Modelo, carros[i].Marca, carros[i].Preco, carros[i].Imagem);
+            }
         }
     })
-    .always(function () { 
-        $("#loading").toggle();
-    })
-    .fail(function () {
-        $("#loading").toggle();
-    });
 }
 
 function adicionaUsuario() {

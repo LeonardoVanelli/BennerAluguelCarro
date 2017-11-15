@@ -42,23 +42,77 @@ namespace LocadoraCarro.Controllers
             return View();
         }
 
-        public JsonResult BuscaCarros()
+        public JsonResult BuscaCarros(string dataRetirada, string dataDevolucao)
         {
-            List<Object> resultado = new List<object>();
+            var resultado = new List<object>();
+            var retirada  = DateTime.Parse(dataRetirada);
+            var devolucao = DateTime.Parse(dataDevolucao);
+
 
             foreach (var carro in new CarroDAO().Lista())
             {
-                var modelo = new ModeloDAO().BuscaPorId(carro.ModeloId);
-                resultado.Add(new
+                var dataDisponivel = true;
+                var qtdDisponivel = true;
+                var EstoqueDisponivel = true;
+
+                if (carro.QtdDisponivel == 0)
                 {
-                    Id = carro.Id,
-                    Modelo = modelo.Nome,
-                    Marca = new MarcaDAO().BuscaPorId(modelo.MarcaId).Nome,
-                    Preco = carro.PrecoDia,
-                    Imagem = carro.Imagem
-                });
+                    qtdDisponivel = false;
+                } 
+
+                var alugueis = new AluguelDAO().BuscaPorIdCarro(carro.Id);
+
+                if (alugueis.Count == 0 & qtdDisponivel == false)
+                {
+                    EstoqueDisponivel = false;
+                } else
+                {
+                    foreach (var aluguel in alugueis)
+                    {
+                        //if (aluguel.Estato != 2)                       
+                        //{
+                        dataDisponivel = CarroEmUso(aluguel, retirada, devolucao);
+                        //}                          
+
+                    }
+                }
+                if (EstoqueDisponivel)
+                {
+                    if (dataDisponivel || qtdDisponivel)
+                    {
+                        var modelo = new ModeloDAO().BuscaPorId(carro.ModeloId);
+                        resultado.Add(new
+                        {
+                            Id = carro.Id,
+                            Modelo = modelo.Nome,
+                            Marca = new MarcaDAO().BuscaPorId(modelo.MarcaId).Nome,
+                            Preco = carro.PrecoDia,
+                            Imagem = carro.Imagem
+                        });
+                    }
+                }                  
             }
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            return Json(resultado, JsonRequestBehavior.AllowGet);         
+        }
+
+        public bool CarroEmUso(Aluguel aluguel, DateTime retirada, DateTime devolucao)
+        {
+            var carroSemUso = true;
+            var x = aluguel.DataHoraRetirada.DayOfYear;
+            while (x <= aluguel.DataHoraDevolucao.DayOfYear)
+            {
+                var y = retirada.DayOfYear;
+                while (y <= devolucao.DayOfYear)
+                {
+                    if (x.Equals(y))
+                    {
+                        carroSemUso = false;
+                    }
+                    y++;
+                }
+                x++;
+            }
+            return carroSemUso;
         }
 
         public JsonResult BuscaProtecoes()
@@ -100,8 +154,19 @@ namespace LocadoraCarro.Controllers
 
             new AluguelDAO().Adiciona(aluguel);
 
+            decrementaQtdCarroDisponivel(idCarro);
+
             return Json(aluguel);
         }
+
+        public void decrementaQtdCarroDisponivel(int id)
+        {
+            var dao = new CarroDAO();
+            var carro = dao.BuscaPorId(id);
+            carro.QtdDisponivel--;
+            dao.Atualiza(carro);
+        }
+
         public JsonResult RetornaConfirmacao(int idCliente, int idCarro, int idProtecao)
         {
             //cria json 
@@ -123,6 +188,20 @@ namespace LocadoraCarro.Controllers
             };
 
             return Json(JsonAluguel);
+        }
+        public JsonResult Remove(int id)
+        {
+            var daoAluguel = new AluguelDAO();
+            var aluguel = daoAluguel.BuscaPorId(id);
+
+            daoAluguel.Remove(aluguel);
+
+            var daoCarro = new CarroDAO();
+            var carro = daoCarro.BuscaPorId(aluguel.CarroId);
+            carro.QtdDisponivel++;
+            daoCarro.Atualiza(carro);
+
+            return Json(new { id = 1 });
         }
     }
 }
