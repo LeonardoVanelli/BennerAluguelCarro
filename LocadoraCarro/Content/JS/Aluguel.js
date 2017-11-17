@@ -13,7 +13,7 @@ var PerguntarSeQuerSair = true;
 
 $("#btn-proximo").click(function () {
     event.preventDefault();    
-    var FormData = $(".data-hora"); 
+    var FormData = $(".data-hora");   
     RetiraValorDataHora();
     if (ValidaCamposDatas()) {
         FormData.addClass("invisivel");
@@ -21,15 +21,6 @@ $("#btn-proximo").click(function () {
         retornaCarros();
     }
 })
-
-function ValidaCamposDatas() {
-    var patternData = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
-    if (!patternData.test($("#data_retirada").val())) {
-        alert("Digite a data no formato Dia/Mês/Ano");
-        return false;
-    }
-    return true
-}
 
 function RetiraValorDataHora() {
 

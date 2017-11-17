@@ -120,3 +120,7 @@ body {
 .login-screen {
     margin-top: 30%;
 }
+
+.campoInvalido {
+    border: 3px solid red;
+}

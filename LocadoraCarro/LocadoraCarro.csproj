@@ -152,6 +152,7 @@
     <Content Include="Content\JS\jquery.comiseo.daterangepicker.min.js" />
     <Content Include="Content\JS\UsuarioAluguel.js" />
     <Content Include="Content\JS\jquery-3.2.1.js" />
+    <Content Include="Content\JS\ValidacaoAluguel.js" />
     <Content Include="Content\JS\VisualizaCarro.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
