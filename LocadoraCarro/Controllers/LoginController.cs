@@ -20,18 +20,17 @@ namespace LocadoraCarro.Controllers
         public ActionResult Autentica(string login, string senha)
         {
             var daoCliente = new ClienteDAO();
-            var usuario = daoCliente.BuscaPorLoginSenha(login, senha);
+            var daoFuncionario = new FuncionarioDAO();
+            var usuario = daoCliente.BuscaPorLoginSenha(login, senha);            
+            var funcioanrio = daoFuncionario.BuscaPorLoginSenha(login, senha);
 
             if (usuario != null)
             {
                 Session["clienteLogado"] = usuario;
                 return RedirectToAction("Index", "Home");
             }
-            else if (usuario == null)
-            {
-                var daoFuncionario = new FuncionarioDAO();
-                var funcioanrio = daoFuncionario.BuscaPorLoginSenha(login, senha);
-
+            else if (funcioanrio != null)
+            {               
                 Session["funcionarioLogado"] = funcioanrio;
                 return RedirectToAction("Index", "Home");                
             }

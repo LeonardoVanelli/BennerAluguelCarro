@@ -2,22 +2,23 @@
 
 campoFiltro.addEventListener("input", function () {
 
-    var pacientes = $(".Campo-doCliente");
+    var cliente = $(".Campo-doCliente");
+    var trDosClientes = $(".TrAluguelDosClientes");
 
     if (this.value.length > 0) {
-        for (var i = 0; i < pacientes.length; i++) {
-            var nome = $(pacientes[i]).text();
+        for (var i = 0; i < cliente.length; i++) {
+            var nome = $(cliente[i]).text();
 
             var expressao = new RegExp(this.value, "i");
             if (!expressao.test(nome)) {
-                $(pacientes[i]).addClass("invisivel");
+                $(trDosClientes[i]).addClass("invisivel");
             } else {
-                $(pacientes[i]).removeClass("invisivel");
+                $(trDosClientes[i]).removeClass("invisivel");
             }
         }
     } else {
-        for (var i = 0; i < pacientes.length; i++) {            
-            $(pacientes[i]).removeClass("invisivel");
+        for (var i = 0; i < trDosClientes.length; i++) {
+            $(trDosClientes[i]).removeClass("invisivel");
         }
     }
 });

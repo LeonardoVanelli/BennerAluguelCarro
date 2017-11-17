@@ -139,6 +139,7 @@
     <Content Include="Content\Css\bootstrap.css" />
     <Content Include="Content\Css\bootstrap.min.css" />
     <Content Include="Content\Css\edit.css" />
+    <Content Include="Content\Css\login.css" />
     <Content Include="Content\Css\Site.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Img\spinner.gif" />

@@ -111,3 +111,12 @@ margin-top: 18%;
 .invisivel{
     display: none;
 }
+
+body {
+    background-color: #e2e2e2;
+    padding: 0px;
+}
+
+.login-screen {
+    margin-top: 30%;
+}

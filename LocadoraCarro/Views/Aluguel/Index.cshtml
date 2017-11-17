@@ -23,7 +23,7 @@ else { <h1>Meus alugueis</h1> }
     <tbody>
         @foreach (var aluguel in Model)
         {
-            <tr>
+            <tr class="TrAluguelDosClientes">
                 <td>@aluguel.Id</td>
                 <td>@aluguel.DataHoraDevolucao</td>
                 <td>@aluguel.DataHoraRetirada</td>
