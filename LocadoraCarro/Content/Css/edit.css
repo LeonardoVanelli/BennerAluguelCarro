@@ -102,3 +102,12 @@
 .btn-confirmacao {
 margin-top: 18%;
 }
+
+.fadeOut{
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.invisivel{
+    display: none;
+}

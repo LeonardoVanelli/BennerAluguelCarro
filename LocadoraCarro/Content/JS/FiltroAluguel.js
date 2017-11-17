@@ -1,12 +1,24 @@
 ﻿var campoFiltro = document.querySelector("#filtro");
 
 campoFiltro.addEventListener("input", function () {
-    console.log(this.value);
 
-    var pacientes = $(".Campo-Cliente");
-    for (var i = 0; i < pacientes.length; i++) {
-        var paciente = pacientes[i];
-        console.log(paciente.Val())
+    var pacientes = $(".Campo-doCliente");
+
+    if (this.value.length > 0) {
+        for (var i = 0; i < pacientes.length; i++) {
+            var nome = $(pacientes[i]).text();
+
+            var expressao = new RegExp(this.value, "i");
+            if (!expressao.test(nome)) {
+                $(pacientes[i]).addClass("invisivel");
+            } else {
+                $(pacientes[i]).removeClass("invisivel");
+            }
+        }
+    } else {
+        for (var i = 0; i < pacientes.length; i++) {            
+            $(pacientes[i]).removeClass("invisivel");
+        }
     }
 });
 
