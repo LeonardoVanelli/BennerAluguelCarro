@@ -15,7 +15,7 @@
     //cria p marca
     var PMarca = $("<p>").addClass("ul-carro").attr("id", "marca-car").text("Marca: " + marca);
     //cria p preço
-    var PPreco = $("<p>").addClass("ul-carro").attr("id", "preco-car").text("Preço por X dias: " + preco + ",00R$");
+    var PPreco = $("<p>").addClass("ul-carro").attr("id", "preco-car").text("Preço por dia: " + preco + ",00R$");
     //Coloca p na div principal
     DCarroPrincipal.append(PId).append(PModelo).append(PMarca).append(PPreco);
     //cria botão

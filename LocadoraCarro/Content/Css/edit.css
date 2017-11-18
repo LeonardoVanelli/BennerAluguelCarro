@@ -57,6 +57,10 @@
     margin-bottom: 5px;
 }
 
+.margin-top {
+    margin-top: 5px;
+}
+
 #btn-logar {
     float: left;
     margin-right: 5px;
@@ -84,13 +88,39 @@
 }
 
 #menu-lateral {
-		width: 13%;
-		margin: 0; padding: 0;
-		float: left;
-        border-right: 2px solid gray;
-		}
+	width: 13%;
+	margin: 0; padding: 0;
+	float: left;
+    border-right: 2px solid gray;
+	height: 500px;
+    }
 
 #conteudo {
 		width: 77%;
 		float: right;
+}
+.btn-confirmacao {
+margin-top: 18%;
+}
+
+.fadeOut{
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.invisivel{
+    display: none;
+}
+
+body {
+    background-color: #e2e2e2;
+    padding: 0px;
+}
+
+.login-screen {
+    margin-top: 30%;
+}
+
+.campoInvalido {
+    border: 3px solid red;
 }

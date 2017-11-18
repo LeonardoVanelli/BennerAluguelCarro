@@ -7,22 +7,23 @@
     <script type="text/javascript" src="~/Content/JS/jquery-3.2.1.js"></script>
     <link rel="stylesheet" href="~/Content/Css/bootstrap.css" />
 
+    <link rel="stylesheet" href="~/Content/Css/login.css">
     <script type="text/javascript" src="~/Scripts/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="~/Scripts/moment.min.js"></script>
     <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="/scripts/bootstrap-datetimepicker.js"></script>
+    
     <link rel="stylesheet" href="~/Content/Css/bootstrap-datetimepicker.css" />
-
     <link rel="stylesheet" href="~/Content/Css/Site.css" />
     <link rel="stylesheet" href="~/Content/Css/edit.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-    <title>Home</title>
+
+    <title>Locadora Benner</title>
 </head>
 <body>
     <div id="menu-top" class="container">
         <div class="header">
             <ul class="nav nav-pills pull-right">
-                <li>@Html.ActionLink("Aluguel", "Form", "Aluguel")</li>
                 
                 @if (Session["funcionarioLogado"] != null || Session["clienteLogado"] != null)
                 {
@@ -38,9 +39,14 @@
         <div>
         <div id="menu-lateral">
             <ul class="nav nav-pills pull-right">
+                @if (Session["clienteLogado"] == null & Session["funcionarioLogado"] == null)
+                {
+                    <li>@Html.ActionLink("Alugue já", "Form", "Aluguel")</li>
+                }
                 <!-- Papel do Cliente+ -->
                 @if (Session["clienteLogado"] != null)
                 {
+                    <li>@Html.ActionLink("Aluguel", "Form", "Aluguel")</li>
                     <li>@Html.ActionLink("Meus aluguéis", "index", "Aluguel")</li>
                 }
                 @if (Session["funcionarioLogado"] != null)
@@ -48,16 +54,19 @@
                     <!-- Papel do gerente+ -->
                     if (((LocadoraCarro.Models.Funcionario)(Session["funcionarioLogado"])).FuncaoId == 3)
                     {                        
+                        <li>Funcionario</li>
                         <li>@Html.ActionLink("Funções"     , "Index", "Funcao")</li>
                         <li>@Html.ActionLink("Funcionarios", "Index", "Funcionario")</li>
                     }
                     <!-- Papel Funcionario+ -->
                     <li>@Html.ActionLink("Alugueis", "Index", "Aluguel")</li>
+                    <li>Carros</li>
                     <li>@Html.ActionLink("Modelos dos carros", "Index", "Modelo")</li>
                     <li>@Html.ActionLink("Marca dos carros"  , "Index", "Marca")</li>
                     <li>@Html.ActionLink("Classes dos carros", "Index", "Classe")</li>
                     <li>@Html.ActionLink("Proteção"          , "Index", "Protecao")</li>
                     <li>@Html.ActionLink("Carros"            , "Index", "Carro")</li>
+                    <li>Clientes</li> 
                     <li>@Html.ActionLink("Clientes"          , "index", "Cliente")</li>                    
                 }
             </ul>

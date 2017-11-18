@@ -95,9 +95,7 @@ function AdicionaAluguel() {
 }
 
 function preencheConfirmacao(idClient) {
-    console.log(idClient);
-    console.log(idCarro);
-    console.log(idProtecao);
+    $("#loading").toggle();
     $.ajax({
         dataType: "json",
         type: "POST",
@@ -113,15 +111,17 @@ function preencheConfirmacao(idClient) {
         success: function (aluguel) {
             $("#confirma-imagem").attr("src", aluguel.Imagem)
             $("#cModelo-car").text("Modelo: " + aluguel.Modelo);
-            $("#cMarca-car").text("Marca " + aluguel.Marca);
+            $("#cMarca-car").text("Marca: " + aluguel.Marca);
             $("#cPreco-car").text(aluguel.PrecoCar + ",00R$");
 
             $("#cRetirada").text(dataHoraRetirada);
             $("#cDevolucao").text(dataHoraDevolucao);
+            $("#cDiasAlugado").text(diasAlugado);
             $("#cProtecao").text(aluguel.Protecao);
             $("#cPreco-protecao").text(aluguel.PrecoProtecao + ",00R$");
-            $("#cTotal").text(aluguel.PrecoProtecao + aluguel.PrecoCar + ",00R$");
+            $("#cTotal").text(aluguel.PrecoProtecao + aluguel.PrecoCar * diasAlugado + ",00R$");
 
+            $("#loading").toggle();
             formLogin.addClass("invisivel");
             formConfirmacao.removeClass("invisivel");
         },

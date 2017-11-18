@@ -1,8 +1,14 @@
 ﻿@model IList<LocadoraCarro.Models.Aluguel>
 
-<h1>Meus Alugueis</h1>
-<label>Filtro: </label>
-<input id="filtro" type="text"/>
+
+@if (Session["funcionarioLogado"] != null)
+{
+    <h1>Alugueis</h1>
+    <label>Filtro: </label>
+    <input id="filtro" type="text" />
+}
+else { <h1>Meus alugueis</h1> }
+
 <table class="table table-hover">
     <thead>
         <tr>
@@ -17,17 +23,27 @@
     <tbody>
         @foreach (var aluguel in Model)
         {
-            <tr>
+            <tr class="TrAluguelDosClientes">
                 <td>@aluguel.Id</td>
                 <td>@aluguel.DataHoraDevolucao</td>
                 <td>@aluguel.DataHoraRetirada</td>
                 <td>@aluguel.CarroId</td>
                 <td>@aluguel.ProtecaoId</td>
-                <td class="Campo-Cliente">@aluguel.ClienteId</td>
+                <td class="Campo-doCliente">@aluguel.ClienteId</td>
+                <td><button value="@aluguel.Id" class="btnCancelPedido btn btn-danger btn-xs">Cacelar pedido</button></td>
+                @if (Session["funcionarioLogado"] != null)
+                {
+                    <td>
+                        <button value="@aluguel.Id" class="btnCancelPedido btn btn-info btn-xs">Finalizar pedido</button>
+                    </td>
+                }
             </tr>
         }</tbody>
 </table>
-<button  class="btn btn-success" onclick="location.href='@Url.Action("Form", "Aluguel")';return false;">Alugue já</button>
+@if (Session["funcionarioLogado"] == null)
+{
+    <button class="btn btn-success" onclick="location.href='@Url.Action("Form", "Aluguel")';return false;">Alugue já</button>
+}
 
 <script type="text/javascript" src="~/Content/JS/FiltroAluguel.js"></script>
 
