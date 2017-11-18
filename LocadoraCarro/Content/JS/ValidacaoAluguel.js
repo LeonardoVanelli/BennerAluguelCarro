@@ -40,3 +40,5 @@ function validaIdad(CampoIdade) {
     CampoIdade.removeClass("campoInvalido")
     return true
 }
+
+//Masks

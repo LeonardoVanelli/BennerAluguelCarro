@@ -68,10 +68,11 @@ function retornaCarros() {
             dataRetirada: dataHoraRetirada,
             dataDevolucao: dataHoraDevolucao
         },
-        success: function (carros) {
+        success: function (carros) {            
             for (var i = 0; i < carros.length; i++) {
                 MontaCarro(carros[i].Id, carros[i].Modelo, carros[i].Marca, carros[i].Preco, carros[i].Imagem);
             }
+            $("#loading").toggle();
         }
     })
 }
@@ -98,7 +99,10 @@ function adicionaUsuario() {
 
 window.onbeforeunload = confirmExit;
 function confirmExit() {
-    if (PerguntarSeQuerSair == true) {
-        return "Deseja realmente sair desta página?"
-    }else{return}
+    if ($("#data_retirada").val() == "") {
+        if (PerguntarSeQuerSair == true) {
+            return "Deseja realmente sair desta página?"
+        }
+    }
+    else{return}
 }
