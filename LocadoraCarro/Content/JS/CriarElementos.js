@@ -1,6 +1,6 @@
-﻿function MontaCarro(id, modelo, marca, preco, imagem) {
+﻿function MontaCarro(id, modelo, marca, classe, preco, imagem) {
     //Cria Div principal
-    var DCarroPrincipal = $("<div>").addClass("lbl-carros");
+    var DCarroPrincipal = $("<div>").addClass("lbl-carros divCarros");
     //cria div imagem e adiciona img
     var DCarroImagem = $("<div>").addClass("Img_car1");
     var IImgCarro = $("<img>").attr("src", imagem).addClass("img-carro");
@@ -14,10 +14,12 @@
     var PModelo = $("<p>").addClass("ul-carro").attr("id", "modelo-car").text("Modelo: " + modelo);
     //cria p marca
     var PMarca = $("<p>").addClass("ul-carro").attr("id", "marca-car").text("Marca: " + marca);
+    //Cria Classe
+    var PClasse = $("<p>").addClass("ul-carro classe-car").attr("id", "classe-car").text("Classe: " + classe);
     //cria p preço
     var PPreco = $("<p>").addClass("ul-carro").attr("id", "preco-car").text("Preço por dia: " + preco + ",00R$");
     //Coloca p na div principal
-    DCarroPrincipal.append(PId).append(PModelo).append(PMarca).append(PPreco);
+    DCarroPrincipal.append(PId).append(PModelo).append(PMarca).append(PClasse).append(PPreco);
     //cria botão
     var botao = $("<button>").addClass("CarroSelecionado").attr("id", "btnSlcCarro").text("Selecionar").addClass("btn btn-success")
     //Insere evento click no botao

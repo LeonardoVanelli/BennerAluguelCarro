@@ -17,6 +17,7 @@ namespace LocadoraCarro.Controllers
         {
             IList<Aluguel> alugueis = new List<Aluguel>();
             IList<Cliente> clientes = new List<Cliente>();
+            IList<Status> status = new List<Status>();
 
             Cliente cliente = (Cliente)(Session["clienteLogado"]);
             if (cliente != null)
@@ -26,12 +27,38 @@ namespace LocadoraCarro.Controllers
             {
                 alugueis = new AluguelDAO().Lista();
                 foreach (var aluguel in alugueis)
-                {
-                    clientes.Add( new ClienteDAO().BuscaPorId(aluguel.ClienteId) );
+                {                    
+                    clientes.Add( new ClienteDAO().BuscaPorId(aluguel.ClienteId) );                  
                 }             
             }
+            foreach (var aluguel in alugueis)
+            {
+                VerificaStatus(aluguel);
+                status.Add(new StatusDAO().BuscaPorId(aluguel.StatusId));
+            }
             ViewBag.Cliente = clientes;
+            ViewBag.Status = status;
+            ViewBag.ListaStatus = new StatusDAO().Lista();
             return View(alugueis);
+        }
+
+        public void VerificaStatus(Aluguel aluguel)
+        {
+            var status = new StatusDAO().BuscaPorId(aluguel.StatusId);            
+            if (status.Nome == "Reservado")
+            {
+                if (aluguel.DataHoraRetirada <= DateTime.Now)
+                {                    
+                    aluguel.StatusId = new StatusDAO().BuscaPorNome("NaoRetirado").Id;
+                }
+            } else if (status.Nome == "Retirado")
+            {
+                if (aluguel.DataHoraDevolucao <= DateTime.Now)
+                {
+                    aluguel.StatusId = new StatusDAO().BuscaPorNome("AtrasoNaDevolucao").Id;
+                }
+            }
+            new AluguelDAO().Atualiza(aluguel);        
         }
 
         public ActionResult Form()
@@ -39,6 +66,7 @@ namespace LocadoraCarro.Controllers
             if (Session["clienteLogado"] != null)
                  ViewBag.ClienteLogado = ( (Cliente)(Session["clienteLogado"]) ).Id;
             else ViewBag.ClienteLogado = 0;
+            ViewBag.Classes = new ClasseDAO().Lista();
             return View();
         }
 
@@ -86,6 +114,7 @@ namespace LocadoraCarro.Controllers
                             Id = carro.Id,
                             Modelo = modelo.Nome,
                             Marca = new MarcaDAO().BuscaPorId(modelo.MarcaId).Nome,
+                            Classe = new ClasseDAO().BuscaPorId(carro.ClasseId).Nome,
                             Preco = carro.PrecoDia,
                             Imagem = carro.Imagem
                         });
@@ -146,25 +175,20 @@ namespace LocadoraCarro.Controllers
             DateTime retirada = DateTime.Parse(dTRetirada);
             DateTime devolucao = DateTime.Parse(dTDevolucao);
 
+            var status = new StatusDAO().BuscaPorNome("Reservado");
+
             var aluguel = new Aluguel() { DataHoraRetirada = retirada ,
                                           DataHoraDevolucao = devolucao,
                                           CarroId = idCarro,
                                           ClienteId = idCliente,
-                                          ProtecaoId = idProtecao };
+                                          ProtecaoId = idProtecao,                                          
+                                          StatusId = status.Id };
 
             new AluguelDAO().Adiciona(aluguel);
 
             decrementaQtdCarroDisponivel(idCarro);
 
             return Json(aluguel);
-        }
-
-        public void decrementaQtdCarroDisponivel(int id)
-        {
-            var dao = new CarroDAO();
-            var carro = dao.BuscaPorId(id);
-            carro.QtdDisponivel--;
-            dao.Atualiza(carro);
         }
 
         public JsonResult RetornaConfirmacao(int idCliente, int idCarro, int idProtecao)
@@ -202,6 +226,55 @@ namespace LocadoraCarro.Controllers
             daoCarro.Atualiza(carro);
 
             return Json(new { id = 1 });
+        }
+        public JsonResult StatusCancela(int id)
+        {
+            var daoAluguel = new AluguelDAO();
+            var aluguel = daoAluguel.BuscaPorId(id);
+            aluguel.StatusId = new StatusDAO().BuscaPorNome("Cancelado").Id;
+
+            daoAluguel.Atualiza(aluguel);
+            incrementaQtdCarroDisponivel(aluguel.CarroId);
+
+            return Json(new { id = 1 });
+        }
+
+        public JsonResult StatusFinaliza(int id)
+        {
+            var daoAluguel = new AluguelDAO();
+            var aluguel = daoAluguel.BuscaPorId(id);
+            aluguel.StatusId = new StatusDAO().BuscaPorNome("Finalizado").Id;
+
+            daoAluguel.Atualiza(aluguel);
+            incrementaQtdCarroDisponivel(aluguel.CarroId);
+
+            return Json(new { id = 1 });
+        }
+
+        public JsonResult StatusIniciar(int id)
+        {
+            var daoAluguel = new AluguelDAO();
+            var aluguel = daoAluguel.BuscaPorId(id);
+            aluguel.StatusId = new StatusDAO().BuscaPorNome("Retirado").Id;
+
+            daoAluguel.Atualiza(aluguel);
+
+            return Json(new { id = 1 });
+        }
+
+        public void decrementaQtdCarroDisponivel(int id)
+        {
+            var dao = new CarroDAO();
+            var carro = dao.BuscaPorId(id);
+            carro.QtdDisponivel--;
+            dao.Atualiza(carro);
+        }
+        public void incrementaQtdCarroDisponivel(int id)
+        {
+            var dao = new CarroDAO();
+            var carro = dao.BuscaPorId(id);
+            carro.QtdDisponivel++;
+            dao.Atualiza(carro);
         }
     }
 }

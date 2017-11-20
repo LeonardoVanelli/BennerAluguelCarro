@@ -35,7 +35,7 @@
     </div>
 
     <label class="informacao-data">Idade:</label>
-    <input type="number" id="data_idade" min="18" class="form-control date" />
+    <input type="number" id="data_idade" min="18" value="30" class="form-control date" />
 
     <button id="btn-proximo" type="button" class="btn btn-success">Proximo</button>
 
@@ -44,7 +44,17 @@
 
 <form>
     <div class="carro invisivel" id="lista-carro">
-        <h1>Selecione o carro</h1>        
+        <h1>Selecione o carro</h1>   
+        <div id="FiltrosCarro">
+            <label>Filtro Classe</label>
+            <select id="SlcClasseCarro ComboBox">
+                <option value="Nenhum">Nenhum</option>
+                @foreach (var classe in ViewBag.Classes)
+                {
+                    <option value="@classe.Nome">@classe.Nome</option>
+                }
+            </select>
+        </div>
     </div>
 </form>
 
@@ -174,3 +184,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <script type="text/javascript" src="~/Content/JS/DateTime.js"></script>
 <script type="text/javascript" src="~/Content/JS/ValidacaoAluguel.js"></script>
+<script type="text/javascript" src="~/Content/JS/FiltroFormAluguel.js"></script>

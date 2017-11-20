@@ -140,13 +140,14 @@
     <Content Include="Content\Css\bootstrap.min.css" />
     <Content Include="Content\Css\edit.css" />
     <Content Include="Content\Css\login.css" />
-    <Content Include="Content\Css\Site.css" />
+    <Content Include="Content\Css\MenuTable.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Img\spinner.gif" />
     <Content Include="Content\JS\Aluguel.js" />
     <Content Include="Content\JS\CriarElementos.js" />
     <Content Include="Content\JS\DateTime.js" />
     <Content Include="Content\JS\FiltroAluguel.js" />
+    <Content Include="Content\JS\FiltroFormAluguel.js" />
     <Content Include="Content\JS\ImagemCarro.js" />
     <Content Include="Content\JS\jquery.comiseo.daterangepicker.js" />
     <Content Include="Content\JS\jquery.comiseo.daterangepicker.min.js" />
@@ -275,6 +276,7 @@
     <Compile Include="DAO\MarcaDAO.cs" />
     <Compile Include="DAO\ModeloDAO.cs" />
     <Compile Include="DAO\ProtecaoDAO.cs" />
+    <Compile Include="DAO\StatusDAO.cs" />
     <Compile Include="Filtros\AutorizacaoFilterClienteAttribute.cs" />
     <Compile Include="Filtros\AutorizacaoFiltroAdmAttribute.cs" />
     <Compile Include="Filtros\AutorizacaoFiltreFuncionarioAttribute.cs" />
@@ -430,6 +432,14 @@
     <Compile Include="Migrations\201711131940064_Carro.Designer.cs">
       <DependentUpon>201711131940064_Carro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711181305299_Status.cs" />
+    <Compile Include="Migrations\201711181305299_Status.Designer.cs">
+      <DependentUpon>201711181305299_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711181328467_Status1.cs" />
+    <Compile Include="Migrations\201711181328467_Status1.Designer.cs">
+      <DependentUpon>201711181328467_Status1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluguel.cs" />
     <Compile Include="Models\Carro.cs" />
@@ -440,6 +450,7 @@
     <Compile Include="Models\Marca.cs" />
     <Compile Include="Models\Modelo.cs" />
     <Compile Include="Models\Protecao.cs" />
+    <Compile Include="Models\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -600,6 +611,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711131940064_Carro.resx">
       <DependentUpon>201711131940064_Carro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711181305299_Status.resx">
+      <DependentUpon>201711181305299_Status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711181328467_Status1.resx">
+      <DependentUpon>201711181328467_Status1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

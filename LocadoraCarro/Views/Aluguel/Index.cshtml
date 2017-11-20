@@ -5,9 +5,23 @@
 {
     <h1>Alugueis</h1>
     <label>Filtro: </label>
-    <input id="filtro" type="text" />
+    <input id="filtroCliente" type="text" />
 }
-else { <h1>Meus alugueis</h1> }
+else
+{
+     <h1>Meus alugueis</h1>
+    <input class="invisivel" id="filtroCliente" type="text" />
+}
+<label>Filtro Status</label>
+<select class="ComboBox" id="filtroStatus">
+    <option value="Nenhum">Nenhum</option>
+    @foreach (var status in ViewBag.ListaStatus)
+    {
+        <option value="@status.Nome">@status.Nome</option>
+    }
+</select>
+
+
 
 <table class="table table-hover">
     <thead>
@@ -17,7 +31,11 @@ else { <h1>Meus alugueis</h1> }
             <th>Data Retirada</th>
             <th>Carro</th>
             <th>Protecao</th>
-            <th>Cliente</th>
+            @if (Session["funcionarioLogado"] != null)
+            {
+                <th>Cliente</th>
+            }          
+            <th>Status</th>
         </tr>
     </thead>
     <tbody>
@@ -29,16 +47,62 @@ else { <h1>Meus alugueis</h1> }
                 <td>@aluguel.DataHoraRetirada</td>
                 <td>@aluguel.CarroId</td>
                 <td>@aluguel.ProtecaoId</td>
-                <td class="Campo-doCliente">@aluguel.ClienteId</td>
-                <td><button value="@aluguel.Id" class="btnCancelPedido btn btn-danger btn-xs">Cacelar pedido</button></td>
-                @if (Session["funcionarioLogado"] != null)
+                @foreach (var cliente in @ViewBag.Cliente)
                 {
-                    <td>
-                        <button value="@aluguel.Id" class="btnCancelPedido btn btn-info btn-xs">Finalizar pedido</button>
-                    </td>
+                    if (aluguel.ClienteId == cliente.Id)
+                    {
+                        <td class="Campo-doCliente">@cliente.Nome</td>
+                        break;
+                    }
+                }
+                @foreach (var status in @ViewBag.Status)
+                {
+                    if (aluguel.StatusId == status.Id)
+                    {
+                        <td class="Campo-doStatus">@status.Nome</td>
+                        if (Session["funcionarioLogado"] != null)
+                        {
+                            if (status.Nome == "Reservado" || status.Nome == "Retirado" || status.Nome == "AtrasoNaDevolucao")
+                            {
+                                <td>
+                                    <div class="dropdown btn-opcoes">
+                                        <button class="dropbtn">opções</button>
+                                        <div class="dropdown-content">
+                                            @if (status.Nome == "Reservado")
+                                            {
+                                                <button value="@aluguel.Id" class="btnIniciarPedido btn btnMenu">Iniciar</button>
+                                                <button value="@aluguel.Id" class="btnCancelPedido btn btnMenu">Cacelar</button>
+                                            }
+                                            @if (status.Nome == "Retirado" || status.Nome == "AtrasoNaDevolucao")
+                                            {
+                                                <button value="@aluguel.Id" class="btnFianlizaPedido btn btnMenu">Finalizar</button>
+                                            }
+                                        </div>
+                                    </div>
+                                </td>
+                            }
+
+                        }
+                        else
+                        {
+                            if (status.Nome == "Reservado")
+                            {
+                                <td>
+                                    <div class="dropdown btn-opcoes">
+                                        <button class="dropbtn">opções</button>
+                                        <div class="dropdown-content">
+                                            <button value="@aluguel.Id" class="btnCancelPedido btn btnMenu">Cacelar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            }
+                        }
+                        break;
+                    }
                 }
             </tr>
-        }</tbody>
+        }
+    </tbody>
 </table>
 @if (Session["funcionarioLogado"] == null)
 {
@@ -46,4 +110,5 @@ else { <h1>Meus alugueis</h1> }
 }
 
 <script type="text/javascript" src="~/Content/JS/FiltroAluguel.js"></script>
+
 

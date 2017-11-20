@@ -15,9 +15,15 @@ namespace LocadoraCarro.Controllers
     {
         // GET: Carro
         public ActionResult Index()
-        {       
-            var dao = new CarroDAO();        
-            return View(dao.Lista());
+        {
+            var modelos = new List<Modelo>();
+            var carros = new CarroDAO().Lista();
+            foreach (var carro in carros)
+            {
+                modelos.Add( new ModeloDAO().BuscaPorId(carro.ModeloId) );
+            }
+            ViewBag.Modelos = modelos;
+            return View(carros);
         }
 
         public ActionResult Form()

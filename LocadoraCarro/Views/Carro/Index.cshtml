@@ -5,6 +5,7 @@
     <thead>
         <tr>
             <th>Id</th>
+            <th>Modelo</th>
             <th>Descrição</th>
         </tr>
     </thead>
@@ -13,9 +14,15 @@
         {
             <tr>
                 <td>@carro.Id</td>
-                <td>
-                    @Html.ActionLink(carro.Descricao, "Visualiza", new { id = carro.Id } )
-                </td>
+                @foreach (var modelo in ViewBag.Modelos)
+                {
+                    if (modelo.Id == carro.ModeloId)
+                    {
+                        <td><a href="/carro/visualiza/@carro.Id">@modelo.Nome</a></td>
+                        break;
+                    }
+                }
+                <td>@carro.Descricao</td>
             </tr>
         }            
     </tbody>

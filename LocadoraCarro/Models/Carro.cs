@@ -19,5 +19,15 @@ namespace LocadoraCarro.Models
         public double PrecoDia { get; set; }
         public int QtdDisponivel { get; set; }
         public string Imagem { get; set; }
+
+        public void Reserva()
+        {
+            this.QtdDisponivel--;
+        }
+
+        public void Libera()
+        {
+            this.QtdDisponivel++;
+        }
     }
 }

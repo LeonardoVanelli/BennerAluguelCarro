@@ -70,7 +70,7 @@ function retornaCarros() {
         },
         success: function (carros) {            
             for (var i = 0; i < carros.length; i++) {
-                MontaCarro(carros[i].Id, carros[i].Modelo, carros[i].Marca, carros[i].Preco, carros[i].Imagem);
+                MontaCarro(carros[i].Id, carros[i].Modelo, carros[i].Marca, carros[i].Classe, carros[i].Preco, carros[i].Imagem);
             }
             $("#loading").toggle();
         }
