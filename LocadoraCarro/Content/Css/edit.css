@@ -140,3 +140,8 @@ body {
 #FiltrosCarro {
     padding: 20px
 }
+
+.header{
+    background-color:black;
+    margin-bottom: 40px;
+}
