@@ -19,10 +19,17 @@
     <link rel="stylesheet" href="~/Content/Css/edit.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
     <title>Locadora Benner</title>
 </head>
 <body>
-    <div id="menu-top" class="container">
+    <div id="menu-top">
         <div class="header">
             <ul class="nav nav-pills pull-right">
                 
@@ -35,7 +42,7 @@
                     <li><a id="btn-loginHome" href="/login/index">Login</a></li>
                 }
             </ul>
-            <h3 class="text-muted">@Html.ActionLink("Locadora Carro", "Index", "Home")</h3>
+            <h1 class="text-muted">@Html.ActionLink("Locadora Carro", "Index", "Home")</h1>
         </div>
         <div>
         <div id="menu-lateral">

@@ -82,7 +82,7 @@ function AdicionaAluguel() {
         success: function (result) {
             $('#cadastro-sucesso').modal({
                 escapeClose: false,
-                clickClose: false,
+                //clickClose: false,
                 showClose: false
             })
             console.log("Aluguel adicionado com sucesso");
