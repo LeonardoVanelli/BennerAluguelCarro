@@ -87,14 +87,6 @@
     margin-top: 10px;
 }
 
-#menu-lateral {
-	width: 13%;
-	margin: 0; padding: 0;
-	float: left;
-    border-right: 2px solid gray;
-	height: 500px;
-    }
-
 #conteudo {
 		width: 77%;
 		float: right;
@@ -115,6 +107,7 @@ margin-top: 18%;
 body {
     background-color: #e2e2e2;
     padding: 0px;
+    margin-top: 0px;
 }
 
 .login-screen {
@@ -141,13 +134,37 @@ body {
     padding: 20px
 }
 
-.header{
-    margin-bottom: 40px;
-}
-
 #menu-top {
     margin-top: 0px;
-    height: 50px;
+    height: 0px;
     border-bottom: 2px solid cyan;
     background-color: #CDC9C9;
+}
+
+.login-screen{
+    background-color: #CDC9C9;
+}
+
+.navbar-collapse {
+    background-color: #2b3643;
+}
+
+.MenuLateral{
+    background-color: #35505A;
+}
+
+#page-wrapper{
+    margin-top: 30px
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #b4bcc8;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+.image{
+    border: 2px solid black;
 }

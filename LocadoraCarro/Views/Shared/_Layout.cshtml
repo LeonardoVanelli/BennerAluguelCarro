@@ -16,73 +16,105 @@
     <link rel="stylesheet" href="~/Content/Css/MenuTable.css"/>
     <link rel="stylesheet" href="~/Content/Css/bootstrap-datetimepicker.css" />
     <link rel="stylesheet" href="~/Content/Css/Site.css" />
-    <link rel="stylesheet" href="~/Content/Css/edit.css" />
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/Css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="~/Content/Css/sb-admin.css" rel="stylesheet">
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+    <link href="~/Content/Css/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="~/Content/Css/edit.css" />
     <title>Locadora Benner</title>
 </head>
 <body>
-    <div id="menu-top">
-        <div class="header">
-            <ul class="nav nav-pills pull-right">
-                
+    <div id="wrapper">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!--Menu Topo-->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>                
+                <a class="navbar-brand image" href="/home">Locadora Benner</a>
+            </div>
+            <ul class="nav navbar-right top-nav">
                 @if (Session["funcionarioLogado"] != null || Session["clienteLogado"] != null)
                 {
-                    <li>@Html.ActionLink("Sair", "Deslogar", "Login")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><i class="fa fa-fw fa-user"></i> Profile</a></li>
+                            <li>@Html.ActionLink("Sair", "Deslogar", "Login")</li>
+                        </ul>
+                    </li>
                 }
                 else
                 {
                     <li><a id="btn-loginHome" href="/login/index">Login</a></li>
                 }
             </ul>
-            <h1 class="text-muted">@Html.ActionLink("Locadora Carro", "Index", "Home")</h1>
-        </div>
-        <div>
-        <div id="menu-lateral">
-            <ul class="nav nav-pills pull-right">
-                @if (Session["clienteLogado"] == null & Session["funcionarioLogado"] == null)
-                {
-                    <li>@Html.ActionLink("Alugue já", "Form", "Aluguel")</li>
-                }
-                <!-- Papel do Cliente+ -->
-                @if (Session["clienteLogado"] != null)
-                {
-                    <li>@Html.ActionLink("Aluguel", "Form", "Aluguel")</li>
-                    <li>@Html.ActionLink("Meus aluguéis", "index", "Aluguel")</li>
-                }
-                @if (Session["funcionarioLogado"] != null)
-                {
-                    <!-- Papel do gerente+ -->
-                    if (((LocadoraCarro.Models.Funcionario)(Session["funcionarioLogado"])).FuncaoId == 3)
-                    {                        
-                        <li>Funcionario</li>
-                        <li>@Html.ActionLink("Funções"     , "Index", "Funcao")</li>
-                        <li>@Html.ActionLink("Funcionarios", "Index", "Funcionario")</li>
+
+            <!--Menu Lateral-->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav MenuLateral">
+                    @if (Session["clienteLogado"] == null & Session["funcionarioLogado"] == null)
+                    {
+                        <li>@Html.ActionLink("Alugue já", "Form", "Aluguel")</li>
                     }
-                    <!-- Papel Funcionario+ -->
-                    <li>@Html.ActionLink("Alugueis", "Index", "Aluguel")</li>
-                    <li>Carros</li>
-                    <li>@Html.ActionLink("Modelos dos carros", "Index", "Modelo")</li>
-                    <li>@Html.ActionLink("Marca dos carros"  , "Index", "Marca")</li>
-                    <li>@Html.ActionLink("Classes dos carros", "Index", "Classe")</li>
-                    <li>@Html.ActionLink("Proteção"          , "Index", "Protecao")</li>
-                    <li>@Html.ActionLink("Carros"            , "Index", "Carro")</li>
-                    <li>Clientes</li> 
-                    <li>@Html.ActionLink("Clientes"          , "index", "Cliente")</li>                    
-                }
-            </ul>
+                    <!-- Papel do Cliente+ -->
+                    @if (Session["clienteLogado"] != null)
+                    {
+                        <li>@Html.ActionLink("Aluguel", "Form", "Aluguel")</li>
+                        <li>@Html.ActionLink("Meus aluguéis", "index", "Aluguel")</li>
+                    }
+                    @if (Session["funcionarioLogado"] != null)
+                    {
+                        <!-- Papel do gerente+ -->
+                        if (((LocadoraCarro.Models.Funcionario)(Session["funcionarioLogado"])).FuncaoId == 1)
+                        {
+                            <li>@Html.ActionLink("Funções", "Index", "Funcao")</li>
+                            <li>@Html.ActionLink("Funcionarios", "Index", "Funcionario")</li>
+                        }
+                        <!-- Papel Funcionario+ -->
+                        <li>@Html.ActionLink("Alugueis", "Index", "Aluguel")</li>
+                            <li>
+                                <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Carros </a>
+                                <ul id="demo" class="collapse">
+                                    <li>@Html.ActionLink("Classes dos carros", "Index", "Classe")</li>
+                                    <li>@Html.ActionLink("Modelos dos carros", "Index", "Modelo")</li>
+                                    <li>@Html.ActionLink("Marca dos carros", "Index", "Marca")</li>
+                                    <li>@Html.ActionLink("Carros", "Index", "Carro")</li>
+                                </ul>
+                            </li>
+                            <li>@Html.ActionLink("Proteção", "Index", "Protecao")</li>
+                            <li>@Html.ActionLink("Clientes", "index", "Cliente")</li>
+                    }
+
+                </ul>
+            </div>
+        </nav>
+        <div id="page-wrapper" style="height: 93vh">
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        @RenderBody()
+                    </div>
+                </div>
+                <!-- /.row -->
+
+            </div>
         </div>
-        <div id="conteudo">
-            @RenderBody()
-        </div>
-       </div>
     </div>
+
+    <!-- jQuery -->
+
+    <!-- Bootstrap Core JavaScript -->
 </body>
 </html>
