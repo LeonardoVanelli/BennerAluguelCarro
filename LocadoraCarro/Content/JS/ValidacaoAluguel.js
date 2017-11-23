@@ -2,8 +2,7 @@
     if (validaData($("#data_retirada" )) &
         validaData($("#data_devolucao")) &
         validaHora($("#hora_retirada" )) &
-        validaHora($("#hora_devolucao")) &
-        validaIdad($("#data_idade"    )) ) {
+        validaHora($("#hora_devolucao")) ) {
         return true;
     } else {
         return false;

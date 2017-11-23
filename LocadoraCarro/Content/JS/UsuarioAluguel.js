@@ -50,6 +50,7 @@ $("#btn-cadastrar").click(function () {
             Senha: $("#senha").val()
         },
         success: function (result) {
+            $("#ex1 .close").click();
             $.ajax({
                 dataType: "json",
                 type: "POST",
@@ -82,7 +83,7 @@ function AdicionaAluguel() {
         success: function (result) {
             $('#cadastro-sucesso').modal({
                 escapeClose: false,
-                //clickClose: false,
+                clickClose: false,
                 showClose: false
             })
             console.log("Aluguel adicionado com sucesso");

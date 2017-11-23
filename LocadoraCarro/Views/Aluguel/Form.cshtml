@@ -1,7 +1,9 @@
 ﻿<label id="cliente-logado" class="invisivel">@ViewBag.ClienteLogado</label>
 
 <form class="data-hora">
-    <h1 class="center">Aluguel</h1>
+    <div class="divTexto">
+        <h1 class="Titulo">Aluguel</h1>
+    </div>
     <label class="informacao-data">Data retirada do automovel</label>
     <div class='input-group date' id='datetimepicker6'>
         <input type='text' id="data_retirada" class="form-control" />
@@ -34,20 +36,17 @@
         </span>
     </div>
 
-    <label class="informacao-data">Idade:</label>
-    <input type="number" id="data_idade" min="18" value="30" class="form-control date" />
-
     <button id="btn-proximo" type="button" class="btn btn-success">Proximo</button>
-
 </form>
-
 
 <form>
     <div class="carro invisivel" id="lista-carro">
-        <h1>Selecione o carro</h1>   
-        <div id="FiltrosCarro">
-            <label>Filtro Classe</label>
-            <select id="SlcClasseCarro ComboBox">
+        <div class="divTexto">
+            <h1 class="Titulo">Selecione o Carro</h1>
+        </div> 
+        <label>Filtro Classe</label>
+        <div id="FiltrosCarro">            
+            <select class="ComboBox" id="SlcClasseCarro">
                 <option value="Nenhum">Nenhum</option>
                 @foreach (var classe in ViewBag.Classes)
                 {
@@ -59,7 +58,9 @@
 </form>
 
 <div class="protecao invisivel">
-    <h1>Proteções</h1>
+    <div class="divTexto">
+        <h1 class="Titulo">Selecione a Proteção</h1>
+    </div> 
     <form>
         <table class="table" id="tbl-protecao" style="width:100%">            
             <tr>
@@ -69,7 +70,7 @@
                 <th>Selecione</th>
             </tr>
             <tr>
-                <td class="invisivel">2002</td>
+                <td class="invisivel">3</td>
                 <td>Nenhuma</td>
                 <td>Descrição do nenhuma proteção</td>
                 <td>00,00R$</td>
@@ -78,7 +79,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="invisivel">1002</td>
+                <td class="invisivel">1</td>
                 <td>Basica</td>
                 <td>Descrição da proteção basica</td>
                 <td>80,00R$</td>
@@ -87,7 +88,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="invisivel">1003</td>
+                <td class="invisivel">2</td>
                 <td>Completa</td>
                 <td>Proteção completa</td>
                 <td>120,00R$</td>
@@ -100,6 +101,9 @@
 </div>
 
 <div class="clienteLogar invisivel">
+    <div class="divTexto">
+        <h1 class="Titulo">Logue ou Cadastre-se</h1>
+    </div> 
     <form>
         <label for="login">Login:</label>
         <input id="login_autentica" class="form-control" />
@@ -116,29 +120,33 @@
 
 <div id="ex1" class="cliente modal">
     <h1>Cadastro de cliente</h1>
+    <form action="#">
+        <label for="nome">Nome:</label>
+        <input id="nome" name="cliente.Nome" class="form-control" />
 
-    <label for="nome">Nome:</label>
-    <input id="nome" name="cliente.Nome" class="form-control" />
+        <label for="cpf">Cpf:</label>
+        <input id="cpf" type="number" name="cliente.Cpf" class="form-control" />
 
-    <label for="cpf">Cpf:</label>
-    <input id="cpf" type="number" name="cliente.Cpf" class="form-control" />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="cliente.Email" class="form-control" />
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="cliente.Email" class="form-control" />
+        <label for="telofone">Telefone:</label>
+        <input id="telefone" name="cliente.Telefono" class="form-control" />
 
-    <label for="telofone">Telefone:</label>
-    <input id="telefone" name="cliente.Telefono" class="form-control" />
+        <label for="login">Login:</label>
+        <input id="login" name="cliente.Login" class="form-control" />
 
-    <label for="login">Login:</label>
-    <input id="login" name="cliente.Login" class="form-control" />
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="cliente.Senha" class="form-control" />
 
-    <label for="senha">Senha:</label>
-    <input type="password" id="senha" name="cliente.Senha" class="form-control" />
-
-    <button id="btn-cadastrar" type="button" class="btn btn-success">Cadastrar</button>
+        <button id="btn-cadastrar" type="button" class="btn btn-success">Cadastrar</button>
+    </form>
 </div>
 
 <div id="confirmacao" class="invisivel">
+    <div class="divTexto">
+        <h1 class="Titulo">Confirmação</h1>
+    </div> 
     <div class="Img_car1 lbl-carro">
         <img id="confirma-imagem" src="/Content/CarrosImg/FordFocus.jpg" class="img-carro">
     </div>
@@ -166,7 +174,9 @@
         <h3>Valor Total</h3>
         <p class="ul-carro" id="cTotal">Total: 200,00R$</p>
     </div>
-    <input class="btn-confirmacao btn btn-success" id="btnConfirmar" type="submit" value="Confirmar" />
+    <div>
+        <input class="btn-confirmacao btn btn-success" id="btnConfirmar" type="submit" value="Confirmar" />
+    </div>
 </div>
 
 <div id="loading" class="center invisivel">
@@ -174,8 +184,10 @@
 </div>
 
 <div id="cadastro-sucesso" class="modal">
-    <p>Locação realizada com sucesso</p>
-    <a id="VoltaHome" href="#" rel="modal:close">Concluir</a>
+    <h2>Locação realizada com sucesso</h2>
+    <button class="btn btn-success" id="VoltaHome" href="#" rel="modal:close">
+        Concluir
+    </button>
 </div>
 
 <script type="text/javascript" src="~/Content/JS/Aluguel.js">       </script>

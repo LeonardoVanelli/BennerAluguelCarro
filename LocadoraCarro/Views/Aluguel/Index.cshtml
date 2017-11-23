@@ -3,13 +3,17 @@
 
 @if (Session["funcionarioLogado"] != null)
 {
-    <h1>Alugueis</h1>
+    <div class="divTexto">
+        <h1 class="Titulo">Alugueis</h1>
+    </div>
     <label>Filtro: </label>
     <input id="filtroCliente" type="text" />
 }
 else
 {
-     <h1>Meus alugueis</h1>
+    <div class="divTexto">
+        <h1 class="Titulo">Meus Alugueis</h1>
+    </div>
     <input class="invisivel" id="filtroCliente" type="text" />
 }
 <label>Filtro Status</label>

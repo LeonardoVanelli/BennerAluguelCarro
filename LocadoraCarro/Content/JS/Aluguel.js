@@ -12,10 +12,12 @@ var idCliente;
 var PerguntarSeQuerSair = true;
 
 $("#btn-proximo").click(function () {
-    event.preventDefault();    
-    var FormData = $(".data-hora");   
+    event.preventDefault();
+    console.log("entrei");
+    var FormData = $(".data-hora");
     RetiraValorDataHora();
-    if (ValidaCamposDatas()) {
+    console.log(ValidaCamposDatas())
+    if (ValidaCamposDatas()) {        
         FormData.addClass("invisivel");
         FormCarro.removeClass("invisivel");
         retornaCarros();
