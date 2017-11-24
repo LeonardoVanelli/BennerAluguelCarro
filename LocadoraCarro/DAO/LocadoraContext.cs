@@ -20,7 +20,7 @@ namespace LocadoraCarro.DAO
         public DbSet<Funcao>      Funcaos { get; set; }
         public DbSet<Status>      Statuos { get; set; }
 
-        public LocadoraContext() : base("Server=(localdb)\\mssqllocaldb;Database=LocadoraCarroDB;Trusted_Connection=true;")
+        public LocadoraContext() : base("Server=(localdb)\\mssqllocaldb;Database=LocadoraCarrosDB;Trusted_Connection=true;")
         {
 
         }

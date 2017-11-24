@@ -1,6 +1,10 @@
 ﻿
 @model IList<LocadoraCarro.Models.Funcionario>
 
+<div class="divTexto">
+    <h1 class="Titulo">Funcionarios</h1>
+</div>
+
 <table class="table table-hover">
     <thead>
         <tr>
@@ -22,4 +26,4 @@
         }
     </tbody>
 </table>
-@Html.ActionLink("Adicionar", "Form", "Funcionario")
+<button class="btn btn-success" onclick="location.href='@Url.Action("Form", "Funcionario")';return false;">Adicionar</button>

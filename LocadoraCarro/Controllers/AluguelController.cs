@@ -96,12 +96,8 @@ namespace LocadoraCarro.Controllers
                 } else
                 {
                     foreach (var aluguel in alugueis)
-                    {
-                        //if (aluguel.Estato != 2)                       
-                        //{
-                        dataDisponivel = CarroEmUso(aluguel, retirada, devolucao);
-                        //}                          
-
+                    {                        
+                        dataDisponivel = CarroEmUso(aluguel, retirada, devolucao);                                                  
                     }
                 }
                 if (EstoqueDisponivel)

@@ -1,4 +1,8 @@
 ﻿
+<div class="divTexto">
+    <h1 class="Titulo">Cadastro de Modelo</h1>
+</div>
+
 <form action="/Modelo/Adiciona" method="post">
     @Html.ValidationMessage("modelo.caracter")
 
@@ -17,5 +21,5 @@
         }
 
     </select>
-        <input type="submit" value="Cadastrar" />
+        <input class="btn btn-success botoes" type="submit" value="Cadastrar" />
 </form>

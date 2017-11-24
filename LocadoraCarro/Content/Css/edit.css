@@ -211,3 +211,13 @@ body {
 #btnConfirmar {
     width: 100px;
 }
+
+.botoes {
+    margin-top: 5px;
+    width: 100px;
+}
+
+.form-control {
+
+    text-align: left;
+}
