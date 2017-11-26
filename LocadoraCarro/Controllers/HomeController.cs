@@ -1,4 +1,5 @@
 ﻿
+using LocadoraCarro.DAO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,7 @@ namespace LocadoraCarro.Controllers
     {
         // GET: Home
         public ActionResult Index()
-        {
-            DAO.FuncaoDAO().
+        {            
             var funcionarioLogado = new FuncionarioDAO().BuscaPorId(4);
             ViewBag.Funcionario = funcionarioLogado;
 
