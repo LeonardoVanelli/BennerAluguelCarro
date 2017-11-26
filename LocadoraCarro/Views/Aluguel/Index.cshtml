@@ -50,8 +50,7 @@ else
                 <td>@aluguel.DataHoraRetirada</td>
                 <td>@aluguel.CarroId</td>
                 <td>
-                    @new DAO.ProtecaoDAO.BuscaPorId(aluguel.ProtecaoId);
-                    
+                    @aluguel.ProtecaoId                                       
                 </td>
                 @foreach (var cliente in @ViewBag.Cliente)
                 {

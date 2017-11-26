@@ -139,9 +139,11 @@
     <Content Include="Content\Css\bootstrap.css" />
     <Content Include="Content\Css\bootstrap.min.css" />
     <Content Include="Content\Css\edit.css" />
-    <Content Include="Content\Css\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\Css\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Content\Css\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="Content\Css\login.css" />
     <Content Include="Content\Css\MenuTable.css" />
+    <Content Include="Content\Css\plugins\morris.css" />
     <Content Include="Content\Css\sb-admin.css" />
     <Content Include="Content\Css\Site.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
@@ -497,6 +499,7 @@
     <Content Include="Views\Funcionario\Form.cshtml" />
     <Content Include="Views\Funcionario\Visualiza.cshtml" />
     <Content Include="Views\Login\FalhaLogin.cshtml" />
+    <Content Include="Views\Home\AIndex.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -504,7 +507,11 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\Css\font-awesome-4.7.0\css\fonts\" />
+    <Folder Include="Content\Css\font-awesome-4.7.0\css\less\" />
+    <Folder Include="Content\Css\font-awesome-4.7.0\css\scss\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710241324499_Modelo.resx">
       <DependentUpon>201710241324499_Modelo.cs</DependentUpon>

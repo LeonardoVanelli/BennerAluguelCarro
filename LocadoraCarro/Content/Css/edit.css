@@ -226,3 +226,22 @@ body {
     border: 1px solid #b3b3b3;
     margin-bottom: 10px;
 }
+
+.caixaTexto {
+    float: left;
+    width: 400px;
+    padding: 10px
+}
+
+.caixaimagem {
+    float: left;
+    width: 431px;
+    border: 4px solid #A2A2A2;
+    background-color: #C8C8C8;
+}
+
+.btnImagem {
+    margin-bottom: 5px;
+    margin-right: 5px;
+    background-color: #626262;
+}
