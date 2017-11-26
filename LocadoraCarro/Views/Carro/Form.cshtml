@@ -1,22 +1,13 @@
 ﻿
+<div class="divTexto">
+    <h1 class="Titulo">Cadastro de Carro</h1>
+</div>
+
 <form action="/Carro/Adiciona" method="post">
-
-    <label for="placa">Placa:</label>
-    <input id="placa" name="carro.Placa" class="form-control" />
-
-    <label for="descricao">Descricao:</label>
-    <input id="descricao" name="carro.Descricao" class="form-control" />
-
-    <label for="precoDia">Preço dia:</label>
-    <input id="precoDia" name="carro.PrecoDia" class="form-control" />
-
-    <label for="clsse">Classe:</label>
-    <select id="classe" name="carro.ClasseId" class="form-control">
-        @foreach (var classe in ViewBag.Classe)
-        {
-            <option value="@classe.Id">@classe.Nome</option>
-        }
-    </select>
+    <div class="invisivel">
+        <label for="placa">Placa:</label>
+        <input id="placa" value="AXT-4598" name="carro.Placa" class="form-control" />
+    </div>
 
     <label for="modelo">Modelo:</label>
     <select id="modelo" name="carro.ModeloId" class="form-control">
@@ -25,13 +16,27 @@
             <option value="@modelo.Id">@modelo.Nome</option>
         }
     </select>
+    
+    <label for="clsse">Classe:</label>
+    <select id="classe" name="carro.ClasseId" class="form-control">
+        @foreach (var classe in ViewBag.Classe)
+        {
+            <option value="@classe.Id">@classe.Nome</option>
+        }
+    </select>
+
+    <label for="descricao">Descricao:</label>
+    <input id="descricao" name="carro.Descricao" class="form-control" />
+
+    <label for="precoDia">Preço dia:</label>
+    <input id="precoDia" name="carro.PrecoDia" class="form-control" />
 
     <label for="quantidade">Quantidade:</label>
     <input id="qauantidade" name="carro.QtdDisponivel" class="form-control" />
 
     <input id="imagem-string" name="carro.Imagem" class="invisivel" />
     
-    <label></label>
+    <label>Imagem:</label>
     <input type="file" id="imagem" class="form-control" />
 
     <input class="btn btn-success botoes" id="btn-selecionar-carro" type="submit" value="Cadastrar" />

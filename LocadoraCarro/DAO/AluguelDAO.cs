@@ -34,6 +34,23 @@ namespace LocadoraCarro.DAO
             }
         }
 
+        public IList<Aluguel> ListaPorCliente(int id)
+        {
+            using (var contexto = new LocadoraContext())
+            {
+                IList<Aluguel> alugueis = new List<Aluguel>();
+                var testar = contexto.Alugueis.ToList();
+                foreach (var aluguel in testar)
+                {
+                    if (aluguel.ClienteId == id)
+                    {
+                        alugueis.Add(aluguel);
+                    } 
+                }
+                return alugueis;
+            }
+        }
+
         public IList<Aluguel> ListaPorUsuario(int idCliente)
         {
             using (var contexto = new LocadoraContext())

@@ -5,22 +5,17 @@ var FormUsuario = $(".escolhaCliente");
 
 var dataHoraRetirada;
 var dataHoraDevolucao;
-var diasAlugado;
+var diasAlugado = 0;
 var idCarro;
 var idProtecao;
 var idCliente;
 var PerguntarSeQuerSair = true;
 
 $("#btn-proximo").click(function () {
-    event.preventDefault();
-    console.log("entrei");
-    var FormData = $(".data-hora");
+    event.preventDefault();    
     RetiraValorDataHora();
-    console.log(ValidaCamposDatas())
     if (ValidaCamposDatas()) {        
-        FormData.addClass("invisivel");
-        FormCarro.removeClass("invisivel");
-        retornaCarros();
+        retornaCarros()            
     }
 })
 
@@ -35,7 +30,6 @@ function RetiraValorDataHora() {
     
     dataHoraRetirada = dataRetirada + " " + horaRetirada;
     dataHoraDevolucao = dataDevolucao + " " + horaDevolucao;
-    diasAlugado = dataHoraDevolucao.substring(0, 2) - dataRetirada.substring(0, 2) + 1;
 }
 function SelecionaCarro() {
     event.preventDefault();
@@ -60,8 +54,6 @@ $(".btn-protecao").click(function (event) {
 
 function retornaCarros() {
     $("#loading").toggle();
-    console.log(dataHoraRetirada);
-    console.log(dataHoraDevolucao);
     $.ajax({
         dataType: "json",
         type: "POST",
@@ -70,11 +62,23 @@ function retornaCarros() {
             dataRetirada: dataHoraRetirada,
             dataDevolucao: dataHoraDevolucao
         },
-        success: function (carros) {            
-            for (var i = 0; i < carros.length; i++) {
-                MontaCarro(carros[i].Id, carros[i].Modelo, carros[i].Marca, carros[i].Classe, carros[i].Preco, carros[i].Imagem);
-            }
+        success: function (carros) {                       
             $("#loading").toggle();
+            var FormData = $(".data-hora");
+            if (diasAlugado <= 30) {
+                if (carros.length > 0) {
+                    for (var i = 0; i < carros.length; i++) {
+                        MontaCarro(carros[i].Id, carros[i].Modelo, carros[i].Marca, carros[i].Classe, carros[i].Preco, carros[i].Imagem);
+                    }
+                    diasAlugado = carros[0].DiasTotal;
+                    FormData.addClass("invisivel");
+                    FormCarro.removeClass("invisivel");
+                } else {
+                    console.log("Não tem carros para essa data");
+                }
+            } else {
+                alert("Não pode ser alugado por mais de 30 dias");      
+            }
         }
     })
 }

@@ -49,13 +49,13 @@ namespace LocadoraCarro.Controllers
             {
                 if (aluguel.DataHoraRetirada <= DateTime.Now)
                 {                    
-                    aluguel.StatusId = new StatusDAO().BuscaPorNome("NaoRetirado").Id;
+                    aluguel.StatusId = new StatusDAO().BuscaPorNome("Nao Retirado").Id;
                 }
             } else if (status.Nome == "Retirado")
             {
                 if (aluguel.DataHoraDevolucao <= DateTime.Now)
                 {
-                    aluguel.StatusId = new StatusDAO().BuscaPorNome("AtrasoNaDevolucao").Id;
+                    aluguel.StatusId = new StatusDAO().BuscaPorNome("Atraso Na Devolucao").Id;
                 }
             }
             new AluguelDAO().Atualiza(aluguel);        
@@ -74,8 +74,7 @@ namespace LocadoraCarro.Controllers
         {
             var resultado = new List<object>();
             var retirada  = DateTime.Parse(dataRetirada);
-            var devolucao = DateTime.Parse(dataDevolucao);
-
+            var devolucao = DateTime.Parse(dataDevolucao);            
 
             foreach (var carro in new CarroDAO().Lista())
             {
@@ -107,6 +106,7 @@ namespace LocadoraCarro.Controllers
                         var modelo = new ModeloDAO().BuscaPorId(carro.ModeloId);
                         resultado.Add(new
                         {
+                            DiasTotal = calculaTempoComCarro(retirada, devolucao),
                             Id = carro.Id,
                             Modelo = modelo.Nome,
                             Marca = new MarcaDAO().BuscaPorId(modelo.MarcaId).Nome,
@@ -138,6 +138,14 @@ namespace LocadoraCarro.Controllers
                 x++;
             }
             return carroSemUso;
+        }
+
+        public int calculaTempoComCarro(DateTime retirada, DateTime Devolucao)
+        {
+            var diasTotal = (Devolucao - retirada).TotalDays;
+            if (diasTotal == 0) return 1;
+            else
+                return Convert.ToInt32(diasTotal);
         }
 
         public JsonResult BuscaProtecoes()
@@ -271,6 +279,45 @@ namespace LocadoraCarro.Controllers
             var carro = dao.BuscaPorId(id);
             carro.QtdDisponivel++;
             dao.Atualiza(carro);
+        }
+        public JsonResult RetornaStatus(int id)
+        {
+            int[] status = new int[5];
+            IList<Aluguel> alugueis = new List<Aluguel>();
+            if (id == 0)
+            {
+                alugueis = new AluguelDAO().Lista();
+            }else
+            {
+                alugueis = new AluguelDAO().ListaPorCliente(id);
+            }
+            
+            foreach (var aluguel in alugueis)
+            {
+                var statusAluguel = new StatusDAO().BuscaPorId(aluguel.StatusId);
+                switch (statusAluguel.Nome)
+                {
+                    case "Reservado":
+                        status[0]++;
+                        break;
+                    case "Cancelado":
+                        status[1]++;
+                        break;
+                    case "Finalizado":
+                        status[2]++;
+                        break;
+                    case "Retirado":
+                        status[3]++;
+                        break;
+                    case "Nao Retirado":
+                        status[4]++;
+                        break;
+                    case "Atraso Na Devolucao":
+                        status[5]++;
+                        break;
+                }
+            }
+            return Json(status);
         }
     }
 }

@@ -177,11 +177,11 @@ body {
     border-bottom: 0.02px solid #3D5771;
 }
 
-.modal{
+.modalCadastro{
     position: fixed;
     top: 20%;
     right: 300px;
-    bottom: 25%;
+    height: 500px;
     left: 40%;
 }
 
@@ -218,6 +218,11 @@ body {
 }
 
 .form-control {
-
     text-align: left;
+}
+
+.filtro {
+    height: 30px;
+    border: 1px solid #b3b3b3;
+    margin-bottom: 10px;
 }
