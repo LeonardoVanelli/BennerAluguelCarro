@@ -43,5 +43,27 @@ namespace LocadoraCarro.Controllers
             dao.Remove(dao.BuscaPorId(id));
             return RedirectToAction("Index");
         }
+        public ActionResult RetornaProtecao()
+        {
+            var alugueis = new AluguelDAO().Lista();
+            int[] status = new int[3];
+
+            foreach (var aluguel in alugueis)
+            {                
+                switch (aluguel.ProtecaoId)
+                {
+                    case 1:
+                        status[0]++;
+                        break;
+                    case 2:
+                        status[1]++;
+                        break;
+                    case 3:
+                        status[2]++;
+                        break;                   
+                }                
+            }
+            return Json(status);
+        }
     }
 }

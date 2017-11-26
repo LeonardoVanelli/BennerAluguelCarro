@@ -132,6 +132,9 @@
     <Content Include="App_Data\LocadoraCarroDB.mdf" />
     <Content Include="Content\CarrosImg\FordFocus.jpg" />
     <Content Include="Content\CarrosImg\HB20.jpg" />
+    <Content Include="Content\Carros\20170405051925-principal-corolla-2018.png" />
+    <Content Include="Content\Carros\20170410090825-3-Cinza Satin Steel %28Metálica%29.png" />
+    <Content Include="Content\Carros\20170703073240-COR_Fusion_Prata Dublin.png" />
     <Content Include="Content\Css\bootstrap-datetimepicker.css" />
     <Content Include="Content\Css\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\Css\bootstrap-theme.css" />

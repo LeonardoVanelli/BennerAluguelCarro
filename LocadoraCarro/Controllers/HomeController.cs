@@ -1,5 +1,6 @@
 ﻿
 using LocadoraCarro.DAO;
+using LocadoraCarro.Filtros;
 using LocadoraCarro.Models;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace LocadoraCarro.Controllers
                 return View();
             }                              
         }
-
+        [AutorizacaoFiltreFuncionario]
         public ActionResult AIndex()
         {
             var alugueis = new AluguelDAO().Lista();

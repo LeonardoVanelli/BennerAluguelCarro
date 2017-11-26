@@ -24,8 +24,6 @@ else
     }
 </select>
 
-
-
 <table class="table table-hover">
     <thead>
         <tr>
@@ -48,10 +46,29 @@ else
                 <td>@aluguel.Id</td>
                 <td>@aluguel.DataHoraDevolucao</td>
                 <td>@aluguel.DataHoraRetirada</td>
-                <td>@aluguel.CarroId</td>
-                <td>
-                    @aluguel.ProtecaoId                                       
-                </td>
+                @foreach (var carro in @ViewBag.Carros)
+                {
+                    if (aluguel.CarroId == carro.Id)
+                    {
+                        foreach (var modelo in @ViewBag.Modelos)
+                        {
+                            if (carro.ModeloId == modelo.Id)
+                            {
+                                <td class="Campo-doCliente">@modelo.Nome</td>
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+                @foreach (var protecao in @ViewBag.Protecoes)
+                {
+                    if (aluguel.ProtecaoId == protecao.Id)
+                    {
+                        <td class="Campo-doCliente">@protecao.Nome</td>
+                        break;
+                    }
+                }
                 @foreach (var cliente in @ViewBag.Cliente)
                 {
                     if (aluguel.ClienteId == cliente.Id)
@@ -136,7 +153,7 @@ $.ajax({
     type: "POST",
     url: "/Aluguel/RetornaStatus",
     data: {
-        Nome: 0
+        id: 0
     },
     success: function (result) {
         montaGrafico(result)

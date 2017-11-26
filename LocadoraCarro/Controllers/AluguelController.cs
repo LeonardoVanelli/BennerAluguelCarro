@@ -18,6 +18,9 @@ namespace LocadoraCarro.Controllers
             IList<Aluguel> alugueis = new List<Aluguel>();
             IList<Cliente> clientes = new List<Cliente>();
             IList<Status> status = new List<Status>();
+            IList<Protecao> protecoes = new List<Protecao>();
+            IList<Modelo> modelos = new List<Modelo>();
+            IList<Carro> carros = new List<Carro>();
 
             Cliente cliente = (Cliente)(Session["clienteLogado"]);
             if (cliente != null)
@@ -35,9 +38,19 @@ namespace LocadoraCarro.Controllers
             {
                 VerificaStatus(aluguel);
                 status.Add(new StatusDAO().BuscaPorId(aluguel.StatusId));
+                protecoes.Add(new ProtecaoDAO().BuscaPorId(aluguel.ProtecaoId));
+                carros.Add(new CarroDAO().BuscaPorId(aluguel.CarroId));
             }
+            foreach (var carro in carros)
+            {
+                modelos.Add(new ModeloDAO().BuscaPorId(carro.ModeloId));
+            }
+
             ViewBag.Cliente = clientes;
             ViewBag.Status = status;
+            ViewBag.Protecoes = protecoes;
+            ViewBag.Carros = carros;
+            ViewBag.Modelos = modelos;
             ViewBag.ListaStatus = new StatusDAO().Lista();
             return View(alugueis);
         }
