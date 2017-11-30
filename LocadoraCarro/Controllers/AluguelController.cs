@@ -295,7 +295,7 @@ namespace LocadoraCarro.Controllers
         }
         public JsonResult RetornaStatus(int id)
         {
-            int[] status = new int[5];
+            int[] status = new int[6];
             IList<Aluguel> alugueis = new List<Aluguel>();
             if (id == 0)
             {
