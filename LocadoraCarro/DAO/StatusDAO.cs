@@ -28,7 +28,7 @@ namespace LocadoraCarro.DAO
         {
             using (var contexto = new LocadoraContext())
             {
-                return contexto.Statuos.FirstOrDefault(u => u.Nome == nome);
+                return contexto.Statuos.FirstOrDefault(u => u.Nome == nome );
             }
         }
     }

@@ -24,7 +24,7 @@ namespace LocadoraCarro.Filtros
                     );
             } else
             {
-                if (((Funcionario)(funcionario)).FuncaoId != 3)
+                if (((Funcionario)(funcionario)).FuncaoId != 1)
                 {
                     filterContext.Result = new RedirectToRouteResult(
                         new RouteValueDictionary(

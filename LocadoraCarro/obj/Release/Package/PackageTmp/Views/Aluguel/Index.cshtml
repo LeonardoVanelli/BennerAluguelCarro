@@ -1,0 +1,197 @@
+﻿@model IList<LocadoraCarro.Models.Aluguel>
+
+@if (Session["funcionarioLogado"] != null)
+{
+    <div class="divTexto">
+        <h1 class="Titulo">Alugueis</h1>
+    </div>
+    <label>Filtro: </label>
+    <input class="filtro" id="filtroCliente" type="text" />
+}
+else
+{
+    <div class="divTexto">
+        <h1 class="Titulo">Meus Alugueis</h1>
+    </div>
+    <input class="invisivel" id="filtroCliente" type="text" />
+}
+<label>Filtro Status</label>
+<select class="ComboBox" id="filtroStatus">
+    <option value="Nenhum">Nenhum</option>
+    @foreach (var status in ViewBag.ListaStatus)
+    {
+        <option value="@status.Nome">@status.Nome</option>
+    }
+</select>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Data Devolução</th>
+            <th>Data Retirada</th>
+            <th>Carro</th>
+            <th>Protecao</th>
+            @if (Session["funcionarioLogado"] != null)
+            {
+                <th>Cliente</th>
+            }          
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var aluguel in Model)
+        {
+            <tr class="TrAluguelDosClientes">
+                <td>@aluguel.Id</td>
+                <td>@aluguel.DataHoraDevolucao</td>
+                <td>@aluguel.DataHoraRetirada</td>
+                @foreach (var carro in @ViewBag.Carros)
+                {
+                    if (aluguel.CarroId == carro.Id)
+                    {
+                        foreach (var modelo in @ViewBag.Modelos)
+                        {
+                            if (carro.ModeloId == modelo.Id)
+                            {
+                                <td class="Campo-doCliente">@modelo.Nome</td>
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+                @foreach (var protecao in @ViewBag.Protecoes)
+                {
+                    if (aluguel.ProtecaoId == protecao.Id)
+                    {
+                        <td class="Campo-doCliente">@protecao.Nome</td>
+                        break;
+                    }
+                }
+                @foreach (var cliente in @ViewBag.Cliente)
+                {
+                    if (aluguel.ClienteId == cliente.Id)
+                    {
+                        <td class="Campo-doCliente">@cliente.Nome</td>
+                        break;
+                    }
+                }
+                @foreach (var status in @ViewBag.Status)
+                {
+                    if (aluguel.StatusId == status.Id)
+                    {
+                        <td class="Campo-doStatus">@status.Nome</td>
+                        if (Session["funcionarioLogado"] != null)
+                        {
+                            if (status.Nome == "Reservado" || status.Nome == "Retirado" || status.Nome == "AtrasoNaDevolucao")
+                            {
+                                <td>
+                                    <div class="dropdown btn-opcoes">
+                                        <button class="dropbtn">opções</button>
+                                        <div class="dropdown-content">
+                                            @if (status.Nome == "Reservado")
+                                            {
+                                                <button value="@aluguel.Id" class="btnIniciarPedido btn btnMenu">Iniciar</button>
+                                                <button value="@aluguel.Id" class="btnCancelPedido btn btnMenu">Cacelar</button>
+                                            }
+                                            @if (status.Nome == "Retirado" || status.Nome == "AtrasoNaDevolucao")
+                                            {
+                                                <button value="@aluguel.Id" class="btnFianlizaPedido btn btnMenu">Finalizar</button>
+                                            }
+                                        </div>
+                                    </div>
+                                </td>
+                            }
+
+                        }
+                        else
+                        {
+                            if (status.Nome == "Reservado")
+                            {
+                                <td>
+                                    <div class="dropdown btn-opcoes">
+                                        <button class="dropbtn">opções</button>
+                                        <div class="dropdown-content">
+                                            <button value="@aluguel.Id" class="btnCancelPedido btn btnMenu">Cacelar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            }
+                        }
+                        break;
+                    }
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+@if (Session["funcionarioLogado"] == null)
+{
+    <button class="btn btn-success" onclick="location.href='@Url.Action("Form", "Aluguel")';return false;">Alugue já</button>
+}
+else
+{
+    if (((LocadoraCarro.Models.Funcionario)(Session["funcionarioLogado"])).FuncaoId == 1)
+    {
+        <div>
+            <canvas id="myChart" width="400" height="100"></canvas>
+        </div>
+    }
+    else
+    {
+        <div class="invisivel">
+            <canvas id="myChart" width="400" height="100"></canvas>
+        </div>
+    }
+}
+
+<script>
+
+$.ajax({
+    dataType: "json",
+    type: "POST",
+    url: "/Aluguel/RetornaStatus",
+    data: {
+        id: 0
+    },
+    success: function (result) {
+        montaGrafico(result)
+    }
+})
+
+var ctx = document.getElementById("myChart").getContext('2d');
+
+function montaGrafico(data) {
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ["Reservados", "Cancelados", "Finalizados", "Retirdos", "Não Retirados", "Atraso na devolução"],
+            datasets: [{
+                data: data,
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 206, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(153, 102, 255)',
+                    'rgb(255, 159, 64)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        }
+    });
+}
+</script>
+
+<script type="text/javascript" src="~/Content/JS/FiltroAluguel.js"></script>
+
+

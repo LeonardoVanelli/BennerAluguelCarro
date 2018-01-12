@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Default Web Site" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Leonardo\\Documents\\GitHub\\BennerAluguelCarro\\LocadoraCarro\\obj\\Debug\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Leonardo\\Documents\\GitHub\\BennerAluguelCarro\\LocadoraCarro\\obj\\Debug\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Add write permission to App_Data Folder" description="Add write permission to App_Data folder" value="Default Web Site/App_Data" tags="Hidden">
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Leonardo\\Documents\\GitHub\\BennerAluguelCarro\\LocadoraCarro\\obj\\Debug\\Package\\PackageTmp\\App_Data$" />
+  </parameter>
+  <parameter name="LocadoraCarro.DAO.LocadoraContext-Web.config Connection String" description="" value="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\bin\Release\PublishOutput\App_Data\LocadoraCarroDB.mdf;Integrated Security=True;Connect Timeout=30" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Leonardo\\Documents\\GitHub\\BennerAluguelCarro\\LocadoraCarro\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='LocadoraCarro.DAO.LocadoraContext']/@connectionString" />
+  </parameter>
+</parameters>

@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -130,8 +131,9 @@
       <DependentUpon>LocadoraCarroDB.mdf</DependentUpon>
     </Content>
     <Content Include="App_Data\LocadoraCarroDB.mdf" />
-    <Content Include="Content\CarrosImg\FordFocus.jpg" />
-    <Content Include="Content\CarrosImg\HB20.jpg" />
+    <Content Include="Content\Carros\20170405051925-principal-corolla-2018.png" />
+    <Content Include="Content\Carros\20170410090825-3-Cinza Satin Steel %28Metálica%29.png" />
+    <Content Include="Content\Carros\20170703073240-COR_Fusion_Prata Dublin.png" />
     <Content Include="Content\Css\bootstrap-datetimepicker.css" />
     <Content Include="Content\Css\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\Css\bootstrap-theme.css" />
@@ -139,11 +141,17 @@
     <Content Include="Content\Css\bootstrap.css" />
     <Content Include="Content\Css\bootstrap.min.css" />
     <Content Include="Content\Css\edit.css" />
+    <Content Include="Content\Css\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Content\Css\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="Content\Css\login.css" />
     <Content Include="Content\Css\MenuTable.css" />
+    <Content Include="Content\Css\plugins\morris.css" />
+    <Content Include="Content\Css\sb-admin.css" />
+    <Content Include="Content\Css\Site.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Img\spinner.gif" />
     <Content Include="Content\JS\Aluguel.js" />
+    <Content Include="Content\JS\bootstrap.min.js" />
     <Content Include="Content\JS\CriarElementos.js" />
     <Content Include="Content\JS\DateTime.js" />
     <Content Include="Content\JS\FiltroAluguel.js" />
@@ -151,6 +159,7 @@
     <Content Include="Content\JS\ImagemCarro.js" />
     <Content Include="Content\JS\jquery.comiseo.daterangepicker.js" />
     <Content Include="Content\JS\jquery.comiseo.daterangepicker.min.js" />
+    <Content Include="Content\JS\jquery.js" />
     <Content Include="Content\JS\UsuarioAluguel.js" />
     <Content Include="Content\JS\jquery-3.2.1.js" />
     <Content Include="Content\JS\ValidacaoAluguel.js" />
@@ -239,6 +248,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
@@ -481,7 +492,6 @@
     <Content Include="Views\Carro\Form.cshtml" />
     <Content Include="Views\Carro\Visualiza.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
-    <Content Include="Views\AluguelCarro.cshtml" />
     <Content Include="Views\Aluguel\Form.cshtml" />
     <Content Include="Views\Aluguel\Index.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
@@ -492,6 +502,7 @@
     <Content Include="Views\Funcionario\Form.cshtml" />
     <Content Include="Views\Funcionario\Visualiza.cshtml" />
     <Content Include="Views\Login\FalhaLogin.cshtml" />
+    <Content Include="Views\Home\AIndex.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -499,7 +510,11 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\Css\font-awesome-4.7.0\css\fonts\" />
+    <Folder Include="Content\Css\font-awesome-4.7.0\css\less\" />
+    <Folder Include="Content\Css\font-awesome-4.7.0\css\scss\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710241324499_Modelo.resx">
       <DependentUpon>201710241324499_Modelo.cs</DependentUpon>
