@@ -47,17 +47,14 @@ namespace LocadoraCarro.Controllers
                     if (aluguel.StatusId == new StatusDAO().BuscaPorNome("Cancelado").Id)
                     {
                         numeroDeCancelados++;
-                    }
-                    if (aluguel.StatusId == new StatusDAO().BuscaPorNome("Retirado").Id)
-                    {
-                        numeroRetirados++;
-                    }
+                    }                    
                     if (aluguel.StatusId == new StatusDAO().BuscaPorNome("Nao Retirado").Id)
                     {
                         numeroNaoRetirados++;
                     }
                 }
-            }          
+            }
+            //var umeroRetirados = new AluguelDAO().ReservasParaHojeTeste01(1);
             ViewBag.NumeroRetiradas = numeroDeRetiradasHoje;
             ViewBag.numeroCancelados = numeroDeCancelados;
             ViewBag.NumerosRetirados = numeroRetirados;

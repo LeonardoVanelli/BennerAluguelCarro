@@ -71,15 +71,15 @@ namespace LocadoraCarro.Controllers
                     aluguel.StatusId = new StatusDAO().BuscaPorNome("Atraso Na Devolucao").Id;
                 }
             }
-            new AluguelDAO().Atualiza(aluguel);        
+            new AluguelDAO().Atualiza(aluguel);
         }
 
         public ActionResult Form()
         {
             if (Session["clienteLogado"] != null)
-                 ViewBag.ClienteLogado = ( (Cliente)(Session["clienteLogado"]) ).Id;
+                ViewBag.ClienteLogado = ( (Cliente)(Session["clienteLogado"]) ).Id;
             else ViewBag.ClienteLogado = 0;
-            ViewBag.Classes = new ClasseDAO().Lista();
+                ViewBag.Classes = new ClasseDAO().Lista();
             return View();
         }
 

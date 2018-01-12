@@ -1,0 +1,138 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript" src="~/Content/JS/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="~/Content/Css/bootstrap.css" />
+
+    <link rel="stylesheet" href="~/Content/Css/login.css">
+    <script type="text/javascript" src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/moment.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/scripts/bootstrap-datetimepicker.js"></script>
+    @* Graphics *@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+
+    <link rel="stylesheet" href="~/Content/Css/MenuTable.css"/>
+    <link rel="stylesheet" href="~/Content/Css/bootstrap-datetimepicker.css" />
+    <link rel="stylesheet" href="~/Content/Css/Site.css" />
+
+    <link href="~/Content/Css/plugins/morris.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/Css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/Content/Css/sb-admin.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="~/Content/Css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link href="~/Content/Css/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+
+
+    <link rel="stylesheet" href="~/Content/Css/edit.css" />
+    <title>Locadora Benner</title>
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!--Menu Topo-->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>                
+                <a class="navbar-brand image" href="/home">Locadora <span style="color: #EC1846">benner</span></a>
+            </div>
+            <ul class="nav navbar-right top-nav">
+                @if (Session["funcionarioLogado"] != null || Session["clienteLogado"] != null)
+                {
+                    <li class="dropdown">
+                        @if (Session["funcionarioLogado"] != null)
+                        {
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> @(((LocadoraCarro.Models.Funcionario)(Session["funcionarioLogado"])).Nome) <b class="caret"></b></a>
+                        }
+                        else
+                        {
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> @(((LocadoraCarro.Models.Cliente)(Session["clienteLogado"])).Nome) <b class="caret"></b></a>
+                        }
+
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><i class="fa fa-fw fa-user"></i> Profile</a></li>
+                            <li>@Html.ActionLink("Sair", "Deslogar", "Login")</li>
+                        </ul>
+                    </li>
+                }
+                else
+                {
+                    <li><a id="btn-loginHome" href="/login/index">Login</a></li>
+                }
+            </ul>
+
+            <!--Menu Lateral-->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav MenuLateral">
+                    @if (Session["clienteLogado"] == null & Session["funcionarioLogado"] == null)
+                    {
+                        <li>@Html.ActionLink("Alugue já", "Form", "Aluguel")</li>
+                    }
+                    <!-- Papel do Cliente+ -->
+                    @if (Session["clienteLogado"] != null)
+                    {
+                        <li>@Html.ActionLink("Aluguel", "Form", "Aluguel")</li>
+                        <li>@Html.ActionLink("Meus aluguéis", "index", "Aluguel")</li>
+                    }
+                    @if (Session["funcionarioLogado"] != null)
+                    {
+                        <!-- Papel do gerente+ -->
+                        if (((LocadoraCarro.Models.Funcionario)(Session["funcionarioLogado"])).FuncaoId == 1)
+                        {
+                            <li>@Html.ActionLink("Funções", "Index", "Funcao")</li>
+                            <li>@Html.ActionLink("Funcionarios", "Index", "Funcionario")</li>
+                        }
+                        <!-- Papel Funcionario+ -->
+                        <li>@Html.ActionLink("Alugueis", "Index", "Aluguel")</li>
+                            <li>
+                                <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Carros </a>
+                                <ul id="demo" class="collapse">
+                                    <li>@Html.ActionLink("Classes dos carros", "Index", "Classe")</li>
+                                    <li>@Html.ActionLink("Modelos dos carros", "Index", "Modelo")</li>
+                                    <li>@Html.ActionLink("Marca dos carros", "Index", "Marca")</li>
+                                    <li>@Html.ActionLink("Carros", "Index", "Carro")</li>
+                                </ul>
+                            </li>
+                            <li>@Html.ActionLink("Proteção", "Index", "Protecao")</li>
+                            <li>@Html.ActionLink("Clientes", "index", "Cliente")</li>
+                    }
+
+                </ul>
+            </div>
+        </nav>
+        <div id="page-wrapper" style="height: 93vh">
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        @RenderBody()
+                    </div>
+                </div>
+                <!-- /.row -->
+
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+
+    <!-- Bootstrap Core JavaScript -->
+</body>
+</html>

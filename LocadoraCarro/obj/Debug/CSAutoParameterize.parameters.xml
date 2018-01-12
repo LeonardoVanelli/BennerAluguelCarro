@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="LocadoraCarro.DAO.LocadoraContext-Web.config Connection String" description="LocadoraCarro.DAO.LocadoraContext A Cadeia de Conexão usada em web.config pelo aplicativo para acessar o banco de dados." defaultValue="LocadoraCarro.DAO.LocadoraContext_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Leonardo\\Documents\\GitHub\\BennerAluguelCarro\\LocadoraCarro\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='LocadoraCarro.DAO.LocadoraContext']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,6 +1,9 @@
 ﻿using LocadoraCarro.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity.Core.Objects;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -45,7 +48,7 @@ namespace LocadoraCarro.DAO
                     if (aluguel.ClienteId == id)
                     {
                         alugueis.Add(aluguel);
-                    } 
+                    }
                 }
                 return alugueis;
             }
@@ -98,6 +101,31 @@ namespace LocadoraCarro.DAO
                 contexto.Entry(aluguel).State = System.Data.Entity.EntityState.Modified;
                 contexto.SaveChanges();
             }
+        }
+        public int ReservasParaHoje(int StatusId)
+        {
+            using (var contexto = new LocadoraContext())
+            {
+                var query = @"select count(*) Qtde
+                            from Aluguels
+                            where StatusId = 1";
+                var objctx = contexto.Alugueis.SqlQuery(query);
+
+                return 7;
+            }
+        }
+        public int ReservasParaHojeTeste01(int StatusId)
+        {
+            using (var contexto = new LocadoraContext())
+            {
+                var query = @"select count(*) Qtde
+                            from Aluguels
+                            where StatusId = 1";
+                SqlCommand cmd = new SqlCommand(query);
+
+                var aa = cmd.ExecuteNonQuery();
+            }
+            return 7;
         }
     }
 }

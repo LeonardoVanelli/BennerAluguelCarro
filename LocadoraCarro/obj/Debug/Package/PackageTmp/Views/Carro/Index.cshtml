@@ -1,0 +1,33 @@
+﻿@model IList<LocadoraCarro.Models.Carro>
+
+<div class="divTexto">
+    <h1 class="Titulo">Carros</h1>
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Modelo</th>
+            <th>Descrição</th>
+        </tr>
+    </thead>
+    <tbody>       
+        @foreach (var carro in Model)
+        {
+            <tr>
+                <td>@carro.Id</td>
+                @foreach (var modelo in ViewBag.Modelos)
+                {
+                    if (modelo.Id == carro.ModeloId)
+                    {
+                        <td><a href="/carro/visualiza/@carro.Id">@modelo.Nome</a></td>
+                        break;
+                    }
+                }
+                <td>@carro.Descricao</td>
+            </tr>
+        }            
+    </tbody>
+</table>
+<button class="btn btn-success" onclick="location.href='@Url.Action("Form", "Carro")';return false;">Adicionar</button>

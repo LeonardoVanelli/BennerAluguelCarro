@@ -1,0 +1,199 @@
+﻿<label id="cliente-logado" class="invisivel">@ViewBag.ClienteLogado</label>
+
+<form class="data-hora">
+    <div class="divTexto">
+        <h1 class="Titulo">Aluguel</h1>
+    </div>
+    <label class="informacao-data">Data retirada do automovel</label>
+    <div class='input-group date' id='datetimepicker6'>
+        <input type='text' id="data_retirada" class="form-control" />
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+    </div>
+
+    <label class="informacao-data">Hora retirada:</label>
+    <div class='input-group date' id='datetimepicker3'>
+        <input type='text' id="hora_retirada" class="form-control" />
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-time"></span>
+        </span>
+    </div>
+
+    <label class="informacao-data">Data devolução:</label>
+    <div class='input-group date' id='datetimepicker7'>
+        <input type='text' id="data_devolucao" class="form-control" />
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+    </div>
+
+    <label class="informacao-data">Hora devolução:</label>
+    <div class='input-group date' id='datetimepicker2'>
+        <input type='text' id="hora_devolucao" class="form-control" />
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-time"></span>
+        </span>
+    </div>
+
+    <button id="btn-proximo" type="button" class="btn btn-success">Proximo</button>
+</form>
+
+<form>
+    <div class="carro invisivel" id="lista-carro">
+        <div class="divTexto">
+            <h1 class="Titulo">Selecione o Carro</h1>
+        </div> 
+        <label>Filtro Classe</label>
+        <div id="FiltrosCarro">            
+            <select class="ComboBox" id="SlcClasseCarro">
+                <option value="Nenhum">Nenhum</option>
+                @foreach (var classe in ViewBag.Classes)
+                {
+                    <option value="@classe.Nome">@classe.Nome</option>
+                }
+            </select>
+        </div>
+    </div>
+</form>
+
+<div class="protecao invisivel">
+    <div class="divTexto">
+        <h1 class="Titulo">Selecione a Proteção</h1>
+    </div> 
+    <form>
+        <table class="table" id="tbl-protecao" style="width:100%">            
+            <tr>
+                <td>       </td>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Selecione</th>
+            </tr>
+            <tr>
+                <td class="invisivel">3</td>
+                <td>Nenhuma</td>
+                <td>Arque com gastos inesperados</td>
+                <td>00,00R$</td>
+                <td>
+                    <a class="btn-protecao btn btn-success btn-xs" role="button">Selecionar</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="invisivel">1</td>
+                <td>Basica</td>
+                <td>Furtos e pneu furado</td>
+                <td>80,00R$</td>
+                <td>
+                    <a class="btn-protecao btn btn-success btn-xs" role="button">Selecionar</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="invisivel">2</td>
+                <td>Completa</td>
+                <td>Furtos, pneu furado, acidentes</td>
+                <td>120,00R$</td>
+                <td>
+                    <a class="btn-protecao btn btn-success btn-xs" role="button">Selecionar</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div class="clienteLogar invisivel">
+    <div class="divTexto">
+        <h1 class="Titulo">Logue ou Cadastre-se</h1>
+    </div> 
+    <form>
+        <label for="login">Login:</label>
+        <input id="login_autentica" class="form-control" />
+        <label for="senha">Senha:</label>
+        <input id="senha_autentica" type="password" class="form-control margin-bot" />
+        <div id="fail-login" class="modal modal-sucesso">
+            <p>Login ou senha incorreto</p>
+            <a class="btn btn-success" href="#" rel="modal:close">Fechar</a>
+        </div>
+        <input class="btn btn-success margin-bot" id="btn-logar" type="submit" value="Logar" />
+        <p><a class="btn btn-success" href="#ex1" rel="modal:open">Ainda não tem conta?</a></p>
+    </form>
+</div>
+
+<div id="ex1" class="cliente modal modalCadastro">
+    <h1>Cadastro de cliente</h1>
+    <form action="#">
+        <label for="nome">Nome:</label>
+        <input id="nome" name="cliente.Nome" class="form-control" />
+
+        <label for="cpf">Cpf:</label>
+        <input id="cpf" type="number" name="cliente.Cpf" class="form-control" />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="cliente.Email" class="form-control" />
+
+        <label for="telofone">Telefone:</label>
+        <input id="telefone" name="cliente.Telefono" class="form-control" />
+
+        <label for="login">Login:</label>
+        <input id="login" name="cliente.Login" class="form-control" />
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="cliente.Senha" class="form-control" />
+
+        <button id="btn-cadastrar" type="button" class="btn btn-success">Cadastrar</button>
+    </form>
+</div>
+
+<div id="confirmacao" class="invisivel">
+    <div class="divTexto">
+        <h1 class="Titulo">Confirmação</h1>
+    </div> 
+    <div class="Img_car1 lbl-carro">
+        <img id="confirma-imagem" src="/Content/CarrosImg/FordFocus.jpg" class="img-carro">
+    </div>
+    <div class="lbl-carros">
+        <h3>Carro</h3>
+        <p class="ul-carro" id="cModelo-car">Modelo: Siena</p>
+        <p class="ul-carro" id="cMarca-car">Marca: Fiat</p>
+        <p class="ul-carro" id="cPreco-car">Preco: 120,00R$</p>
+    </div>
+
+    <div class="lbl-carros">
+        <h3>Data</h3>
+        <p class="ul-carro" id="cRetirada">De: 10/08/2017 as 12:00h</p>
+        <p class="ul-carro" id="cDevolucao">Até: 17/08/2017 as 16:00h</p>
+        <p class="ul-carro"><span id="cDiasAlugado"></span> dias</p>
+    </div>
+
+    <div class="lbl-carros">
+        <h3>Proteção</h3>
+        <p class="ul-carro" id="cProtecao">Proteção: Básica</p>
+        <p class="ul-carro" id="cPreco-protecao">Preco: 80,00R$</p>
+    </div>
+
+    <div class="lbl-carros">
+        <h3>Valor Total</h3>
+        <p class="ul-carro" id="cTotal">Total: 200,00R$</p>
+    </div>
+    <div>
+        <input class="btn-confirmacao btn btn-success" id="btnConfirmar" type="submit" value="Confirmar" />
+    </div>
+</div>
+
+<div id="loading" class="center invisivel">
+    <img src="~/Content/Img/spinner.gif" alt="Spinner" id="spinner">
+</div>
+
+<div id="cadastro-sucesso" class="modal modal-sucesso">
+    <h2>Locação realizada com sucesso</h2>
+    <button class="btn btn-success" id="VoltaHome" href="#" rel="modal:close">
+        Concluir
+    </button>
+</div>
+
+<script type="text/javascript" src="~/Content/JS/Aluguel.js">       </script>
+<script type="text/javascript" src="~/Content/JS/CriarElementos.js"></script>
+<script type="text/javascript" src="~/Content/JS/UsuarioAluguel.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<script type="text/javascript" src="~/Content/JS/DateTime.js"></script>
+<script type="text/javascript" src="~/Content/JS/ValidacaoAluguel.js"></script>
+<script type="text/javascript" src="~/Content/JS/FiltroFormAluguel.js"></script>

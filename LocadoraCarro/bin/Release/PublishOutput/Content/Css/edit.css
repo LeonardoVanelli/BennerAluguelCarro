@@ -1,0 +1,270 @@
+.img-carro {
+    height: 100px;
+    width: 220px;
+    float: left;
+    clear: left;
+
+}
+
+.lbl-carros {
+    display: grid;
+    margin-bottom: 50px;
+    height: auto;
+    width: auto;
+    margin: 0% auto;
+    float: left;
+    margin-left: 2.5%;
+    margin-bottom: 30px;
+}
+
+.ul-carro {
+    border-bottom: 2px solid gray;
+}
+
+.slc-carro {
+    text-align: right;
+}
+
+#btn-proximo {
+    margin-top:10px;
+    float: right;
+    clear : left;
+}
+
+.visivel {
+    display: grid;
+}
+
+.invisivel {
+    display: none;
+}
+
+#btnSlcCarro {
+    width: 90px;
+}
+
+#Img_car1 {
+    height: 100px;
+    width: 220px;
+}
+
+#Img_car2 {
+    height: 100px;
+    width: 220px;
+}
+
+.margin-bot {
+    margin-bottom: 5px;
+}
+
+.margin-top {
+    margin-top: 5px;
+}
+
+#btn-logar {
+    float: left;
+    margin-right: 5px;
+    width: 100px;
+}
+
+#fail-login {
+    font-size:15px;
+    color: red;
+}
+
+.date {
+  width: 262px;
+}
+
+.time {
+  width: 150px;
+}
+
+.informacao-data {
+    border-bottom: 1px solid #e2e2e2;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#conteudo {
+		width: 77%;
+		float: right;
+}
+.btn-confirmacao {
+margin-top: 18%;
+}
+
+.fadeOut{
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.invisivel{
+    display: none;
+}
+
+body {
+    background-color: #e2e2e2;
+    padding: 0px;
+    margin-top: 50px;
+}
+
+.login-screen {
+    margin-top: 30%;
+}
+
+.campoInvalido {
+    border: 3px solid red;
+}
+
+.ComboBox {
+   -webkit-appearance: none;  /* Remove estilo padrão do Chrome */
+   -moz-appearance: none; /* Remove estilo padrão do FireFox */
+   appearance: none; /* Remove estilo padrão do FireFox*/
+   background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-appearance.gif) no-repeat #eeeeee;  /* Imagem de fundo (Seta) */
+   background-position: 218px center;  /*Posição da imagem do background*/
+   width: 250px; /* Tamanho do select, maior que o tamanho da div "div-select" */
+   height:30px; /* Altura do select, importante para que tenha a mesma altura em todo os navegadores */
+   border:1px solid #b3b3b3;
+   font: message-box;
+}
+
+#FiltrosCarro {
+    padding: 0px;
+    margin-bottom: 50px;
+}
+
+#menu-top {
+    margin-top: 0px;
+    height: 0px;
+    border-bottom: 2px solid cyan;
+    background-color: #CDC9C9;
+}
+
+.login-screen{
+    background-color: #CDC9C9;
+}
+
+.navbar-collapse {
+    background-color: #2b3643;
+}
+
+.MenuLateral{
+    background-color: #35505A;
+}
+
+#page-wrapper{
+    margin-top: 30px
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #b4bcc8;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+    font-size: 30px;
+}
+
+.side-nav>li>ul>li>a {
+    color: #A1ADD5;
+    border-bottom: 0.02px solid #3D5771;
+}
+
+.navbar-nav>li {
+    border-bottom: 0.02px solid #3D5771;
+}
+
+.modalCadastro{
+    position: fixed;
+    top: 20%;
+    right: 300px;
+    height: 500px;
+    left: 40%;
+}
+
+#btn-cadastrar {
+    margin-top: 5px;
+    float: right;
+}
+
+.modal a.close-modal {
+    top: -1.5px;
+    right: -1.5px;
+}
+
+.Titulo {        
+    text-align: center;
+}
+
+.divTexto{
+    border-bottom: 1.5px solid #A9B5C8;
+    margin-bottom: 30px;
+}
+
+#page-wrapper {
+    background-color: #e2e2e2;
+}
+
+#btnConfirmar {
+    width: 100px;
+}
+
+.botoes {
+    margin-top: 5px;
+    width: 100px;
+}
+
+.form-control {
+    text-align: left;
+}
+
+.filtro {
+    height: 30px;
+    border: 1px solid #b3b3b3;
+    margin-bottom: 10px;
+}
+
+.caixaTexto {
+    float: left;
+    width: 400px;
+    padding: 10px
+}
+
+.caixaimagem {
+    float: left;
+    width: 700px;
+    border: 4px solid #A2A2A2;
+    background-color: #C8C8C8;
+}
+
+.btnImagem {
+    margin-bottom: 5px;
+    margin-right: 5px;
+    background-color: #626262;
+    border: #626262;
+}
+
+.modal-sucesso{
+    top: 120px;
+    left: 500px;
+    height: 150px;
+}
+
+.caixa2 {
+    float: right;
+    padding: 30px;
+}
+
+.caixa {
+    float: left;
+    padding: 30px;
+    padding-top: 0px;
+}
+
+.carro-home {
+    width: 430px;
+    height: 230px;
+}

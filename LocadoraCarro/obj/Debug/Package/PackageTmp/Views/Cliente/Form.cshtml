@@ -1,0 +1,27 @@
+﻿
+<div class="divTexto">
+    <h1 class="Titulo">Cadastro de Clientes</h1>
+</div>
+
+<form action="/Cliente/Adiciona" method="post">
+
+    <label for="nome">Nome:</label>
+    <input id="nome" name="cliente.Nome" class="form-control" />
+
+    <label for="cpf">Cpf:</label>
+    <input type="number" id="cpf" name="cliente.Cpf" class="form-control" />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="cliente.Email" class="form-control" />
+
+    <label for="telofone">Telefone:</label>
+    <input id="telefone" name="cliente.Telefono" class="form-control" />
+
+    <label for="login">Login:</label>
+    <input id="login" name="cliente.Login" class="form-control" />
+
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="cliente.Senha" class="form-control" />
+
+    <input class="btn btn-success botoes" type="submit" value="Cadastrar" />
+</form>

@@ -1,0 +1,27 @@
+﻿
+@model LocadoraCarro.Models.Protecao
+
+<div class="divTexto">
+    <h1 class="Titulo">Cadastro de Proteção</h1>
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Preço por Dia</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Id</td>
+            <td>@Model.Nome</td>
+            <td>@Model.Descricao</td>
+            <td>@Model.PrecoDia</td>
+        </tr>
+    </tbody>
+</table>
+
+@Html.ActionLink("Remover", "Remove", new { id = @Model.Id })

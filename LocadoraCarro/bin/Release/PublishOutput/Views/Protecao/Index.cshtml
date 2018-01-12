@@ -1,0 +1,89 @@
+﻿
+@model IList<LocadoraCarro.Models.Protecao>
+
+<div class="divTexto">
+    <h1 class="Titulo">Cadastro de Proteção</h1>
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var protecao in Model)
+        {
+            <tr>
+                <td>@protecao.Id</td>
+                <td>
+                    @Html.ActionLink(protecao.Nome, "Visualiza", new { id = protecao.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<button class="btn btn-success" onclick="location.href='@Url.Action("Form", "Protecao")';return false;">Adicionar</button>
+
+@if(Session["funcionarioLogado"] != null)
+{
+    if (((LocadoraCarro.Models.Funcionario)(Session["funcionarioLogado"])).FuncaoId == 1)
+    {
+        <div>
+            <canvas id="myChart" width="400" height="100"></canvas>
+        </div>
+    }
+    else
+    {
+        <div class="invisivel">
+            <canvas id="myChart" width="400" height="100"></canvas>
+        </div>
+    }
+}
+
+<script>
+
+$.ajax({
+    dataType: "json",
+    type: "POST",
+    url: "/Protecao/RetornaProtecao",
+    data: {
+        id: 0
+    },
+    success: function (result) {
+        montaGrafico(result)
+    }
+})
+
+var ctx = document.getElementById("myChart").getContext('2d');
+
+function montaGrafico(data) {
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ["Basica", "Completa", "Nenhuma"],
+            datasets: [{
+                data: data,
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 206, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(153, 102, 255)',
+                    'rgb(255, 159, 64)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        }
+    });
+}
+</script>
