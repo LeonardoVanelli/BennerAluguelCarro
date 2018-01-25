@@ -451,6 +451,14 @@
     <Compile Include="Migrations\201711181328467_Status1.Designer.cs">
       <DependentUpon>201711181328467_Status1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801251917239_Remove_Classe_carro.cs" />
+    <Compile Include="Migrations\201801251917239_Remove_Classe_carro.Designer.cs">
+      <DependentUpon>201801251917239_Remove_Classe_carro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801251930042_Adiciona_classe_no_modelos.cs" />
+    <Compile Include="Migrations\201801251930042_Adiciona_classe_no_modelos.Designer.cs">
+      <DependentUpon>201801251930042_Adiciona_classe_no_modelos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluguel.cs" />
     <Compile Include="Models\Carro.cs" />
@@ -632,6 +640,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711181328467_Status1.resx">
       <DependentUpon>201711181328467_Status1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801251917239_Remove_Classe_carro.resx">
+      <DependentUpon>201801251917239_Remove_Classe_carro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801251930042_Adiciona_classe_no_modelos.resx">
+      <DependentUpon>201801251930042_Adiciona_classe_no_modelos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

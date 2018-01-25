@@ -123,7 +123,7 @@ namespace LocadoraCarro.Controllers
                             Id = carro.Id,
                             Modelo = modelo.Nome,
                             Marca = new MarcaDAO().BuscaPorId(modelo.MarcaId).Nome,
-                            Classe = new ClasseDAO().BuscaPorId(carro.ClasseId).Nome,
+                           // Classe = new ClasseDAO().BuscaPorId(carro.ClasseId).Nome,
                             Preco = carro.PrecoDia,
                             Imagem = carro.Imagem
                         });
