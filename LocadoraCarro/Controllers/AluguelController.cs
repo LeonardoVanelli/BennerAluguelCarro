@@ -332,5 +332,23 @@ namespace LocadoraCarro.Controllers
             }
             return Json(status);
         }
+
+        public JsonResult RetornaTodasProtecao()
+        {
+            var protecoes = new ProtecaoDAO().Lista();
+
+            var resultado = new List<object>();
+            foreach (var protecao in protecoes)
+            {
+                resultado.Add(new
+                {
+                    Id = protecao.Id,
+                    Nome = protecao.Nome,
+                    Descricao = protecao.Descricao,
+                    PrecoDia = protecao.PrecoDia
+                });
+            }
+            return Json(resultado, JsonRequestBehavior.AllowGet);
+        }
     }
 }

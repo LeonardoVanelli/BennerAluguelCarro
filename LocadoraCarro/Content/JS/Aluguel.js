@@ -35,6 +35,7 @@ function SelecionaCarro() {
     event.preventDefault();
     FormCarro.addClass("invisivel");
     FormProtecao.removeClass("invisivel");
+    retornaProtecao()
 
     idCarro = $(this).parent().find("p")[0].innerHTML; 
 }
@@ -51,6 +52,23 @@ $(".btn-protecao").click(function (event) {
         formLogin.removeClass("invisivel");
     }        
 })
+
+function retornaProtecao() {
+    $.ajax({
+        dataType: "json",
+        type: "GET",
+        url: "/Aluguel/RetornaTodasProtecao",
+        success: function (protecoes) {
+            for (var i = 0; i < protecoes.length; i++) {
+                MontaProtecao(protecoes[i].Id,
+                    protecoes[i].Nome,
+                    protecoes[i].Descricao,
+                    protecoes[i].PrecoDia)
+            }
+        }
+    })
+    
+}
 
 function retornaCarros() {
     $("#loading").toggle();

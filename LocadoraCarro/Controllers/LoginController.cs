@@ -24,6 +24,8 @@ namespace LocadoraCarro.Controllers
             var usuario = daoCliente.BuscaPorLoginSenha(login, senha);            
             var funcioanrio = daoFuncionario.BuscaPorLoginSenha(login, senha);
 
+            new AluguelDAO().ReservasParaHoje(7);
+
             if (usuario != null)
             {
                 Session["clienteLogado"] = usuario;

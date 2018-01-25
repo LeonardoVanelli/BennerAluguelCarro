@@ -106,25 +106,26 @@ namespace LocadoraCarro.DAO
         {
             using (var contexto = new LocadoraContext())
             {
-                var query = @"select count(*) Qtde
-                            from Aluguels
-                            where StatusId = 1";
-                var objctx = contexto.Alugueis.SqlQuery(query);
+                var query =   @"Select ca.Id, ca.Placa, ca.Descricao, ca.PrecoDia, ca.ClasseId, ca.ModeloId, QtdDisponivel, ca.Imagem
+                                  from Aluguels al
+                                     , Carroes  ca
+                                 where al.CarroId = ca.id";
+                var Alugueis = contexto.Carros.SqlQuery(query).ToList();
 
                 return 7;
             }
         }
         public int ReservasParaHojeTeste01(int StatusId)
         {
-            using (var contexto = new LocadoraContext())
-            {
-                var query = @"select count(*) Qtde
-                            from Aluguels
-                            where StatusId = 1";
-                SqlCommand cmd = new SqlCommand(query);
+            //using (var contexto = new LocadoraContext())
+            //{
+            //    var query = @"select count(*) Qtde
+            //                from Aluguels
+            //                where StatusId = 1";
+            //    SqlCommand cmd = new SqlCommand(query);
 
-                var aa = cmd.ExecuteNonQuery();
-            }
+            //    var aa = cmd.ExecuteNonQuery();
+            //}
             return 7;
         }
     }

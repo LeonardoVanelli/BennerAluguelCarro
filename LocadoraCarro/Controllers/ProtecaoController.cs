@@ -43,6 +43,7 @@ namespace LocadoraCarro.Controllers
             dao.Remove(dao.BuscaPorId(id));
             return RedirectToAction("Index");
         }
+
         public ActionResult RetornaProtecao()
         {
             var alugueis = new AluguelDAO().Lista();

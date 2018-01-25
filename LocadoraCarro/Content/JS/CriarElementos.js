@@ -47,4 +47,5 @@ function MontaProtecao(id, nome, descricao, preco) {
     linha.append(id).append(nome).append(desc).append(preco).append(btn);
 
     $("#tbl-protecao").append(linha);
+    console.log(linha)
 }
