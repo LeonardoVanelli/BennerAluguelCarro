@@ -22,9 +22,7 @@ namespace LocadoraCarro.Controllers
             var daoCliente = new ClienteDAO();
             var daoFuncionario = new FuncionarioDAO();
             var usuario = daoCliente.BuscaPorLoginSenha(login, senha);            
-            var funcioanrio = daoFuncionario.BuscaPorLoginSenha(login, senha);
-
-            new AluguelDAO().ReservasParaHoje(7);
+            var funcioanrio = daoFuncionario.BuscaPorLoginSenha(login, senha);            
 
             if (usuario != null)
             {

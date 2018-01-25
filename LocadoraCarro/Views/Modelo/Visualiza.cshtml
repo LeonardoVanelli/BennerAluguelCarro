@@ -1,4 +1,5 @@
-﻿
+﻿@model LocadoraCarro.Models.Modelo
+
 <div class="divTexto">
     <h1 class="Titulo">Modelo</h1>
 </div>
@@ -10,14 +11,16 @@
             <th>Nome do Modelo</th>
             <th>Descrição</th>
             <th>Marca</th>
+            <th>Classe</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>@ViewBag.Modelo.Id</td>
-            <td>@ViewBag.Modelo.Nome</td>
-            <td>@ViewBag.Modelo.Descricao</td>
+            <td>@Model.Id</td>
+            <td>@Model.Descricao</td>
+            <td>@Model.Nome</td>
             <td>@ViewBag.Marca.Nome</td>
+            <td>@ViewBag.Classe.Nome</td>                        
         </tr>
     </tbody>
 </table>

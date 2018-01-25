@@ -27,8 +27,7 @@ namespace LocadoraCarro.Controllers
         }
 
         public ActionResult Form()
-        {
-            ViewBag.Classe = new ClasseDAO().Lista();
+        {            
             ViewBag.Modelo = new ModeloDAO().Lista();
             return View();
         }
@@ -45,8 +44,7 @@ namespace LocadoraCarro.Controllers
             var dao = new CarroDAO();
             ViewBag.Carro = dao.BuscaPorId(id);
 
-            ViewBag.Modelo = new ModeloDAO().BuscaPorId(ViewBag.Carro.ModeloId);
-            ViewBag.Classe = new ClasseDAO().BuscaPorId(ViewBag.Carro.ClasseId);
+            ViewBag.Modelo = new ModeloDAO().BuscaPorId(ViewBag.Carro.ModeloId);            
 
             ViewBag.Marca = new MarcaDAO().BuscaPorId(ViewBag.Modelo.MarcaId);
             return View();

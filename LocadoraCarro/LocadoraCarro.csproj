@@ -459,6 +459,10 @@
     <Compile Include="Migrations\201801251930042_Adiciona_classe_no_modelos.Designer.cs">
       <DependentUpon>201801251930042_Adiciona_classe_no_modelos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801252037049_ClasseId_tabela_Modelo.cs" />
+    <Compile Include="Migrations\201801252037049_ClasseId_tabela_Modelo.Designer.cs">
+      <DependentUpon>201801252037049_ClasseId_tabela_Modelo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluguel.cs" />
     <Compile Include="Models\Carro.cs" />
@@ -646,6 +650,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801251930042_Adiciona_classe_no_modelos.resx">
       <DependentUpon>201801251930042_Adiciona_classe_no_modelos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801252037049_ClasseId_tabela_Modelo.resx">
+      <DependentUpon>201801252037049_ClasseId_tabela_Modelo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

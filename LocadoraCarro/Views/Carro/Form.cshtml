@@ -18,12 +18,6 @@
     </select>
     
     <label for="clsse">Classe:</label>
-    <select id="classe" name="carro.ClasseId" class="form-control">
-        @foreach (var classe in ViewBag.Classe)
-        {
-            <option value="@classe.Id">@classe.Nome</option>
-        }
-    </select>
 
     <label for="descricao">Descricao:</label>
     <input id="descricao" name="carro.Descricao" class="form-control" />

@@ -500,3 +500,4 @@ C:\Users\leona\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\Locad
 C:\Users\leona\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.pdb
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Remove_Classe_carro.resources
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Adiciona_classe_no_modelos.resources
+C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.ClasseId_tabela_Modelo.resources

@@ -24,7 +24,10 @@ namespace LocadoraCarro.Controllers
         {
             var dao = new MarcaDAO();
             ViewBag.Marca = dao.Lista();
+            ViewBag.Classe = new ClasseDAO().Lista();
+            
             return View();
+            
         }
 
         [HttpPost]
@@ -57,8 +60,9 @@ namespace LocadoraCarro.Controllers
             var dao = new ModeloDAO();
             ViewBag.Modelo = dao.BuscaPorId(id);
 
+            ViewBag.Classe = new ClasseDAO().BuscaPorId(ViewBag.Modelo.ClasseId);
             ViewBag.Marca = new MarcaDAO().BuscaPorId(ViewBag.Modelo.MarcaId);
-            return View();
+            return View(dao.BuscaPorId(id));
         }
 
         public ActionResult Remove(int id)

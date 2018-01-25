@@ -21,5 +21,13 @@
         }
 
     </select>
+    <label for="classe">Classe:</label>
+    <select id="classe" name="modelo.ClasseId" class="form-control">
+        @foreach (var classe in ViewBag.Classe)
+        {
+            <option value="@classe.Id">@classe.Nome</option>
+        }
+
+    </select>
         <input class="btn btn-success botoes" type="submit" value="Cadastrar" />
 </form>

@@ -17,6 +17,7 @@ namespace LocadoraCarro.Models
 
         public int MarcaId { get; set; }
 
+        public int? ClasseId { get; set; }
         public virtual Classe Classe { get; set; }
     }
 }
