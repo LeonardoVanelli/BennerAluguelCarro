@@ -54,6 +54,7 @@ namespace LocadoraCarro.Controllers
         {
             var dao = new CarroDAO();
             dao.Remove(dao.BuscaPorId(id));
-            return RedirectToAction("Index");        }
+            return RedirectToAction("Index");
+        }
     }
 }

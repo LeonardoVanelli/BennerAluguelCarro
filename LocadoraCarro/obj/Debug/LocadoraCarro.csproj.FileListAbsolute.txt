@@ -501,3 +501,4 @@ C:\Users\leona\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\Locad
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Remove_Classe_carro.resources
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Adiciona_classe_no_modelos.resources
 C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.ClasseId_tabela_Modelo.resources
+C:\Users\Leonardo\Documents\GitHub\BennerAluguelCarro\LocadoraCarro\obj\Debug\LocadoraCarro.Migrations.Remove_coluna_qtdDisponivel_tabela_carro.resources

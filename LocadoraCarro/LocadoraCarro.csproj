@@ -463,6 +463,10 @@
     <Compile Include="Migrations\201801252037049_ClasseId_tabela_Modelo.Designer.cs">
       <DependentUpon>201801252037049_ClasseId_tabela_Modelo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801252044506_Remove_coluna_qtdDisponivel_tabela_carro.cs" />
+    <Compile Include="Migrations\201801252044506_Remove_coluna_qtdDisponivel_tabela_carro.Designer.cs">
+      <DependentUpon>201801252044506_Remove_coluna_qtdDisponivel_tabela_carro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluguel.cs" />
     <Compile Include="Models\Carro.cs" />
@@ -653,6 +657,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801252037049_ClasseId_tabela_Modelo.resx">
       <DependentUpon>201801252037049_ClasseId_tabela_Modelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801252044506_Remove_coluna_qtdDisponivel_tabela_carro.resx">
+      <DependentUpon>201801252044506_Remove_coluna_qtdDisponivel_tabela_carro.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
